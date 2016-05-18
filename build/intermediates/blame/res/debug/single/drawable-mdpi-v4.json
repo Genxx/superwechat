@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\unread_count_bg.9.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-mdpi\\unread_count_bg.9.png"
+    }
+]
