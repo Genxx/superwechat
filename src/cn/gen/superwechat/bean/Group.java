@@ -1,6 +1,11 @@
 package cn.gen.superwechat.bean;
 
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
+import java.util.Objects;
+
 /**
  * Group entity. @author MyEclipse Persistence Tools
  */
@@ -151,6 +156,19 @@ public class Group extends Location implements java.io.Serializable {
 				+ ", MGroupIsPublic=" + mgroupIsPublic
 				+ ", MGroupAllowInvites=" + mgroupAllowInvites + "]";
 	}
-	
 
+	@TargetApi(Build.VERSION_CODES.KITKAT)
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Group group = (Group) o;
+		return Objects.equals(mgroupId, group.mgroupId);
+	}
+
+	@TargetApi(Build.VERSION_CODES.KITKAT)
+	@Override
+	public int hashCode() {
+		return Objects.hash(mgroupId);
+	}
 }

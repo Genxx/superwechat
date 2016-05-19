@@ -1,5 +1,10 @@
 package cn.gen.superwechat.bean;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
+import java.util.Objects;
+
 /**
  * Contact entity. @author MyEclipse Persistence Tools
  */
@@ -82,5 +87,18 @@ public class Contact extends User implements java.io.Serializable {
 				+ mcontactCname + "]";
 	}
 
-	
+	@TargetApi(Build.VERSION_CODES.KITKAT)
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Contact contact = (Contact) o;
+		return Objects.equals(mcontactId, contact.mcontactId);
+	}
+
+	@TargetApi(Build.VERSION_CODES.KITKAT)
+	@Override
+	public int hashCode() {
+		return Objects.hash(mcontactId);
+	}
 }

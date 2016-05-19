@@ -1,6 +1,11 @@
 package cn.gen.superwechat.bean;
 
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
+import java.util.Objects;
+
 /**
  * Member entity. @author MyEclipse Persistence Tools
  */
@@ -93,6 +98,22 @@ public class Member extends User implements java.io.Serializable {
 				+ mmemberGroupHxid + ", MMemberPermission=" + mmemberPermission
 				+ "]";
 	}
-	
 
+	@TargetApi(Build.VERSION_CODES.KITKAT)
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Member member = (Member) o;
+		return Objects.equals(mmemberUserId, member.mmemberUserId) &&
+				Objects.equals(mmemberUserName, member.mmemberUserName) &&
+				Objects.equals(mmemberGroupId, member.mmemberGroupId) &&
+				Objects.equals(mmemberGroupHxid, member.mmemberGroupHxid);
+	}
+
+	@TargetApi(Build.VERSION_CODES.KITKAT)
+	@Override
+	public int hashCode() {
+		return Objects.hash(mmemberUserId, mmemberUserName, mmemberGroupId, mmemberGroupHxid);
+	}
 }
