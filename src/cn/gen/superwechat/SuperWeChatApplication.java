@@ -20,6 +20,7 @@ import com.easemob.EMCallBack;
 
 public class SuperWeChatApplication extends Application {
 
+	public static   String SERVER_ROOT="http://127.0.0.1:8080/SuperWeChatServer/Server?";
 	public static Context applicationContext;
 	private static SuperWeChatApplication instance;
 	// login user name
