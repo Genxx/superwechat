@@ -87,7 +87,7 @@ import com.easemob.chat.NormalFileMessageBody;
 import com.easemob.chat.TextMessageBody;
 import com.easemob.chat.VideoMessageBody;
 import com.easemob.chat.VoiceMessageBody;
-import cn.gen.superwechat.DemoApplication;
+import cn.gen.superwechat.SuperWeChatApplication;
 import cn.gen.superwechat.DemoHXSDKHelper;
 import cn.gen.superwechat.adapter.ExpressionAdapter;
 import cn.gen.superwechat.adapter.ExpressionPagerAdapter;
@@ -98,6 +98,7 @@ import cn.gen.superwechat.utils.CommonUtils;
 import cn.gen.superwechat.utils.ImageUtils;
 import cn.gen.superwechat.utils.SmileUtils;
 import cn.gen.superwechat.utils.UserUtils;
+import cn.gen.superwechat.utils.Utils;
 import cn.gen.superwechat.widget.ExpandGridView;
 import cn.gen.superwechat.widget.PasteEditText;
 import com.easemob.exceptions.EaseMobException;
@@ -855,7 +856,7 @@ public class ChatActivity extends BaseActivity implements OnClickListener, EMEve
 			return;
 		}
 
-		cameraFile = new File(PathUtil.getInstance().getImagePath(), DemoApplication.getInstance().getUserName()
+		cameraFile = new File(PathUtil.getInstance().getImagePath(), SuperWeChatApplication.getInstance().getUserName()
 				+ System.currentTimeMillis() + ".jpg");
 		cameraFile.getParentFile().mkdirs();
 		startActivityForResult(
@@ -1414,7 +1415,7 @@ public class ChatActivity extends BaseActivity implements OnClickListener, EMEve
 
 						if (filename != "delete_expression") { // 不是删除键，显示表情
 							// 这里用的反射，所以混淆的时候不要混淆SmileUtils这个类
-							Class clz = Class.forName("SmileUtils");
+							Class clz = Class.forName(Utils.getPackageName(getApplicationContext())+".Utils.SmileUtils");
 							Field field = clz.getField(filename);
 							mEditTextContent.append(SmileUtils.getSmiledText(ChatActivity.this,
 									(String) field.get(null)));

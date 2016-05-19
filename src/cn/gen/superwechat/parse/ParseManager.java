@@ -138,6 +138,7 @@ public class ParseManager {
 	
 	public void asyncGetCurrentUserInfo(final EMValueCallBack<User> callback){
 		final String username = EMChatManager.getInstance().getCurrentUser();
+		if(username==null)return;
 		asyncGetUserInfo(username, new EMValueCallBack<User>() {
 
 			@Override
