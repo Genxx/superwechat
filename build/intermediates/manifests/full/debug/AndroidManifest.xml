@@ -39,7 +39,7 @@
     <uses-permission android:name="com.easemob.chatuidemo.permission.C2D_MESSAGE" />
 
     <application
-        android:name="cn.gen.superwechat.DemoApplication"
+        android:name="cn.gen.superwechat.SuperWeChatApplication"
         android:allowBackup="true"
         android:icon="@drawable/logo_uidemo"
         android:label="@string/app_name" >
@@ -330,7 +330,7 @@
         <!-- 设置环信应用的appkey -->
         <meta-data
             android:name="EASEMOB_APPKEY"
-            android:value="easemob-demo#chatdemoui" />
+            android:value="52162#superwechat" />
         <!-- 声明sdk所需的service -->
         <service android:name="com.easemob.chat.EMChatService" />
         <!-- 声明sdk所需的receiver -->

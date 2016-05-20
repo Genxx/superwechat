@@ -39,7 +39,7 @@ import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
 import cn.gen.superwechat.Constant;
 import cn.gen.superwechat.DemoHXSDKHelper;
-import cn.gen.superwechat.db.UserDao;
+import cn.gen.superwechat.db.EMUserDao;
 import cn.gen.superwechat.domain.User;
 import cn.gen.superwechat.utils.CommonUtils;
 
@@ -230,7 +230,7 @@ public class LoginActivity extends BaseActivity {
 		// 存入内存
 		((DemoHXSDKHelper) HXSDKHelper.getInstance()).setContactList(userlist);
 		// 存入db
-		UserDao dao = new UserDao(LoginActivity.this);
+		EMUserDao dao = new EMUserDao(LoginActivity.this);
 		List<User> users = new ArrayList<User>(userlist.values());
 		dao.saveContactList(users);
 	}

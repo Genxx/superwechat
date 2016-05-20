@@ -176,4 +176,5 @@ public class SuperWeChatApplication extends Application {
 	public void setGroupMembers(HashMap<String, ArrayList<Member>> groupMembers) {
 		this.groupMembers = groupMembers;
 	}
+
 }

@@ -56,7 +56,7 @@ import cn.gen.superwechat.Constant;
 import cn.gen.superwechat.DemoHXSDKHelper;
 import cn.gen.superwechat.adapter.ContactAdapter;
 import cn.gen.superwechat.db.InviteMessgeDao;
-import cn.gen.superwechat.db.UserDao;
+import cn.gen.superwechat.db.EMUserDao;
 import cn.gen.superwechat.domain.User;
 import cn.gen.superwechat.widget.Sidebar;
 import com.easemob.exceptions.EaseMobException;
@@ -333,7 +333,7 @@ public class ContactlistFragment extends Fragment {
 				try {
 					EMContactManager.getInstance().deleteContact(tobeDeleteUser.getUsername());
 					// 删除db和内存中此用户的数据
-					UserDao dao = new UserDao(getActivity());
+					EMUserDao dao = new EMUserDao(getActivity());
 					dao.deleteContact(tobeDeleteUser.getUsername());
 					((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList().remove(tobeDeleteUser.getUsername());
 					getActivity().runOnUiThread(new Runnable() {

@@ -132,7 +132,7 @@ ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:41:5-362:25
 	android:icon
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:44:9-45
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:42:9-58
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:42:9-65
 activity#cn.gen.superwechat.activity.MainActivity
 ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:46:9-52:20
 	android:windowSoftInputMode
@@ -532,11 +532,11 @@ ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:324:17-62
 	android:name
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:324:25-60
 meta-data#EASEMOB_APPKEY
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:331:9-333:55
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:331:9-333:49
 	android:name
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:332:13-42
 	android:value
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:333:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:333:13-46
 service#com.easemob.chat.EMChatService
 ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:335:9-65
 	android:name

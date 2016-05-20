@@ -105,10 +105,11 @@ public class Member extends User implements java.io.Serializable {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Member member = (Member) o;
-		return Objects.equals(mmemberUserId, member.mmemberUserId) &&
-				Objects.equals(mmemberUserName, member.mmemberUserName) &&
-				Objects.equals(mmemberGroupId, member.mmemberGroupId) &&
-				Objects.equals(mmemberGroupHxid, member.mmemberGroupHxid);
+		return (mmemberUserId.equals(member.mmemberUserId)
+				&& mmemberUserName.equals(member.mmemberUserName)
+				&&mmemberGroupId.equals(member.mmemberGroupId)
+				&&mmemberGroupHxid.equals(member.mmemberGroupHxid));
+
 	}
 
 	@TargetApi(Build.VERSION_CODES.KITKAT)
