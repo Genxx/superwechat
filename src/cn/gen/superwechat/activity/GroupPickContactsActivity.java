@@ -36,7 +36,7 @@ import com.easemob.chat.EMGroupManager;
 import cn.gen.superwechat.Constant;
 import cn.gen.superwechat.DemoHXSDKHelper;
 import cn.gen.superwechat.adapter.ContactAdapter;
-import cn.gen.superwechat.domain.User;
+import cn.gen.superwechat.domain.EMUser;
 import cn.gen.superwechat.widget.Sidebar;
 
 public class GroupPickContactsActivity extends BaseActivity {
@@ -66,15 +66,15 @@ public class GroupPickContactsActivity extends BaseActivity {
 		if(exitingMembers == null)
 			exitingMembers = new ArrayList<String>();
 		// 获取好友列表
-		final List<User> alluserList = new ArrayList<User>();
-		for (User user : ((DemoHXSDKHelper) HXSDKHelper.getInstance()).getContactList().values()) {
-			if (!user.getUsername().equals(Constant.NEW_FRIENDS_USERNAME) & !user.getUsername().equals(Constant.GROUP_USERNAME) & !user.getUsername().equals(Constant.CHAT_ROOM) & !user.getUsername().equals(Constant.CHAT_ROBOT))
-				alluserList.add(user);
+		final List<EMUser> alluserList = new ArrayList<EMUser>();
+		for (EMUser EMUser : ((DemoHXSDKHelper) HXSDKHelper.getInstance()).getContactList().values()) {
+			if (!EMUser.getUsername().equals(Constant.NEW_FRIENDS_USERNAME) & !EMUser.getUsername().equals(Constant.GROUP_USERNAME) & !EMUser.getUsername().equals(Constant.CHAT_ROOM) & !EMUser.getUsername().equals(Constant.CHAT_ROBOT))
+				alluserList.add(EMUser);
 		}
 		// 对list进行排序
-		Collections.sort(alluserList, new Comparator<User>() {
+		Collections.sort(alluserList, new Comparator<EMUser>() {
 			@Override
-			public int compare(User lhs, User rhs) {
+			public int compare(EMUser lhs, EMUser rhs) {
 				return (lhs.getUsername().compareTo(rhs.getUsername()));
 
 			}
@@ -130,9 +130,9 @@ public class GroupPickContactsActivity extends BaseActivity {
 
 		private boolean[] isCheckedArray;
 
-		public PickContactAdapter(Context context, int resource, List<User> users) {
-			super(context, resource, users);
-			isCheckedArray = new boolean[users.size()];
+		public PickContactAdapter(Context context, int resource, List<EMUser> EMUsers) {
+			super(context, resource, EMUsers);
+			isCheckedArray = new boolean[EMUsers.size()];
 		}
 
 		@Override

@@ -7,7 +7,8 @@ import android.widget.TextView;
 
 import cn.gen.superwechat.applib.controller.HXSDKHelper;
 import cn.gen.superwechat.DemoHXSDKHelper;
-import cn.gen.superwechat.domain.User;
+import cn.gen.superwechat.domain.EMUser;
+
 import com.squareup.picasso.Picasso;
 
 public class UserUtils {
@@ -16,18 +17,18 @@ public class UserUtils {
      * @param username
      * @return
      */
-    public static User getUserInfo(String username){
-        User user = ((DemoHXSDKHelper) HXSDKHelper.getInstance()).getContactList().get(username);
-        if(user == null){
-            user = new User(username);
+    public static EMUser getUserInfo(String username){
+        EMUser EMUser = ((DemoHXSDKHelper) HXSDKHelper.getInstance()).getContactList().get(username);
+        if(EMUser == null){
+            EMUser = new EMUser(username);
         }
             
-        if(user != null){
+        if(EMUser != null){
             //demo没有这些数据，临时填充
-        	if(TextUtils.isEmpty(user.getNick()))
-        		user.setNick(username);
+        	if(TextUtils.isEmpty(EMUser.getNick()))
+        		EMUser.setNick(username);
         }
-        return user;
+        return EMUser;
     }
     
     /**
@@ -35,9 +36,9 @@ public class UserUtils {
      * @param username
      */
     public static void setUserAvatar(Context context, String username, ImageView imageView){
-    	User user = getUserInfo(username);
-        if(user != null && user.getAvatar() != null){
-            Picasso.with(context).load(user.getAvatar()).placeholder(cn.gen.superwechat.R.drawable.default_avatar).into(imageView);
+    	EMUser EMUser = getUserInfo(username);
+        if(EMUser != null && EMUser.getAvatar() != null){
+            Picasso.with(context).load(EMUser.getAvatar()).placeholder(cn.gen.superwechat.R.drawable.default_avatar).into(imageView);
         }else{
             Picasso.with(context).load(cn.gen.superwechat.R.drawable.default_avatar).into(imageView);
         }
@@ -47,9 +48,9 @@ public class UserUtils {
      * 设置当前用户头像
      */
 	public static void setCurrentUserAvatar(Context context, ImageView imageView) {
-		User user = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getUserProfileManager().getCurrentUserInfo();
-		if (user != null && user.getAvatar() != null) {
-			Picasso.with(context).load(user.getAvatar()).placeholder(cn.gen.superwechat.R.drawable.default_avatar).into(imageView);
+		EMUser EMUser = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getUserProfileManager().getCurrentUserInfo();
+		if (EMUser != null && EMUser.getAvatar() != null) {
+			Picasso.with(context).load(EMUser.getAvatar()).placeholder(cn.gen.superwechat.R.drawable.default_avatar).into(imageView);
 		} else {
 			Picasso.with(context).load(cn.gen.superwechat.R.drawable.default_avatar).into(imageView);
 		}
@@ -59,9 +60,9 @@ public class UserUtils {
      * 设置用户昵称
      */
     public static void setUserNick(String username,TextView textView){
-    	User user = getUserInfo(username);
-    	if(user != null){
-    		textView.setText(user.getNick());
+    	EMUser EMUser = getUserInfo(username);
+    	if(EMUser != null){
+    		textView.setText(EMUser.getNick());
     	}else{
     		textView.setText(username);
     	}
@@ -71,9 +72,9 @@ public class UserUtils {
      * 设置当前用户昵称
      */
     public static void setCurrentUserNick(TextView textView){
-    	User user = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getUserProfileManager().getCurrentUserInfo();
+    	EMUser EMUser = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getUserProfileManager().getCurrentUserInfo();
     	if(textView != null){
-    		textView.setText(user.getNick());
+    		textView.setText(EMUser.getNick());
     	}
     }
     
@@ -81,11 +82,11 @@ public class UserUtils {
      * 保存或更新某个用户
      * @param user
      */
-	public static void saveUserInfo(User newUser) {
-		if (newUser == null || newUser.getUsername() == null) {
+	public static void saveUserInfo(EMUser newEMUser) {
+		if (newEMUser == null || newEMUser.getUsername() == null) {
 			return;
 		}
-		((DemoHXSDKHelper) HXSDKHelper.getInstance()).saveContact(newUser);
+		((DemoHXSDKHelper) HXSDKHelper.getInstance()).saveContact(newEMUser);
 	}
     
 }

@@ -16,10 +16,10 @@ package cn.gen.superwechat.activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import cn.gen.superwechat.domain.User;
+import cn.gen.superwechat.domain.EMUser;
 
 public class ForwardMessageActivity extends PickContactNoCheckboxActivity {
-	private User selectUser;
+	private EMUser selectEMUser;
 	private String forward_msg_id;
 
 	 
@@ -35,11 +35,11 @@ public class ForwardMessageActivity extends PickContactNoCheckboxActivity {
 	@Override
 	protected void onListItemClick(int position) {
 //		if (position != 0) {
-			selectUser = contactAdapter.getItem(position);
+			selectEMUser = contactAdapter.getItem(position);
 			Intent intent = new Intent(ForwardMessageActivity.this, AlertDialog.class);
 			intent.putExtra("cancel", true);
 			intent.putExtra("titleIsCancel", true);
-			intent.putExtra("msg", getString(cn.gen.superwechat.R.string.confirm_forward_to, selectUser.getUsername()));
+			intent.putExtra("msg", getString(cn.gen.superwechat.R.string.confirm_forward_to, selectEMUser.getUsername()));
 			startActivityForResult(intent, 1);
 //		}
 	}
@@ -52,10 +52,10 @@ public class ForwardMessageActivity extends PickContactNoCheckboxActivity {
 			} catch (Exception e) {
 			}
 			Intent intent = new Intent(this, ChatActivity.class);
-			if (selectUser == null)
+			if (selectEMUser == null)
 				return;
 			// it is single chat
-			intent.putExtra("userId", selectUser.getUsername());
+			intent.putExtra("userId", selectEMUser.getUsername());
 			intent.putExtra("forward_msg_id", forward_msg_id);
 			startActivity(intent);
 			finish();

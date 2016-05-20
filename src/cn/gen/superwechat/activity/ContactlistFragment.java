@@ -57,7 +57,7 @@ import cn.gen.superwechat.DemoHXSDKHelper;
 import cn.gen.superwechat.adapter.ContactAdapter;
 import cn.gen.superwechat.db.InviteMessgeDao;
 import cn.gen.superwechat.db.EMUserDao;
-import cn.gen.superwechat.domain.User;
+import cn.gen.superwechat.domain.EMUser;
 import cn.gen.superwechat.widget.Sidebar;
 import com.easemob.exceptions.EaseMobException;
 import com.easemob.util.EMLog;
@@ -69,7 +69,7 @@ import com.easemob.util.EMLog;
 public class ContactlistFragment extends Fragment {
 	public static final String TAG = "ContactlistFragment";
 	private ContactAdapter adapter;
-	private List<User> contactList;
+	private List<EMUser> contactList;
 	private ListView listView;
 	private boolean hidden;
 	private Sidebar sidebar;
@@ -82,7 +82,7 @@ public class ContactlistFragment extends Fragment {
 	HXContactInfoSyncListener contactInfoSyncListener;
 	View progressBar;
 	Handler handler = new Handler();
-    private User toBeProcessUser;
+    private EMUser toBeProcessEMUser;
     private String toBeProcessUsername;
 
 	class HXContactSyncListener implements HXSDKHelper.HXSyncListener {
@@ -165,7 +165,7 @@ public class ContactlistFragment extends Fragment {
         
 		//黑名单列表
 		blackList = EMContactManager.getInstance().getBlackListUsernames();
-		contactList = new ArrayList<User>();
+		contactList = new ArrayList<EMUser>();
 		// 获取设置contactlist
 		getContactList();
 		
@@ -208,8 +208,8 @@ public class ContactlistFragment extends Fragment {
 				String username = adapter.getItem(position).getUsername();
 				if (Constant.NEW_FRIENDS_USERNAME.equals(username)) {
 					// 进入申请与通知页面
-					User user = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList().get(Constant.NEW_FRIENDS_USERNAME);
-					user.setUnreadMsgCount(0);
+					EMUser EMUser = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList().get(Constant.NEW_FRIENDS_USERNAME);
+					EMUser.setUnreadMsgCount(0);
 					startActivity(new Intent(getActivity(), NewFriendsMsgActivity.class));
 				} else if (Constant.GROUP_USERNAME.equals(username)) {
 					// 进入群聊列表页面
@@ -273,8 +273,8 @@ public class ContactlistFragment extends Fragment {
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
 		if (((AdapterContextMenuInfo) menuInfo).position > 3) {
-		    toBeProcessUser = adapter.getItem(((AdapterContextMenuInfo) menuInfo).position);
-		    toBeProcessUsername = toBeProcessUser.getUsername();
+		    toBeProcessEMUser = adapter.getItem(((AdapterContextMenuInfo) menuInfo).position);
+		    toBeProcessUsername = toBeProcessEMUser.getUsername();
 			getActivity().getMenuInflater().inflate(cn.gen.superwechat.R.menu.context_contact_list, menu);
 		}
 	}
@@ -284,10 +284,10 @@ public class ContactlistFragment extends Fragment {
 		if (item.getItemId() == cn.gen.superwechat.R.id.delete_contact) {
 			try {
                 // 删除此联系人
-                deleteContact(toBeProcessUser);
+                deleteContact(toBeProcessEMUser);
                 // 删除相关的邀请消息
                 InviteMessgeDao dao = new InviteMessgeDao(getActivity());
-                dao.deleteMessage(toBeProcessUser.getUsername());
+                dao.deleteMessage(toBeProcessEMUser.getUsername());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -321,7 +321,7 @@ public class ContactlistFragment extends Fragment {
 	 * 
 	 * @param toDeleteUser
 	 */
-	public void deleteContact(final User tobeDeleteUser) {
+	public void deleteContact(final EMUser tobeDeleteEMUser) {
 		String st1 = getResources().getString(cn.gen.superwechat.R.string.deleting);
 		final String st2 = getResources().getString(cn.gen.superwechat.R.string.Delete_failed);
 		final ProgressDialog pd = new ProgressDialog(getActivity());
@@ -331,15 +331,15 @@ public class ContactlistFragment extends Fragment {
 		new Thread(new Runnable() {
 			public void run() {
 				try {
-					EMContactManager.getInstance().deleteContact(tobeDeleteUser.getUsername());
+					EMContactManager.getInstance().deleteContact(tobeDeleteEMUser.getUsername());
 					// 删除db和内存中此用户的数据
 					EMUserDao dao = new EMUserDao(getActivity());
-					dao.deleteContact(tobeDeleteUser.getUsername());
-					((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList().remove(tobeDeleteUser.getUsername());
+					dao.deleteContact(tobeDeleteEMUser.getUsername());
+					((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList().remove(tobeDeleteEMUser.getUsername());
 					getActivity().runOnUiThread(new Runnable() {
 						public void run() {
 							pd.dismiss();
-							adapter.remove(tobeDeleteUser);
+							adapter.remove(tobeDeleteEMUser);
 							adapter.notifyDataSetChanged();
 
 						}
@@ -444,10 +444,10 @@ public class ContactlistFragment extends Fragment {
 	private void getContactList() {
 		contactList.clear();
 		//获取本地好友列表
-		Map<String, User> users = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList();
-		Iterator<Entry<String, User>> iterator = users.entrySet().iterator();
+		Map<String, EMUser> users = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList();
+		Iterator<Entry<String, EMUser>> iterator = users.entrySet().iterator();
 		while (iterator.hasNext()) {
-			Entry<String, User> entry = iterator.next();
+			Entry<String, EMUser> entry = iterator.next();
 			if (!entry.getKey().equals(Constant.NEW_FRIENDS_USERNAME)
 			        && !entry.getKey().equals(Constant.GROUP_USERNAME)
 			        && !entry.getKey().equals(Constant.CHAT_ROOM)
@@ -456,10 +456,10 @@ public class ContactlistFragment extends Fragment {
 				contactList.add(entry.getValue());
 		}
 		// 排序
-		Collections.sort(contactList, new Comparator<User>() {
+		Collections.sort(contactList, new Comparator<EMUser>() {
 
 			@Override
-			public int compare(User lhs, User rhs) {
+			public int compare(EMUser lhs, EMUser rhs) {
 				return lhs.getUsername().compareTo(rhs.getUsername());
 			}
 		});
