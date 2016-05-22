@@ -276,6 +276,10 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\fragment_conversation_settings.xml"
     },
     {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\popu_show_avatar.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\popu_show_avatar.xml"
+    },
+    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_login.xml"
     },
