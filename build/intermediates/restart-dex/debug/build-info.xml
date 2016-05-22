@@ -4,29 +4,34 @@
     api-level="23"
     density="hdpi"
     format="7"
-    timestamp="17866598097992" >
+    timestamp="5264109468834" >
 
     <task
         name="javac"
-        duration="6422" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1786" />
+        duration="0" />
     <task
         name="verifier"
-        duration="92" />
+        duration="0" />
 
     <artifact
-        location="D:\SuperWeChat\superwechat\build\outputs\apk\superwechat-debug.apk"
-        type="MAIN" />
+        location="D:\SuperWeChat\superwechat\build\intermediates\res\resources-debug.ap_"
+        type="RESOURCES" />
 
-    <build timestamp="28465248361492" >
+    <build timestamp="4940173814626" >
         <artifact
             location="D:\SuperWeChat\superwechat\build\outputs\apk\superwechat-debug.apk"
             type="MAIN" />
+    </build>
+    <build timestamp="5264109468834" >
+        <artifact
+            location="D:\SuperWeChat\superwechat\build\intermediates\res\resources-debug.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

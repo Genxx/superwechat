@@ -1,5 +1,57 @@
 [
     {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\find_icon.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\find_icon.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\find_piaoliuping.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\find_piaoliuping.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\find_erweima.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\find_erweima.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\friends_icon.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\friends_icon.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\geek.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\geek.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\find_friends.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\find_friends.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\mobile.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\mobile.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\find_pressed.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\find_pressed.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\find_yaoyiyao.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\find_yaoyiyao.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\find_fujin.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\find_fujin.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\find_gouwu.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\find_gouwu.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\find_youxi.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\find_youxi.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\find_normal.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\find_normal.png"
+    },
+    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\empty_photo.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\empty_photo.png"
     }

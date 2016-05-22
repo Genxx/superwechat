@@ -212,6 +212,10 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable\\btn_gray_selector.xml"
     },
     {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_pop_avatar.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable\\selector_pop_avatar.xml"
+    },
+    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_style_alert_dialog_special.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable\\btn_style_alert_dialog_special.xml"
     },

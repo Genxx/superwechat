@@ -39,9 +39,9 @@ public class RegisterActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(cn.gen.superwechat.R.layout.activity_register);
-		userNameEditText = (EditText) findViewById(cn.gen.superwechat.R.id.username);
-		passwordEditText = (EditText) findViewById(cn.gen.superwechat.R.id.password);
-		confirmPwdEditText = (EditText) findViewById(cn.gen.superwechat.R.id.confirm_password);
+		userNameEditText = (EditText) findViewById(cn.gen.superwechat.R.id.etUsername);
+		passwordEditText = (EditText) findViewById(cn.gen.superwechat.R.id.etPassword);
+		confirmPwdEditText = (EditText) findViewById(cn.gen.superwechat.R.id.etconfirm_password);
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class RegisterActivity extends BaseActivity {
 									pd.dismiss();
 								// 保存用户名
 								SuperWeChatApplication.getInstance().setUserName(username);
-								Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.Registered_successfully), 0).show();
+								Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.Registered_successfully), Toast.LENGTH_SHORT).show();
 								finish();
 							}
 						});

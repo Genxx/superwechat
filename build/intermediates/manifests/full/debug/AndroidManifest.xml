@@ -282,7 +282,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <!-- user profile -->
+        <!-- EMUser profile -->
         <activity
             android:name="cn.gen.superwechat.activity.UserProfileActivity"
             android:screenOrientation="portrait"

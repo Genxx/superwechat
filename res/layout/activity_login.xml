@@ -10,12 +10,16 @@
         android:layout_height="0dip"
         android:layout_weight="1" >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerInParent="true"
-            android:src="@drawable/welcom_logo" />
+      <TextView
+          android:layout_centerInParent="true"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/mobile"
+          android:text="SuperWeChat"
+          android:textSize="20sp"
+          android:textColor="#000"
+          android:drawablePadding="5dp"
+          android:gravity="center_vertical"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -125,5 +129,13 @@
                 android:textSize="18sp" />
         </LinearLayout>
     </RelativeLayout>
+    <Button
+        android:id="@+id/btnUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="设置服务器的IP地址"
+        android:textColor="#000"
+        android:background="@null"/>
 
 </LinearLayout>
