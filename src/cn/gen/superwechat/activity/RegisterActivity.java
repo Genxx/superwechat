@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -32,8 +33,14 @@ import cn.gen.superwechat.I;
 import cn.gen.superwechat.Listener.OnSetAvatarListener;
 import cn.gen.superwechat.R;
 import cn.gen.superwechat.SuperWeChatApplication;
+import cn.gen.superwechat.bean.Message;
+import cn.gen.superwechat.data.OkHttpUtils;
+import cn.gen.superwechat.utils.ImageUtils;
+import cn.gen.superwechat.utils.Utils;
 
 import com.easemob.exceptions.EaseMobException;
+
+import java.io.File;
 
 /**
  * 注册页
@@ -54,6 +61,8 @@ public class RegisterActivity extends BaseActivity {
     String username;
     String pwd;
     String nick;
+
+    ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,51 +156,101 @@ public class RegisterActivity extends BaseActivity {
                 }
 
                 if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(pwd)) {
-                    final ProgressDialog pd = new ProgressDialog(mContext);
+                    pd = new ProgressDialog(mContext);
                     pd.setMessage(getResources().getString(cn.gen.superwechat.R.string.Is_the_registered));
                     pd.show();
 
-                    new Thread(new Runnable() {
-                        public void run() {
-                            try {
-                                // 调用sdk注册方法
-                                EMChatManager.getInstance().createAccountOnServer(username, pwd);
-                                runOnUiThread(new Runnable() {
-                                    public void run() {
-                                        if (!RegisterActivity.this.isFinishing())
-                                            pd.dismiss();
-                                        // 保存用户名
-                                        SuperWeChatApplication.getInstance().setUserName(username);
-                                        Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.Registered_successfully), Toast.LENGTH_SHORT).show();
-                                        finish();
-                                    }
-                                });
-                            } catch (final EaseMobException e) {
-                                runOnUiThread(new Runnable() {
-                                    public void run() {
-                                        if (!RegisterActivity.this.isFinishing())
-                                            pd.dismiss();
-                                        int errorCode = e.getErrorCode();
-                                        if (errorCode == EMError.NONETWORK_ERROR) {
-                                            Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.network_anomalies), Toast.LENGTH_SHORT).show();
-                                        } else if (errorCode == EMError.USER_ALREADY_EXISTS) {
-                                            Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.User_already_exists), Toast.LENGTH_SHORT).show();
-                                        } else if (errorCode == EMError.UNAUTHORIZED) {
-                                            Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.registration_failed_without_permission), Toast.LENGTH_SHORT).show();
-                                        } else if (errorCode == EMError.ILLEGAL_USER_NAME) {
-                                            Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.illegal_user_name), Toast.LENGTH_SHORT).show();
-                                        } else {
-                                            Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.Registration_failed) + e.getMessage(), Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                            }
-                        }
-                    }).start();
-
+                    registerAppServer();
                 }
             }
         });
+    }
+
+    private void registerAppServer() {
+        //首先注册远端服务器账号，并上传头像--okhttp
+        //注册环信的账号 registerEMServer
+        //如果环信的服务器注册失败，删除远端服务器上面的账号和头像 unRegister-->okhttp
+        //http://10.0.2.2:8080/SuperWeChatServer/Server?
+        // request=register&m_user_name=&m_user_nick=&m_user_password=
+        File file  = new File(ImageUtils.getAvatarPath(mContext,I.AVATAR_TYPE_USER_PATH),
+                avatarName+I.AVATAR_SUFFIX_JPG);
+        OkHttpUtils<Message> utils = new OkHttpUtils<Message>();
+        utils.url(SuperWeChatApplication.SERVER_ROOT)//设置服务端根地址
+                .addParam(I.KEY_REQUEST,I.REQUEST_REGISTER)//天津爱上传的请求参数
+                .addParam(I.User.USER_NAME,username)//添加用户的账号
+                .addParam(I.User.NICK,nick)//添加用户的昵称
+                .addParam(I.User.PASSWORD,pwd)//添加用户密码
+                .targetClass(Message.class)//设置服务端返回json数据的解析类型
+                .addFile(file)//添加上传的文件
+                .execute(new OkHttpUtils.OnCompleteListener<Message>() {
+                    @Override
+                    public void onSuccess(Message result) {
+                        if(result.isResult()){
+                            registerEMServer();
+                        }else {
+                            pd.dismiss();
+                            Utils.showToast(mContext,Utils.getResourceString(mContext,result.getMsg()),Toast.LENGTH_SHORT);
+                            Log.e(TAG,"register fail ,error:"+result.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onError(String error) {
+                        pd.dismiss();
+                        Utils.showToast(mContext,error,Toast.LENGTH_SHORT);
+                        Log.e(TAG,"register fail ,error:"+error);
+                    }
+                });
+
+    }
+
+    /**
+     * 注册环信账号
+     */
+    private void registerEMServer(){
+        new Thread(new Runnable() {
+            public void run() {
+                try {
+                    // 调用sdk注册方法
+                    EMChatManager.getInstance().createAccountOnServer(username, pwd);
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            if (!RegisterActivity.this.isFinishing())
+                                pd.dismiss();
+                            // 保存用户名
+                            SuperWeChatApplication.getInstance().setUserName(username);
+                            Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.Registered_successfully), Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    });
+                } catch (final EaseMobException e) {
+                    unRegister();
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            if (!RegisterActivity.this.isFinishing())
+                                pd.dismiss();
+                            int errorCode = e.getErrorCode();
+                            if (errorCode == EMError.NONETWORK_ERROR) {
+                                Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.network_anomalies), Toast.LENGTH_SHORT).show();
+                            } else if (errorCode == EMError.USER_ALREADY_EXISTS) {
+                                Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.User_already_exists), Toast.LENGTH_SHORT).show();
+                            } else if (errorCode == EMError.UNAUTHORIZED) {
+                                Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.registration_failed_without_permission), Toast.LENGTH_SHORT).show();
+                            } else if (errorCode == EMError.ILLEGAL_USER_NAME) {
+                                Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.illegal_user_name), Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.superwechat.R.string.Registration_failed) + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+            }
+        }).start();
+    }
+
+    private void unRegister() {
+        //url=http://10.0.2.2:8080/SuperWeChatServer/Server?
+        // request=unregister&m_user_name=
     }
 
     public void back(View view) {
