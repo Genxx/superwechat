@@ -46,7 +46,14 @@ public class ImageUtils {
         EMLog.d("msg", "thum image path:" + path);
         return path;
     }
-	
+
+	/***
+	 * 返回头像保存在sd卡的位置
+	 * Android/data/cn.gen.superwechat/files/pictures/user_avatar
+	 * @param context
+	 * @param path
+     * @return
+     */
     public static  String getAvatarPath(Context context,String path){
 		File dir = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
 		File folder = new File(dir,path);

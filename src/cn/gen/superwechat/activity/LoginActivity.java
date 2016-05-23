@@ -90,7 +90,10 @@ public class LoginActivity extends BaseActivity {
 		onLoginListener();
 		onUserNameChangedListener();
 		onRegisterListener();
+
 	}
+
+
 
 	private void onUserNameChangedListener() {
 		// 如果用户名改变，清空密码

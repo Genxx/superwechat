@@ -4,29 +4,58 @@
     api-level="23"
     density="hdpi"
     format="7"
-    timestamp="8435169147497" >
+    timestamp="3742517200925" >
 
     <task
         name="javac"
-        duration="1093" />
+        duration="1571" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1147" />
+        duration="577" />
     <task
         name="verifier"
-        duration="354" />
+        duration="99" />
 
     <artifact
-        location="D:\SuperWeChat\superwechat\build\outputs\apk\superwechat-debug.apk"
-        type="MAIN" />
+        location="D:\SuperWeChat\superwechat\build\intermediates\res\resources-debug.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+        type="DEX" />
 
-    <build timestamp="8435169147497" >
+    <build timestamp="1422209587520" >
         <artifact
             location="D:\SuperWeChat\superwechat\build\outputs\apk\superwechat-debug.apk"
             type="MAIN" />
+    </build>
+    <build timestamp="3742517200925" >
+        <artifact
+            location="D:\SuperWeChat\superwechat\build\intermediates\res\resources-debug.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>
