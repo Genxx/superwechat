@@ -19,14 +19,19 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
 import cn.gen.superwechat.applib.controller.HXSDKHelper;
+import cn.gen.superwechat.data.RequestManager;
 
+import com.android.volley.VolleyError;
+import com.squareup.okhttp.Response;
 import com.umeng.analytics.MobclickAgent;
 
 public class BaseActivity extends FragmentActivity {
+    BaseActivity activity;
 
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
+        activity = this;
     }
 
     @Override
@@ -54,5 +59,23 @@ public class BaseActivity extends FragmentActivity {
      */
     public void back(View view) {
         finish();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        RequestManager.cancelAll(activity);
+    }
+
+    public void executeRequest(com.android.volley.Request<?> request){
+        RequestManager.addRequest(request,activity);
+    }
+    public com.android.volley.Response.ErrorListener errorListener(){
+        return new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                System.out.print(volleyError.getMessage());
+            }
+        };
     }
 }

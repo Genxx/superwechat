@@ -25,6 +25,7 @@ import cn.gen.superwechat.bean.Contact;
 import cn.gen.superwechat.bean.Group;
 import cn.gen.superwechat.bean.Member;
 import cn.gen.superwechat.bean.User;
+import cn.gen.superwechat.data.RequestManager;
 
 public class SuperWeChatApplication extends Application {
 
@@ -65,6 +66,7 @@ public class SuperWeChatApplication extends Application {
          * }
          */
         hxSDKHelper.onInit(applicationContext);
+		RequestManager.init(applicationContext);
 	}
 
 	public static SuperWeChatApplication getInstance() {
