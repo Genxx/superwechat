@@ -1,6 +1,8 @@
 package cn.gen.superwechat.bean;
 
 
+import java.util.Objects;
+
 /**
  * EMUser entity. @author MyEclipse Persistence Tools
  */
@@ -12,11 +14,12 @@ public class User extends Location implements java.io.Serializable {
 	/**
 	 * 
 	 */
-	private Integer muserId;
-	private String muserName;
-	private String muserPassword;
-	private String muserNick;
-	private Integer muserUnreadMsgCount;
+	private Integer muserId;//用户在环信服务器上的id
+	private String muserName;//用户在环信服务器上的账号
+	private String muserPassword;//用户在环信服务器上的密码
+	private String muserNick;//用户在环信服务器上的昵称
+	private Integer muserUnreadMsgCount=0;//用户位置信息
+	private String header;//保存昵称首字母的索引
 
 	// Constructors
 
@@ -83,6 +86,27 @@ public class User extends Location implements java.io.Serializable {
 
 	public void setMUserUnreadMsgCount(Integer MUserUnreadMsgCount) {
 		this.muserUnreadMsgCount = MUserUnreadMsgCount;
+	}
+
+	public String getHeader() {
+		return header;
+	}
+
+	public void setHeader(String header) {
+		this.header = header;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof User)) return false;
+		User user = (User) o;
+		return muserName.equals(user.muserName);
+	}
+
+	@Override
+	public int hashCode() {
+		return muserName.hashCode();
 	}
 
 	@Override
