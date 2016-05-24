@@ -354,12 +354,12 @@ public class LoginActivity extends BaseActivity {
         userlist.put(Constant.GROUP_USERNAME, groupEMUser);
 
         // 添加"Robot"
-        EMUser robotEMUser = new EMUser();
-        String strRobot = getResources().getString(cn.gen.superwechat.R.string.robot_chat);
-        robotEMUser.setUsername(Constant.CHAT_ROBOT);
-        robotEMUser.setNick(strRobot);
-        robotEMUser.setHeader("");
-        userlist.put(Constant.CHAT_ROBOT, robotEMUser);
+//        EMUser robotEMUser = new EMUser();
+//        String strRobot = getResources().getString(cn.gen.superwechat.R.string.robot_chat);
+//        robotEMUser.setUsername(Constant.CHAT_ROBOT);
+//        robotEMUser.setNick(strRobot);
+//        robotEMUser.setHeader("");
+//        userlist.put(Constant.CHAT_ROBOT, robotEMUser);
 
         // 存入内存
         ((DemoHXSDKHelper) HXSDKHelper.getInstance()).setContactList(userlist);

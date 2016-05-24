@@ -1,3 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\easemobchat_2.2.8.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8cc35694de3c1a6185566afa93ea73e23d356bd6">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\easemobchat_2.2.8_926a2ea0aba36ca5793feb77c4f3f2605abbba2b\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\android-support-v4.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b6c138ba72ce38beda559df33d369856854fd6f5">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\android-support-v4_9411777b31ce420c3aab12da2e0412edb448349f\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\okhttp-urlconnection-2.7.5.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b3ae78e05ff9fdb1788db2056b583281ef684277">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\okhttp-urlconnection-2.7.5_ac90e13e34302a9eb57bbd8f7fa9a984f2551314\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\MiPush_SDK_Client_2_2_19.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="01298c1280e97b7367a55252f66a8f19fd494d35">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\MiPush_SDK_Client_2_2_19_7ae526176a7f410aaf2e9eed562cbd70be95eca4\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\locSDK_3.3.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="590d32bdf5bb37ee372a21696b8f7853b224e31f">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\locSDK_3.3_2b1f2ea02e80a5e6d02a3054d31c1a693ad22dec\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\gson-2.2.4.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\gson-2.2.4_70bc614f98d39bd53313ba2cb6911e1df208e3eb\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\volley.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4a94601db9bdfb7dc60efabb3dea91a0675f591d">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\volley_f96e9a2cc1c62a8753e1ed0abf013a4c5f532b05\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\picasso-2.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\picasso-2.4.0_bd5d5bb71654ccee6bd1439bee8527c91aab3d77\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\google-play-services.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f0d8e4a84fad131bc291c3c4850afcaa8ba0b299">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\google-play-services_81c13e6d0488c3a97c80c336b4ca28a4d73bb463\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\bolts-android-1.2.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\bolts-android-1.2.0_831258390a3552e5712eab837df8b49338e0fb49\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\org.apache.http.legacy.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="fa331331b626ee78c52bea16ce1e34b39e666ce5">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\org.apache.http.legacy_44a21fa587de307285ffad3cd425221bc8249c83\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\okhttp-2.7.5.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="7a15a7db50f86c4b64aa3367424a60e3a325b8f1">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\okhttp-2.7.5_8b88b60c7d29af61c5ab48637b7ec580978373c4\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\baidumapapi_v3_2_0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="46ca4c3c74e1ddc60b45c490485e5df05babe6a5">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\baidumapapi_v3_2_0_4abb943b6a4690c40bc4957aada977412c29f5d9\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\umeng-analytics-v5.2.4.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="0f9eccf79ae6006e4346725b09114182dca0c023">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\umeng-analytics-v5.2.4_416f6d56beca5876d2418eb6ac07d1e264b967f6\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\Parse-1.9.4.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="56c22930b5d4f77015b6a40c7f14103d3e101001">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\Parse-1.9.4_90e6bf23f18b352035e37c9098692a68c92dc44b\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="69eb4bc563b9d958fbb9fbb735ffaaf63a2e7f9e">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_745341db286810d967e00328d9a2a411f90e7ea1\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8fe8d3427f2279490a356db620f340c66f9bb15c">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_a27eda934ac3a8a60e1e36dc24070d992cccc8a8\classes.dex" />
+    </item>
+    <item
+        jar="D:\SuperWeChat\superwechat\libs\okio-1.6.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\okio-1.6.0_8c8c6cd4968d8e4a6832780054c4d3f2b4d262ad\classes.dex" />
+    </item>
+
+</items>

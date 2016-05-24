@@ -229,20 +229,20 @@ public class MainActivity extends BaseActivity implements EMEventListener {
                 userlist.put(Constant.GROUP_USERNAME, groupEMUser);
                 
                  // 添加"聊天室"
-                EMUser chatRoomItem = new EMUser();
-                String strChatRoom = context.getString(cn.gen.superwechat.R.string.chat_room);
-                chatRoomItem.setUsername(Constant.CHAT_ROOM);
-                chatRoomItem.setNick(strChatRoom);
-                chatRoomItem.setHeader("");
-                userlist.put(Constant.CHAT_ROOM, chatRoomItem);
+//                EMUser chatRoomItem = new EMUser();
+//                String strChatRoom = context.getString(cn.gen.superwechat.R.string.chat_room);
+//                chatRoomItem.setUsername(Constant.CHAT_ROOM);
+//                chatRoomItem.setNick(strChatRoom);
+//                chatRoomItem.setHeader("");
+//                userlist.put(Constant.CHAT_ROOM, chatRoomItem);
                 
                 // 添加"Robot"
-        		EMUser robotEMUser = new EMUser();
-        		String strRobot = context.getString(cn.gen.superwechat.R.string.robot_chat);
-        		robotEMUser.setUsername(Constant.CHAT_ROBOT);
-        		robotEMUser.setNick(strRobot);
-        		robotEMUser.setHeader("");
-        		userlist.put(Constant.CHAT_ROBOT, robotEMUser);
+//        		EMUser robotEMUser = new EMUser();
+//        		String strRobot = context.getString(cn.gen.superwechat.R.string.robot_chat);
+//        		robotEMUser.setUsername(Constant.CHAT_ROBOT);
+//        		robotEMUser.setNick(strRobot);
+//        		robotEMUser.setHeader("");
+//        		userlist.put(Constant.CHAT_ROBOT, robotEMUser);
         		
                  // 存入内存
                 ((DemoHXSDKHelper)HXSDKHelper.getInstance()).setContactList(userlist);
@@ -549,7 +549,7 @@ public class MainActivity extends BaseActivity implements EMEventListener {
 					String st10 = getResources().getString(cn.gen.superwechat.R.string.have_you_removed);
 					if (ChatActivity.activityInstance != null
 							&& usernameList.contains(ChatActivity.activityInstance.getToChatUsername())) {
-						Toast.makeText(MainActivity.this, ChatActivity.activityInstance.getToChatUsername() + st10, 1)
+						Toast.makeText(MainActivity.this, ChatActivity.activityInstance.getToChatUsername() + st10, Toast.LENGTH_LONG)
 								.show();
 						ChatActivity.activityInstance.finish();
 					}
