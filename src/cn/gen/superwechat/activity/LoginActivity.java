@@ -13,6 +13,9 @@
  */
 package cn.gen.superwechat.activity;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -37,18 +40,23 @@ import com.android.volley.Response;
 import com.easemob.EMCallBack;
 
 import cn.gen.superwechat.I;
+import cn.gen.superwechat.Listener.OnSetAvatarListener;
 import cn.gen.superwechat.R;
 import cn.gen.superwechat.SuperWeChatApplication;
 import cn.gen.superwechat.applib.controller.HXSDKHelper;
 
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.Request;
 
 import cn.gen.superwechat.Constant;
 import cn.gen.superwechat.DemoHXSDKHelper;
+import cn.gen.superwechat.bean.Message;
 import cn.gen.superwechat.bean.User;
 import cn.gen.superwechat.data.ApiParams;
 import cn.gen.superwechat.data.GsonRequest;
+import cn.gen.superwechat.data.OkHttpUtils;
 import cn.gen.superwechat.db.EMUserDao;
 import cn.gen.superwechat.domain.EMUser;
 import cn.gen.superwechat.utils.CommonUtils;
@@ -61,7 +69,7 @@ import cn.ucai.superwechat.db.UserDao;
  *
  */
 public class LoginActivity extends BaseActivity {
-    Context mContext;
+    Activity mContext;
     private static final String TAG = "LoginActivity";
     public static final int REQUEST_CODE_SETNICK = 1;
     private EditText usernameEditText;
@@ -156,11 +164,9 @@ public class LoginActivity extends BaseActivity {
 
                     @Override
                     public void onSuccess() {
-
                         if (!progressShow) {
                             return;
                         }
-
                         loginAppServer();
                     }
 
@@ -192,6 +198,7 @@ public class LoginActivity extends BaseActivity {
         User user = dao.findUserByUserName(currentUsername);
         if (user != null) {
             if (user.getMUserPassword().equals(MD5.getData(currentPassword))) {
+                saveUser(user);
                 loginSuccess();
             } else {
                 pd.dismiss();
@@ -200,9 +207,12 @@ public class LoginActivity extends BaseActivity {
         } else {
             //http://10.0.2.2:8080/SuperWeChatServer/Server?
             // request=login&m_user_name=&m_user_password=
+            //volley login server
             try {
-                String path = new ApiParams().with(I.User.USER_NAME,currentUsername)
-                        .with(I.User.PASSWORD,currentPassword).getRequestUrl(I.REQUEST_LOGIN);
+                String path = new ApiParams()
+                        .with(I.User.USER_NAME,currentUsername)
+                        .with(I.User.PASSWORD,currentPassword)
+                        .getRequestUrl(I.REQUEST_LOGIN);
                 executeRequest(new GsonRequest<User>(path,User.class,
                         responseListener(),errorListener()));
             } catch (Exception e) {
@@ -227,6 +237,7 @@ public class LoginActivity extends BaseActivity {
         };
     }
 
+    /**保存当前登录的用户到全局变量**/
     private void saveUser(User user) {
         SuperWeChatApplication instance = SuperWeChatApplication.getInstance();
         instance.setUser(user);
@@ -237,10 +248,6 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void loginSuccess() {
-        // 登陆成功，保存用户名密码
-//        SuperWeChatApplication.getInstance().setUserName(currentUsername);
-//        SuperWeChatApplication.getInstance().setPassword(currentPassword);
-
         try {
             // ** 第一次登录或者之前logout后再登录，加载所有本地群和回话
             // ** manually load all local groups and
@@ -249,6 +256,28 @@ public class LoginActivity extends BaseActivity {
             // 处理好友和群组
             initializeContacts();
             //下载用户头像到sd卡里面
+            //http://10.0.2.2:8080/SuperWeChatServer/Server?
+            // request=download_avatar&avatarType=
+            final OkHttpUtils<Message> utils = new OkHttpUtils<Message>();
+            utils.url(SuperWeChatApplication.SERVER_ROOT)//设置服务端根地址
+            .addParam(I.KEY_REQUEST,I.REQUEST_DOWNLOAD_AVATAR)//添加上传的请求参数
+            .addParam(I.AVATAR_TYPE,currentUsername)//添加用户的账号
+            .doInBackground(new Callback() {
+                @Override
+                public void onFailure(Request request, IOException e) {
+                    Toast.makeText(mContext,e.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onResponse(com.squareup.okhttp.Response response) throws IOException {
+                    String avatarPath = I.AVATAR_TYPE_USER_PATH + I.BACKSLASH
+                            + currentUsername + I.AVATAR_SUFFIX_JPG;
+                    File file = OnSetAvatarListener.getAvatarFile(mContext,avatarPath);
+                    FileOutputStream out  = null;
+                    out = new FileOutputStream(file);
+                    utils.downloadFile(response,file,false);
+                }
+            }).execute(null);
 
         } catch (Exception e) {
             e.printStackTrace();
