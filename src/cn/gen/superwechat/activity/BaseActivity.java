@@ -22,7 +22,6 @@ import cn.gen.superwechat.applib.controller.HXSDKHelper;
 import cn.gen.superwechat.data.RequestManager;
 
 import com.android.volley.VolleyError;
-import com.squareup.okhttp.Response;
 import com.umeng.analytics.MobclickAgent;
 
 public class BaseActivity extends FragmentActivity {

@@ -1,0 +1,3 @@
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\BaseActivity$1$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\BaseActivity$override.class

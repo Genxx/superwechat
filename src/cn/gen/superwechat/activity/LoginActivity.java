@@ -23,7 +23,6 @@ import java.util.Map;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
@@ -59,6 +58,9 @@ import cn.gen.superwechat.data.GsonRequest;
 import cn.gen.superwechat.data.OkHttpUtils;
 import cn.gen.superwechat.db.EMUserDao;
 import cn.gen.superwechat.domain.EMUser;
+import cn.gen.superwechat.task.DownloadAllGroupTask;
+import cn.gen.superwechat.task.DownloadContactList;
+import cn.gen.superwechat.task.DownloadPublicGroupTask;
 import cn.gen.superwechat.utils.CommonUtils;
 import cn.gen.superwechat.utils.MD5;
 import cn.gen.superwechat.utils.Utils;
@@ -278,7 +280,17 @@ public class LoginActivity extends BaseActivity {
                     utils.downloadFile(response,file,false);
                 }
             }).execute(null);
-
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    new DownloadContactList(mContext,currentUsername).execute();
+                    new DownloadAllGroupTask(mContext,currentUsername).execute();
+                    new DownloadPublicGroupTask(mContext,currentUsername,
+                            I.PAGE_ID_DEFAULT,I.PAGE_SIZE_DEFAULT).execute();
+                }
+            });
+            //处理好友和群组
+            initializeContacts();
         } catch (Exception e) {
             e.printStackTrace();
             // 取好友或者群聊失败，不让进入主页面
