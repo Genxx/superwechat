@@ -96,6 +96,18 @@ public class UserUtils {
     		textView.setText(username);
     	}
     }
+    public static void setUserBeanNick (String username,TextView textView){
+        Contact contact = getUserBeanInfo(username);
+        if(contact!=null){
+            if(contact.getMUserNick()!=null){
+                textView.setText(contact.getMUserNick());
+            } else if(contact.getMContactCname()!=null){
+                textView.setText(contact.getMContactCname());
+            }
+        }else {
+            textView.setText(username);
+        }
+    }
     
     /**
      * 设置当前用户昵称
@@ -109,7 +121,7 @@ public class UserUtils {
     
     /**
      * 保存或更新某个用户
-     * @param user
+     * @param newEMUser
      */
 	public static void saveUserInfo(EMUser newEMUser) {
 		if (newEMUser == null || newEMUser.getUsername() == null) {
