@@ -31,6 +31,7 @@ import android.widget.TextView;
 import cn.gen.superwechat.Constant;
 import cn.gen.superwechat.R;
 import cn.gen.superwechat.bean.Contact;
+import cn.gen.superwechat.data.RequestManager;
 import cn.gen.superwechat.utils.UserUtils;
 
 import com.android.volley.toolbox.NetworkImageView;
@@ -107,6 +108,8 @@ public class ContactAdapter extends BaseAdapter implements SectionIndexer{
 		if(username.equals(Constant.NEW_FRIENDS_USERNAME)){
 		    holder.nameTextview.setText(EMUser.getMUserNick());
 		    holder.avatar.setDefaultImageResId(R.drawable.new_friends_icon);
+			holder.avatar.setImageUrl("", RequestManager.getImageLoader());
+			holder.avatar.setErrorImageResId(R.drawable.new_friends_icon);
 			if(EMUser.getMUserUnreadMsgCount() > 0){
 			    holder.unreadMsgView.setVisibility(View.VISIBLE);
 //			    holder.unreadMsgView.setText(EMUser.getUnreadMsgCount()+"");
@@ -117,6 +120,8 @@ public class ContactAdapter extends BaseAdapter implements SectionIndexer{
 			//群聊item
 		    holder.nameTextview.setText(EMUser.getMUserNick());
 		    holder.avatar.setDefaultImageResId(R.drawable.groups_icon);
+			holder.avatar.setImageUrl("", RequestManager.getImageLoader());
+			holder.avatar.setErrorImageResId(R.drawable.groups_icon);
 		}else if(username.equals(Constant.CHAT_ROOM)){
             //群聊item
             holder.nameTextview.setText(EMUser.getMUserNick());
