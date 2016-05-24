@@ -1,11 +1,13 @@
 package cn.gen.superwechat.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.animation.AlphaAnimation;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -15,10 +17,12 @@ import com.easemob.chat.EMGroupManager;
 import cn.gen.superwechat.DemoHXSDKHelper;
 import cn.gen.superwechat.I;
 import cn.gen.superwechat.SuperWeChatApplication;
+import cn.gen.superwechat.bean.Contact;
 import cn.gen.superwechat.bean.User;
 import cn.gen.superwechat.task.DownloadAllGroupTask;
 import cn.gen.superwechat.task.DownloadContactList;
 import cn.gen.superwechat.task.DownloadPublicGroupTask;
+import cn.ucai.superwechat.db.UserDao;
 
 /**
  * 开屏页
@@ -27,7 +31,7 @@ import cn.gen.superwechat.task.DownloadPublicGroupTask;
 public class SplashActivity extends BaseActivity {
 	private RelativeLayout rootLayout;
 	private TextView versionText;
-	Activity mContext;
+	Context mContext;
 	
 	private static final int sleepTime = 2000;
 
@@ -50,18 +54,30 @@ public class SplashActivity extends BaseActivity {
 	protected void onStart() {
 		super.onStart();
 		if(DemoHXSDKHelper.getInstance().isLogined()){
-			User user = SuperWeChatApplication.getInstance().getUser();
-			SuperWeChatApplication instance = SuperWeChatApplication.getInstance();
-			instance.setUser(user);
-			//登录成功，保存用户名密码
-			instance.setUserName(user.getMUserName());
-			instance.setPassword(user.getMUserPassword());
-			SuperWeChatApplication.currentUserNick = user.getMUserNick();
+			Log.e("main","start dowmload arraylist--------SplashAcitivity");
+			String username = SuperWeChatApplication.getInstance().getUserName();
+			UserDao dao = new UserDao(mContext);
+
+			User user = dao.findUserByUserName(username);
+			SuperWeChatApplication.getInstance().setUser(user);
+//			SuperWeChatApplication.currentUserNick = user.getMUserNick();
+
+//			User user = SuperWeChatApplication.getInstance().getUser();
+//			SuperWeChatApplication instance = SuperWeChatApplication.getInstance();
+//			instance.setUser(user);
+//
+//			//登录成功，保存用户名密码
+//			instance.setUserName(user.getMUserName());
+//			instance.setPassword(user.getMUserPassword());
+//			SuperWeChatApplication.currentUserNick = user.getMUserNick();
+			if(user!=null){
 			new DownloadContactList(mContext,user.getMUserName()).execute();
 			new DownloadAllGroupTask(mContext,user.getMUserName()).execute();
 			new DownloadPublicGroupTask(mContext,user.getMUserName(),
 					I.PAGE_ID_DEFAULT,I.PAGE_SIZE_DEFAULT).execute();
+			}
 		}
+
 		new Thread(new Runnable() {
 			public void run() {
 				if (DemoHXSDKHelper.getInstance().isLogined()) {

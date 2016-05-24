@@ -436,12 +436,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\ee_26.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\record_animate_12.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\record_animate_12.png"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\record_animate_12.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\record_animate_12.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\slidetab_bg_press.9.png",

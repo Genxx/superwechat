@@ -25,14 +25,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
-import android.widget.ImageView;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 
 import cn.gen.superwechat.Constant;
+import cn.gen.superwechat.R;
 import cn.gen.superwechat.domain.EMUser;
 import cn.gen.superwechat.utils.UserUtils;
 
+import com.android.volley.toolbox.NetworkImageView;
 import com.easemob.util.EMLog;
 
 /**
@@ -61,7 +62,7 @@ public class ContactAdapter extends ArrayAdapter<EMUser>  implements SectionInde
 	}
 	
 	private static class ViewHolder {
-	    ImageView avatar;
+	    NetworkImageView avatar;
 	    TextView unreadMsgView;
 	    TextView nameTextview;
 	    TextView tvHeader;
@@ -72,7 +73,7 @@ public class ContactAdapter extends ArrayAdapter<EMUser>  implements SectionInde
  		if(convertView == null){
  		    holder = new ViewHolder();
 			convertView = layoutInflater.inflate(res, null);
-			holder.avatar = (ImageView) convertView.findViewById(cn.gen.superwechat.R.id.avatar);
+			holder.avatar = (NetworkImageView) convertView.findViewById(cn.gen.superwechat.R.id.avatar);
 			holder.unreadMsgView = (TextView) convertView.findViewById(cn.gen.superwechat.R.id.unread_msg_number);
 			holder.nameTextview = (TextView) convertView.findViewById(cn.gen.superwechat.R.id.name);
 			holder.tvHeader = (TextView) convertView.findViewById(cn.gen.superwechat.R.id.header);
@@ -100,7 +101,7 @@ public class ContactAdapter extends ArrayAdapter<EMUser>  implements SectionInde
 		//显示申请与通知item
 		if(username.equals(Constant.NEW_FRIENDS_USERNAME)){
 		    holder.nameTextview.setText(EMUser.getNick());
-		    holder.avatar.setImageResource(cn.gen.superwechat.R.drawable.new_friends_icon);
+		    holder.avatar.setDefaultImageResId(R.drawable.new_friends_icon);
 			if(EMUser.getUnreadMsgCount() > 0){
 			    holder.unreadMsgView.setVisibility(View.VISIBLE);
 //			    holder.unreadMsgView.setText(EMUser.getUnreadMsgCount()+"");
@@ -110,7 +111,7 @@ public class ContactAdapter extends ArrayAdapter<EMUser>  implements SectionInde
 		}else if(username.equals(Constant.GROUP_USERNAME)){
 			//群聊item
 		    holder.nameTextview.setText(EMUser.getNick());
-		    holder.avatar.setImageResource(cn.gen.superwechat.R.drawable.groups_icon);
+		    holder.avatar.setDefaultImageResId(R.drawable.groups_icon);
 		}else if(username.equals(Constant.CHAT_ROOM)){
             //群聊item
             holder.nameTextview.setText(EMUser.getNick());

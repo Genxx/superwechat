@@ -244,8 +244,8 @@ public class LoginActivity extends BaseActivity {
         SuperWeChatApplication instance = SuperWeChatApplication.getInstance();
         instance.setUser(user);
         //登录成功，保存用户名密码
-        instance.setUserName(user.getMUserName());
-        instance.setPassword(user.getMUserPassword());
+        instance.setUserName(currentUsername);
+        instance.setPassword(currentPassword);
         SuperWeChatApplication.currentUserNick = user.getMUserNick();
     }
 
@@ -280,6 +280,7 @@ public class LoginActivity extends BaseActivity {
                     utils.downloadFile(response,file,false);
                 }
             }).execute(null);
+            Log.e("main","start dowmload arraylist");
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
