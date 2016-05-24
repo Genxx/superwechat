@@ -28,10 +28,12 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import cn.gen.superwechat.SuperWeChatApplication;
 import cn.gen.superwechat.applib.controller.HXSDKHelper;
 import cn.gen.superwechat.Constant;
 import cn.gen.superwechat.DemoHXSDKHelper;
 import cn.gen.superwechat.adapter.ContactAdapter;
+import cn.gen.superwechat.bean.Contact;
 import cn.gen.superwechat.domain.EMUser;
 import cn.gen.superwechat.widget.Sidebar;
 
@@ -40,7 +42,7 @@ public class PickContactNoCheckboxActivity extends BaseActivity {
 	private ListView listView;
 	private Sidebar sidebar;
 	protected ContactAdapter contactAdapter;
-	private List<EMUser> contactList;
+	private ArrayList<Contact> contactList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,7 @@ public class PickContactNoCheckboxActivity extends BaseActivity {
 		listView = (ListView) findViewById(cn.gen.superwechat.R.id.list);
 		sidebar = (Sidebar) findViewById(cn.gen.superwechat.R.id.sidebar);
 		sidebar.setListView(listView);
-		contactList = new ArrayList<EMUser>();
+		contactList = new ArrayList<Contact>();
 		// 获取设置contactlist
 		getContactList();
 		// 设置adapter
@@ -68,7 +70,7 @@ public class PickContactNoCheckboxActivity extends BaseActivity {
 	protected void onListItemClick(int position) {
 //		if (position != 0) {
 			setResult(RESULT_OK, new Intent().putExtra("username", contactAdapter.getItem(position)
-					.getUsername()));
+					.getMContactCname()));
 			finish();
 //		}
 	}
@@ -79,19 +81,20 @@ public class PickContactNoCheckboxActivity extends BaseActivity {
 
 	private void getContactList() {
 		contactList.clear();
-		Map<String, EMUser> users = ((DemoHXSDKHelper) HXSDKHelper.getInstance()).getContactList();
-		Iterator<Entry<String, EMUser>> iterator = users.entrySet().iterator();
+		Map<String, Contact> users = SuperWeChatApplication.getInstance().getUserList();
+
+		Iterator<Entry<String, Contact>> iterator = users.entrySet().iterator();
 		while (iterator.hasNext()) {
-			Entry<String, EMUser> entry = iterator.next();
+			Entry<String, Contact> entry = iterator.next();
 			if (!entry.getKey().equals(Constant.NEW_FRIENDS_USERNAME) && !entry.getKey().equals(Constant.GROUP_USERNAME) && !entry.getKey().equals(Constant.CHAT_ROOM) && !entry.getKey().equals(Constant.CHAT_ROBOT))
 				contactList.add(entry.getValue());
 		}
 		// 排序
-		Collections.sort(contactList, new Comparator<EMUser>() {
+		Collections.sort(contactList, new Comparator<Contact>() {
 
 			@Override
-			public int compare(EMUser lhs, EMUser rhs) {
-				return lhs.getUsername().compareTo(rhs.getUsername());
+			public int compare(Contact lhs, Contact rhs) {
+				return lhs.getHeader().compareTo(rhs.getHeader());
 			}
 		});
 	}

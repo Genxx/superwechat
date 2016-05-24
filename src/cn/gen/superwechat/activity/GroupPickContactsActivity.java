@@ -30,12 +30,14 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ListView;
 
+import cn.gen.superwechat.SuperWeChatApplication;
 import cn.gen.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMGroup;
 import com.easemob.chat.EMGroupManager;
 import cn.gen.superwechat.Constant;
 import cn.gen.superwechat.DemoHXSDKHelper;
 import cn.gen.superwechat.adapter.ContactAdapter;
+import cn.gen.superwechat.bean.Contact;
 import cn.gen.superwechat.domain.EMUser;
 import cn.gen.superwechat.widget.Sidebar;
 
@@ -66,16 +68,19 @@ public class GroupPickContactsActivity extends BaseActivity {
 		if(exitingMembers == null)
 			exitingMembers = new ArrayList<String>();
 		// 获取好友列表
-		final List<EMUser> alluserList = new ArrayList<EMUser>();
-		for (EMUser EMUser : ((DemoHXSDKHelper) HXSDKHelper.getInstance()).getContactList().values()) {
-			if (!EMUser.getUsername().equals(Constant.NEW_FRIENDS_USERNAME) & !EMUser.getUsername().equals(Constant.GROUP_USERNAME) & !EMUser.getUsername().equals(Constant.CHAT_ROOM) & !EMUser.getUsername().equals(Constant.CHAT_ROBOT))
+		final ArrayList<Contact> alluserList = new ArrayList<Contact>();
+		for (Contact EMUser : SuperWeChatApplication.getInstance().getUserList().values()) {
+			if (!EMUser.getMContactCname().equals(Constant.NEW_FRIENDS_USERNAME)
+					& !EMUser.getMContactCname().equals(Constant.GROUP_USERNAME)
+					& !EMUser.getMContactCname().equals(Constant.CHAT_ROOM)
+					& !EMUser.getMContactCname().equals(Constant.CHAT_ROBOT))
 				alluserList.add(EMUser);
 		}
 		// 对list进行排序
-		Collections.sort(alluserList, new Comparator<EMUser>() {
+		Collections.sort(alluserList, new Comparator<Contact>() {
 			@Override
-			public int compare(EMUser lhs, EMUser rhs) {
-				return (lhs.getUsername().compareTo(rhs.getUsername()));
+			public int compare(Contact lhs, Contact rhs) {
+				return (lhs.getHeader().compareTo(rhs.getHeader()));
 
 			}
 		});
@@ -114,7 +119,7 @@ public class GroupPickContactsActivity extends BaseActivity {
 		List<String> members = new ArrayList<String>();
 		int length = contactAdapter.isCheckedArray.length;
 		for (int i = 0; i < length; i++) {
-			String username = contactAdapter.getItem(i).getUsername();
+			String username = contactAdapter.getItem(i).getMContactCname();
 			if (contactAdapter.isCheckedArray[i] && !exitingMembers.contains(username)) {
 				members.add(username);
 			}
@@ -130,7 +135,7 @@ public class GroupPickContactsActivity extends BaseActivity {
 
 		private boolean[] isCheckedArray;
 
-		public PickContactAdapter(Context context, int resource, List<EMUser> EMUsers) {
+		public PickContactAdapter(Context context, int resource, ArrayList<Contact> EMUsers) {
 			super(context, resource, EMUsers);
 			isCheckedArray = new boolean[EMUsers.size()];
 		}
@@ -139,7 +144,7 @@ public class GroupPickContactsActivity extends BaseActivity {
 		public View getView(final int position, View convertView, ViewGroup parent) {
 			View view = super.getView(position, convertView, parent);
 //			if (position > 0) {
-				final String username = getItem(position).getUsername();
+				final String username = getItem(position).getMContactCname();
 				// 选择框checkbox
 				final CheckBox checkBox = (CheckBox) view.findViewById(cn.gen.superwechat.R.id.checkbox);
 				if(exitingMembers != null && exitingMembers.contains(username)){

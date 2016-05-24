@@ -23,7 +23,6 @@ import android.util.SparseIntArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.SectionIndexer;
@@ -31,9 +30,7 @@ import android.widget.TextView;
 
 import cn.gen.superwechat.Constant;
 import cn.gen.superwechat.R;
-import cn.gen.superwechat.activity.BaseActivity;
 import cn.gen.superwechat.bean.Contact;
-import cn.gen.superwechat.domain.EMUser;
 import cn.gen.superwechat.utils.UserUtils;
 
 import com.android.volley.toolbox.NetworkImageView;
@@ -64,7 +61,11 @@ public class ContactAdapter extends BaseAdapter implements SectionIndexer{
 		copyEMUserList.addAll(objects);
 		layoutInflater = LayoutInflater.from(context);
 	}
-	
+
+	public void remove(Contact tobeDeleteEMUser) {
+		EMUserList.remove(tobeDeleteEMUser);
+	}
+
 	private static class ViewHolder {
 	    NetworkImageView avatar;
 	    TextView unreadMsgView;
