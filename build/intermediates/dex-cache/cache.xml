@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
+<items version="2" />
 
-    <item
-        jar="D:\SuperWeChat\superwechat\libs\okhttp-urlconnection-2.7.5.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="b3ae78e05ff9fdb1788db2056b583281ef684277">
-        <dex dex="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\2\okhttp-urlconnection-2.7.5_ac90e13e34302a9eb57bbd8f7fa9a984f2551314\classes.dex" />
-    </item>
-
-</items>
