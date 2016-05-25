@@ -16,11 +16,11 @@ public class Contact extends User implements java.io.Serializable {
 	 */
 	// Fields
 
-	private Integer mcontactId;
-	private Integer mcontactUserId;
-	private String mcontactUserName;
-	private Integer mcontactCid;
-	private String mcontactCname;
+	private Integer mcontactId;//这条好友关系在数据库里的id
+	private Integer mcontactUserId;//好友的id
+	private String mcontactUserName;//好友的名字
+	private Integer mcontactCid;//自己的id
+	private String mcontactCname;//自己的名字
 
 	// Constructors
 

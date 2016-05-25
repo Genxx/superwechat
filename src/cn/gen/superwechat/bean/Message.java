@@ -3,7 +3,7 @@ package cn.gen.superwechat.bean;
 public class Message {
 
 	boolean result;
-	int msg;
+	int msg;//就是我们在String中使用的消息。
 	
 	public Message() {
 		super();

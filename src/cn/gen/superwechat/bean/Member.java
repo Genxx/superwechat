@@ -21,8 +21,8 @@ public class Member extends User implements java.io.Serializable {
 	private Integer mmemberUserId;
 	private String mmemberUserName;
 	private Integer mmemberGroupId;
-	private String mmemberGroupHxid;
-	private Integer mmemberPermission;
+	private String mmemberGroupHxid;//环信服务器上的id
+	private Integer mmemberPermission;//权限的设定
 
 	// Constructors
 

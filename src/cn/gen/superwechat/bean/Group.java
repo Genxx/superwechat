@@ -17,8 +17,8 @@ public class Group extends Location implements java.io.Serializable {
 	/**
 	 * 
 	 */
-	private Integer mgroupId;
-	private String mgroupHxid;
+	private Integer mgroupId;//远端服务器上的id
+	private String mgroupHxid;//环信群主id
 	private String mgroupName;
 	private String mgroupDescription;
 	private String mgroupOwner;
