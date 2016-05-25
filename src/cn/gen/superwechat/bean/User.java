@@ -1,7 +1,6 @@
 package cn.gen.superwechat.bean;
 
 
-import java.util.Objects;
 
 /**
  * EMUser entity. @author MyEclipse Persistence Tools

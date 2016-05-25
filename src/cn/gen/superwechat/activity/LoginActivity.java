@@ -32,6 +32,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -76,6 +77,7 @@ public class LoginActivity extends BaseActivity {
     public static final int REQUEST_CODE_SETNICK = 1;
     private EditText usernameEditText;
     private EditText passwordEditText;
+    private Button mbtnUrl;
 
     private boolean progressShow;
     private boolean autoLogin = false;
@@ -93,7 +95,6 @@ public class LoginActivity extends BaseActivity {
         if (DemoHXSDKHelper.getInstance().isLogined()) {
             autoLogin = true;
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
-
             return;
         }
         setContentView(R.layout.activity_login);
@@ -101,6 +102,7 @@ public class LoginActivity extends BaseActivity {
 
         usernameEditText = (EditText) findViewById(R.id.username);
         passwordEditText = (EditText) findViewById(R.id.password);
+        mbtnUrl = (Button) findViewById(R.id.btnLogin);
 
 
         if (SuperWeChatApplication.getInstance().getUserName() != null) {
@@ -194,7 +196,7 @@ public class LoginActivity extends BaseActivity {
         });
 
     }
-
+//登录本地
     private void loginAppServer() {
         UserDao dao = new UserDao(mContext);
         User user = dao.findUserByUserName(currentUsername);
@@ -230,6 +232,9 @@ public class LoginActivity extends BaseActivity {
             public void onResponse(User user) {
                 if(user.isResult()){
                     saveUser(user);
+                    user.setMUserPassword(MD5.getData(user.getMUserPassword()));
+                    UserDao dao = new UserDao(mContext);
+                    dao.addUser(user);
                     loginSuccess();
                 }else {
                     pd.dismiss();
@@ -243,7 +248,7 @@ public class LoginActivity extends BaseActivity {
     private void saveUser(User user) {
         SuperWeChatApplication instance = SuperWeChatApplication.getInstance();
         instance.setUser(user);
-        //登录成功，保存用户名密码
+        //登录成功，保存用户名,密码
         instance.setUserName(currentUsername);
         instance.setPassword(currentPassword);
         SuperWeChatApplication.currentUserNick = user.getMUserNick();
@@ -280,6 +285,7 @@ public class LoginActivity extends BaseActivity {
                     utils.downloadFile(response,file,false);
                 }
             }).execute(null);
+            //登录成功后下载联系人，群组等资料
             Log.e("main","start dowmload arraylist");
             runOnUiThread(new Runnable() {
                 @Override
@@ -333,7 +339,12 @@ public class LoginActivity extends BaseActivity {
             }
         });
         pd.setMessage(getString(R.string.Is_landing));
-        pd.show();
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                pd.show();
+            }
+        });
     }
 
     private void initializeContacts() {
