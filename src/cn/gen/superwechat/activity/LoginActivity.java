@@ -65,7 +65,7 @@ import cn.gen.superwechat.task.DownloadPublicGroupTask;
 import cn.gen.superwechat.utils.CommonUtils;
 import cn.gen.superwechat.utils.MD5;
 import cn.gen.superwechat.utils.Utils;
-import cn.ucai.superwechat.db.UserDao;
+import cn.gen.superwechat.db.UserDao;
 
 /**
  * 登陆页面

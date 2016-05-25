@@ -21,7 +21,7 @@ import cn.gen.superwechat.bean.User;
 import cn.gen.superwechat.task.DownloadAllGroupTask;
 import cn.gen.superwechat.task.DownloadContactList;
 import cn.gen.superwechat.task.DownloadPublicGroupTask;
-import cn.ucai.superwechat.db.UserDao;
+import cn.gen.superwechat.db.UserDao;
 
 /**
  * 开屏页

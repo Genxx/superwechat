@@ -113,7 +113,7 @@ public class User extends Location implements java.io.Serializable {
 		return "EMUser [MUserId=" + muserId + ", MUserName=" + muserName
 				+ ", MUserPassword=" + muserPassword + ", MUserNick="
 				+ muserNick + ", MUserUnreadMsgCount=" + muserUnreadMsgCount
-				+ "]";
+				+ ",header=" + header + "]";
 	}
 	
 
