@@ -272,7 +272,7 @@ public class LoginActivity extends BaseActivity {
             .doInBackground(new Callback() {
                 @Override
                 public void onFailure(Request request, IOException e) {
-                    Toast.makeText(mContext,e.getMessage(),Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(mContext,e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
 
                 @Override

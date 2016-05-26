@@ -89,8 +89,8 @@ public class ContactAdapter extends BaseAdapter implements SectionIndexer{
 		}
 		
 		Contact EMUser = getItem(position);
-		if(EMUser == null)
-			Log.d("ContactAdapter", position + "");
+//		if(EMUser == null)
+
 		//设置nick，demo里不涉及到完整user，用username代替nick显示
 		String username = EMUser.getMContactCname();
 		String header = EMUser.getHeader();
@@ -150,11 +150,12 @@ public class ContactAdapter extends BaseAdapter implements SectionIndexer{
 
 	@Override
 	public long getItemId(int position) {
-		return 0;
+		return position;
 	}
 
 	@Override
 	public int getCount() {
+
 		return EMUserList==null?0:EMUserList.size();
 	}
 
