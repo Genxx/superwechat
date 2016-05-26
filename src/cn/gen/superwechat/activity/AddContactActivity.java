@@ -78,7 +78,7 @@ public class AddContactActivity extends BaseActivity {
      */
     public void searchContact(View v) {
         final String name = editText.getText().toString();
-        String saveText = searchBtn.getText().toString();
+
         if (TextUtils.isEmpty(name)) {
             String st = getResources().getString(cn.gen.superwechat.R.string.Please_enter_a_username);
             startActivity(new Intent(this, AlertDialog.class).putExtra("msg", st));
@@ -86,7 +86,7 @@ public class AddContactActivity extends BaseActivity {
         }
 
         //如果添加的是自己就显示自己的页面
-        if (SuperWeChatApplication.getInstance().getUserName().equals(nameText.getText().toString())) {
+        if (SuperWeChatApplication.getInstance().getUserName().equals(name.trim())) {
             String str = getString(cn.gen.superwechat.R.string.not_add_myself);
             startActivity(new Intent(this, AlertDialog.class).putExtra("msg", str));
             return;
@@ -111,6 +111,8 @@ public class AddContactActivity extends BaseActivity {
                 if(user!=null){
                     //服务器存在此用户，显示此用户和添加按钮
                     searchedUserLayout.setVisibility(View.VISIBLE);
+                    //解决无结果的时候显示有结果的横条
+                    mTvNothing.setVisibility(View.GONE);
                     nameText.setText(toAddUsername);
                 }else {
                     searchedUserLayout.setVisibility(View.GONE);
