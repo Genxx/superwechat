@@ -4,20 +4,20 @@
     api-level="23"
     density="hdpi"
     format="7"
-    timestamp="15446578324003" >
+    timestamp="16653875349352" >
 
     <task
         name="javac"
-        duration="5323" />
+        duration="4167" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="121" />
+        duration="489" />
     <task
         name="verifier"
-        duration="35" />
+        duration="13" />
 
     <artifact
         location="D:\SuperWeChat\superwechat\build\intermediates\res\resources-debug.ap_"
@@ -42,7 +42,7 @@
             location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
             type="DEX" />
     </build>
-    <build timestamp="15446578324003" >
+    <build timestamp="16653875349352" >
         <artifact
             location="D:\SuperWeChat\superwechat\build\intermediates\res\resources-debug.ap_"
             type="RESOURCES" />
