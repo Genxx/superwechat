@@ -32,20 +32,25 @@ import cn.gen.superwechat.R;
 import cn.gen.superwechat.applib.controller.HXSDKHelper;
 
 import com.android.volley.Response;
+import com.android.volley.toolbox.NetworkImageView;
 import com.easemob.chat.EMContactManager;
+
+import java.util.HashMap;
 
 import cn.gen.superwechat.SuperWeChatApplication;
 import cn.gen.superwechat.DemoHXSDKHelper;
+import cn.gen.superwechat.bean.Contact;
 import cn.gen.superwechat.bean.User;
 import cn.gen.superwechat.data.ApiParams;
 import cn.gen.superwechat.data.GsonRequest;
+import cn.gen.superwechat.utils.UserUtils;
 
 public class AddContactActivity extends BaseActivity {
     private EditText editText;
     private LinearLayout searchedUserLayout;
     private TextView nameText, mTextView;
     private Button searchBtn;
-    private ImageView avatar;
+    private NetworkImageView avatar;
     private InputMethodManager inputMethodManager;
     private String toAddUsername;
     private ProgressDialog progressDialog;
@@ -66,7 +71,7 @@ public class AddContactActivity extends BaseActivity {
         searchedUserLayout = (LinearLayout) findViewById(cn.gen.superwechat.R.id.ll_user);
         nameText = (TextView) findViewById(cn.gen.superwechat.R.id.name);
         searchBtn = (Button) findViewById(cn.gen.superwechat.R.id.search);
-        avatar = (ImageView) findViewById(cn.gen.superwechat.R.id.avatar);
+        avatar = (NetworkImageView) findViewById(cn.gen.superwechat.R.id.avatar);
         mTvNothing = (TextView) findViewById(R.id.tv_show_nothing);
         inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     }
@@ -74,6 +79,7 @@ public class AddContactActivity extends BaseActivity {
 
     /**
      * 查找contact
+     *
      * @param v
      */
     public void searchContact(View v) {
@@ -96,8 +102,8 @@ public class AddContactActivity extends BaseActivity {
             String path = new ApiParams()
                     .with(I.User.USER_NAME, toAddUsername)
                     .getRequestUrl(I.REQUEST_FIND_USER);
-            executeRequest(new GsonRequest<User>(path,User.class,
-                    responseFindUserListener(),errorListener()));
+            executeRequest(new GsonRequest<User>(path, User.class,
+                    responseFindUserListener(), errorListener()));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -108,13 +114,20 @@ public class AddContactActivity extends BaseActivity {
         return new Response.Listener<User>() {
             @Override
             public void onResponse(User user) {
-                if(user!=null){
-                    //服务器存在此用户，显示此用户和添加按钮
-                    searchedUserLayout.setVisibility(View.VISIBLE);
-                    //解决无结果的时候显示有结果的横条
+                if (user != null) {
+                    HashMap<String, Contact> userList =
+                            SuperWeChatApplication.getInstance().getUserList();
+                    if (userList.containsKey(user.getMUserName())) {
+                        startActivity(new Intent(AddContactActivity.this, UserProfileActivity.class)
+                                .putExtra("username", user.getMUserName()));
+                    } else {
+                        //服务器存在此用户，显示此用户和添加按钮
+                        searchedUserLayout.setVisibility(View.VISIBLE);
+                        UserUtils.setUserBeanNick(user, nameText);
+                        UserUtils.setUserBeanAvatar(user, avatar);
+                    }
                     mTvNothing.setVisibility(View.GONE);
-                    nameText.setText(toAddUsername);
-                }else {
+                } else {
                     searchedUserLayout.setVisibility(View.GONE);
                     mTvNothing.setVisibility(View.VISIBLE);
                 }
@@ -124,7 +137,8 @@ public class AddContactActivity extends BaseActivity {
 
 
     /**
-     *  添加contact
+     * 添加contact
+     *
      * @param view
      */
     public void addContact(View view) {

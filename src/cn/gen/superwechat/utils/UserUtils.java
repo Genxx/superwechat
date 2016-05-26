@@ -58,13 +58,18 @@ public class UserUtils {
         }
     }
 
-	public static void setUserBeanAvatar(String username, NetworkImageView imageView){
-		Contact contact = getUserBeanInfo(username);
-		if(contact!=null && contact.getMContactCname()!=null){
-            setUserAvatar(getAvatarPath(username),imageView);
+	public static void setUserBeanAvatar(User user, NetworkImageView imageView){
+		if(user!=null && user.getMUserName()!=null){
+            setUserAvatar(getAvatarPath(user.getMUserName()),imageView);
 		}
 	}
 
+    public static void setUserBeanAvatar(String username, NetworkImageView imageView){
+        Contact contact = getUserBeanInfo(username);
+        if(contact!=null && contact.getMContactCname()!=null){
+            setUserAvatar(getAvatarPath(username),imageView);
+        }
+    }
     private static void setUserAvatar(String url,NetworkImageView imageView){
         if(url==null || url.isEmpty()) return;
         imageView.setDefaultImageResId(R.drawable.default_avatar);
@@ -115,6 +120,16 @@ public class UserUtils {
             }
         }else {
             textView.setText(username);
+        }
+    }
+
+    public static void setUserBeanNick (User user,TextView textView){
+        if(user!=null){
+            if(user.getMUserNick()!=null){
+                textView.setText(user.getMUserNick());
+            } else if(user.getMUserName()!=null){
+                textView.setText(user.getMUserName());
+            }
         }
     }
     
