@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.easemob.EMValueCallBack;
 import com.easemob.chat.EMChatManager;
@@ -113,8 +114,7 @@ public class ParseManager {
 
 	/**
      * 设置hearder属性，方便通讯中对联系人按header分类显示，以及通过右侧ABCD...字母栏快速定位联系人
-     * 
-     * @param username
+     *
      * @param EMUser
      */
     private static void setUserHearder(EMUser EMUser) {
@@ -127,8 +127,8 @@ public class ParseManager {
         if (Character.isDigit(headerName.charAt(0))) {
             EMUser.setHeader("#");
         } else {
-            EMUser.setHeader(HanziToPinyin.getInstance().get(headerName.substring(0, 1)).get(0).target.substring(0, 1)
-                    .toUpperCase());
+			//在headerName的后面添加.trim（）删除他的前面产生的空格。
+			EMUser.setHeader(HanziToPinyin.getInstance().get(headerName.trim().substring(0, 1)).get(0).target.substring(0, 1).toUpperCase());
             char header = EMUser.getHeader().toLowerCase().charAt(0);
             if (header < 'a' || header > 'z') {
                 EMUser.setHeader("#");

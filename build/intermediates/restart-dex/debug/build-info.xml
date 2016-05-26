@@ -4,37 +4,31 @@
     api-level="23"
     density="hdpi"
     format="7"
-    timestamp="16653875349352" >
+    timestamp="32971574813839" >
 
     <task
         name="javac"
-        duration="4167" />
+        duration="1473" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="489" />
+        duration="9" />
     <task
         name="verifier"
-        duration="13" />
+        duration="1" />
 
-    <artifact
-        location="D:\SuperWeChat\superwechat\build\intermediates\res\resources-debug.ap_"
-        type="RESOURCES" />
-    <artifact
-        location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-        type="DEX" />
     <artifact
         location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
         type="DEX" />
 
-    <build timestamp="132515902419" >
+    <build timestamp="26873245201748" >
         <artifact
             location="D:\SuperWeChat\superwechat\build\outputs\apk\superwechat-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="3781477303362" >
+    <build timestamp="31913817823523" >
         <artifact
             location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
             type="DEX" />
@@ -42,21 +36,10 @@
             location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
             type="DEX" />
     </build>
-    <build timestamp="16653875349352" >
-        <artifact
-            location="D:\SuperWeChat\superwechat\build\intermediates\res\resources-debug.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-            type="DEX" />
+    <build timestamp="32971574813839" >
         <artifact
             location="D:\SuperWeChat\superwechat\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
             type="DEX" />
-    </build>
-    <build timestamp="30108585445466" >
-        <artifact
-            location="D:\SuperWeChat\superwechat\build\outputs\apk\superwechat-debug.apk"
-            type="MAIN" />
     </build>
 
 </instant-run>

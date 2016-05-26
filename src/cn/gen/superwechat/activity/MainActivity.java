@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -37,6 +38,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Response;
 import com.easemob.EMCallBack;
 import com.easemob.EMConnectionListener;
 import com.easemob.EMError;
@@ -44,6 +46,9 @@ import com.easemob.EMEventListener;
 import com.easemob.EMGroupChangeListener;
 import com.easemob.EMNotifierEvent;
 import com.easemob.EMValueCallBack;
+
+import cn.gen.superwechat.I;
+import cn.gen.superwechat.SuperWeChatApplication;
 import cn.gen.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMContactListener;
@@ -58,6 +63,9 @@ import com.easemob.chat.EMMessage.Type;
 import com.easemob.chat.TextMessageBody;
 import cn.gen.superwechat.Constant;
 import cn.gen.superwechat.DemoHXSDKHelper;
+import cn.gen.superwechat.bean.Contact;
+import cn.gen.superwechat.data.ApiParams;
+import cn.gen.superwechat.data.GsonRequest;
 import cn.gen.superwechat.db.InviteMessgeDao;
 import cn.gen.superwechat.db.EMUserDao;
 import cn.gen.superwechat.domain.EMUser;
@@ -66,6 +74,8 @@ import cn.gen.superwechat.fragment.ChatAllHistoryFragment;
 import cn.gen.superwechat.fragment.ContactlistFragment;
 import cn.gen.superwechat.fragment.SettingsFragment;
 import cn.gen.superwechat.utils.CommonUtils;
+import cn.gen.superwechat.utils.Utils;
+
 import com.easemob.util.EMLog;
 import com.easemob.util.HanziToPinyin;
 import com.easemob.util.NetUtils;
@@ -74,6 +84,7 @@ import com.umeng.analytics.MobclickAgent;
 public class MainActivity extends BaseActivity implements EMEventListener {
 
 	protected static final String TAG = "MainActivity";
+	Activity mContext;
 	// 未读消息textview
 	private TextView unreadLabel;
 	// 未读通讯录textview
@@ -106,7 +117,8 @@ public class MainActivity extends BaseActivity implements EMEventListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		mContext = this;
+
 		if (savedInstanceState != null && savedInstanceState.getBoolean(Constant.ACCOUNT_REMOVED, false)) {
 			// 防止被移除后，没点确定按钮然后按了home键，长期在后台又进app导致的crash
 			// 三个fragment里加的判断同理
@@ -518,20 +530,64 @@ public class MainActivity extends BaseActivity implements EMEventListener {
 		public void onContactAdded(List<String> usernameList) {			
 			// 保存增加的联系人
 			Map<String, EMUser> localUsers = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getContactList();
+			HashMap<String, Contact> userList = SuperWeChatApplication.getInstance().getUserList();
 			Map<String, EMUser> toAddUsers = new HashMap<String, EMUser>();
+			//保存我们要添加的name
+			ArrayList<String> toAddUserNames = new ArrayList<String>();
+			boolean isAdd = false;
 			for (String username : usernameList) {
+				Log.e("main1","+++++++222222222+++++++++++++++++++++");
 				EMUser EMUser = setUserHead(username);
+
 				// 添加好友时可能会回调added方法两次
 				if (!localUsers.containsKey(username)) {
 					EMUserDao.saveContact(EMUser);
+					isAdd = true;
 				}
 				toAddUsers.put(username, EMUser);
+				if (userList.containsKey(username)) {
+					toAddUserNames.add(username);
+
+				}
+			}
+			for(String name:usernameList){
+				Log.e("main1","++++++++++++++++++++++++++++");
+				if(isAdd){
+//					String path = null;
+					try {
+						String path = new ApiParams()
+                                .with(I.Contact.USER_NAME, SuperWeChatApplication.getInstance().getUserName())
+                                .with(I.Contact.CU_NAME,name)
+                                .getRequestUrl(I.REQUEST_ADD_CONTACT);
+						executeRequest(new GsonRequest<Contact>(path,Contact.class,
+								responseAddContactListener(),errorListener()));
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
 			}
 			localUsers.putAll(toAddUsers);
 			// 刷新ui
 			if (currentTabIndex == 1)
 				contactListFragment.refresh();
+		}
 
+		private Response.Listener<Contact> responseAddContactListener() {
+			return new Response.Listener<Contact>() {
+				@Override
+				public void onResponse(Contact contact) {
+					if(contact!=null && contact.isResult()){
+						HashMap<String, Contact> userList = SuperWeChatApplication.getInstance().getUserList();
+						ArrayList<Contact> contactList = SuperWeChatApplication.getInstance().getContactList();
+					    if(!userList.containsKey(contact.getMContactCname())){
+							userList.put(contact.getMContactCname(),contact);
+							contactList.add(contact);
+							sendStickyBroadcast(new Intent("update_contact_list"));
+						}
+						Utils.showToast(mContext,Utils.getResourceString(mContext,contact.getMsg()),Toast.LENGTH_LONG);
+					}
+				}
+			};
 		}
 
 		@Override
@@ -611,6 +667,8 @@ public class MainActivity extends BaseActivity implements EMEventListener {
 		}
 
 	}
+
+	
 
 	/**
 	 * 连接监听listener

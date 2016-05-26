@@ -133,7 +133,7 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 	 * 同意好友请求或者群申请
 	 * 
 	 * @param button
-	 * @param username
+	 * @param msg
 	 */
 	private void acceptInvitation(final Button button, final InviteMessage msg) {
 		final ProgressDialog pd = new ProgressDialog(context);
@@ -174,7 +174,7 @@ public class NewFriendsMsgAdapter extends ArrayAdapter<InviteMessage> {
 						@Override
 						public void run() {
 							pd.dismiss();
-							Toast.makeText(context, str3 + e.getMessage(), 1).show();
+							Toast.makeText(context, str3 + e.getMessage(), Toast.LENGTH_LONG).show();
 						}
 					});
 
