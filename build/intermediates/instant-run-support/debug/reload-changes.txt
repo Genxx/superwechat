@@ -1,7 +1,7 @@
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\UserProfileManager$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$4$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$5$override.class
 CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\adapter\ContactAdapter$ViewHolder$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\adapter\ContactAdapter$MyFilter$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ContactlistFragment$6$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\adapter\ContactAdapter$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\MainActivity$MyGroupChangeListener$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$3$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$2$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$1$override.class
