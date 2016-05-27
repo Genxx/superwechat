@@ -2,6 +2,7 @@ package cn.gen.superwechat.activity;
 
 import java.io.ByteArrayOutputStream;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
@@ -14,6 +15,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +31,8 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.easemob.EMValueCallBack;
 
 import cn.gen.superwechat.I;
+import cn.gen.superwechat.Listener.OnSetAvatarListener;
+import cn.gen.superwechat.R;
 import cn.gen.superwechat.SuperWeChatApplication;
 import cn.gen.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
@@ -46,7 +50,8 @@ import com.squareup.picasso.Picasso;
 
 public class UserProfileActivity extends BaseActivity implements OnClickListener{
     private  static final  String TAG = UserProfileActivity.class.getName();
-	Context mContext;
+	UserProfileActivity mContext;
+    OnSetAvatarListener mOnSetAvatarListener;
 
 	private static final int REQUESTCODE_PICK = 1;
 	private static final int REQUESTCODE_CUTTING = 2;
@@ -107,7 +112,8 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case cn.gen.superwechat.R.id.user_head_avatar:
-			uploadHeadPhoto();
+			mOnSetAvatarListener = new OnSetAvatarListener(mContext, R.id.layout_uset_profile,getAvatarName(),I.AVATAR_TYPE_USER_PATH);
+//			uploadHeadPhoto();
 			break;
 		case cn.gen.superwechat.R.id.rl_nickname:
 			final EditText editText = new EditText(this);
@@ -130,7 +136,13 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 		}
 
 	}
-	
+
+	String avatarName;
+	private String getAvatarName() {
+		avatarName = System.currentTimeMillis()+"";
+		return avatarName;
+	}
+
 	public void asyncFetchUserInfo(String username){
 		((DemoHXSDKHelper) HXSDKHelper.getInstance()).getUserProfileManager().asyncGetUserInfo(username, new EMValueCallBack<EMUser>() {
 			
