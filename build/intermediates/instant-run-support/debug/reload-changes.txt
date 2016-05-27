@@ -1,7 +1,6 @@
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$4$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$5$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$6$1$override.class
 CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$3$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$2$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ChatAllHistoryFragment$1$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$6$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$5$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$5$2$override.class

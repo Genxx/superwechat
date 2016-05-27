@@ -5,6 +5,7 @@ import java.io.ByteArrayOutputStream;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -14,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
@@ -22,19 +24,30 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Response;
 import com.android.volley.toolbox.NetworkImageView;
 import com.easemob.EMValueCallBack;
 
+import cn.gen.superwechat.I;
 import cn.gen.superwechat.SuperWeChatApplication;
 import cn.gen.superwechat.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
 import cn.gen.superwechat.DemoHXSDKHelper;
+import cn.gen.superwechat.bean.Contact;
+import cn.gen.superwechat.bean.User;
+import cn.gen.superwechat.data.ApiParams;
+import cn.gen.superwechat.data.GsonRequest;
+import cn.gen.superwechat.db.UserDao;
 import cn.gen.superwechat.domain.EMUser;
 import cn.gen.superwechat.utils.UserUtils;
+import cn.gen.superwechat.utils.Utils;
+
 import com.squareup.picasso.Picasso;
 
 public class UserProfileActivity extends BaseActivity implements OnClickListener{
-	
+    private  static final  String TAG = UserProfileActivity.class.getName();
+	Context mContext;
+
 	private static final int REQUESTCODE_PICK = 1;
 	private static final int REQUESTCODE_CUTTING = 2;
 	private NetworkImageView headAvatar;
@@ -50,6 +63,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
+		mContext=this;
 		setContentView(cn.gen.superwechat.R.layout.activity_user_profile);
 		initView();
 		initListener();
@@ -107,7 +121,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 								Toast.makeText(UserProfileActivity.this, getString(cn.gen.superwechat.R.string.toast_nick_not_isnull), Toast.LENGTH_SHORT).show();
 								return;
 							}
-							updateRemoteNick(nickString);
+							updateUserNick(nickString);
 						}
 					}).setNegativeButton(cn.gen.superwechat.R.string.dl_cancel, null).show();
 			break;
@@ -166,8 +180,34 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 				});
 		builder.create().show();
 	}
-	
-	
+
+	private void updateUserNick(String nickName){
+		try {
+			String path = new ApiParams()
+                    .with(I.User.USER_NAME,SuperWeChatApplication.getInstance().getUserName())
+                    .with(I.User.NICK,nickName)
+                    .getRequestUrl(I.REQUEST_UPDATE_USER_NICK);
+			executeRequest(new GsonRequest<User>(path,User.class,
+					responseUpdateNickListener(),errorListener()));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	private Response.Listener<User> responseUpdateNickListener() {
+		return new Response.Listener<User>() {
+			@Override
+			public void onResponse(User user) {
+		         if(user.isResult()){
+					 updateRemoteNick(user.getMUserNick());
+				 }else {
+					 Utils.showToast(mContext,Utils.getResourceString(mContext,user.getMsg()),Toast.LENGTH_SHORT);
+				     dialog.dismiss();
+				 }
+			}
+		};
+	}
 
 	private void updateRemoteNick(final String nickName) {
 		dialog = ProgressDialog.show(this, getString(cn.gen.superwechat.R.string.dl_update_nick), getString(cn.gen.superwechat.R.string.dl_waiting));
@@ -176,6 +216,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 			@Override
 			public void run() {
 				boolean updatenick = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getUserProfileManager().updateParseNickName(nickName);
+				Log.e("updateUserNick",String.valueOf(updatenick));
 				if (UserProfileActivity.this.isFinishing()) {
 					return;
 				}
@@ -195,6 +236,11 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 							Toast.makeText(UserProfileActivity.this, getString(cn.gen.superwechat.R.string.toast_updatenick_success), Toast.LENGTH_SHORT)
 									.show();
 							tvNickName.setText(nickName);
+							SuperWeChatApplication.currentUserNick = nickName;
+							User user = SuperWeChatApplication.getInstance().getUser();
+							user.setMUserNick(nickName);
+							UserDao dao = new UserDao(mContext);
+							dao.updateUser(user);
 						}
 					});
 				}
