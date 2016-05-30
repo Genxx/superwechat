@@ -28,11 +28,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.easemob.chat.EMGroup;
 import com.easemob.chat.EMGroupManager;
 
 import cn.gen.superwechat.I;
 import cn.gen.superwechat.Listener.OnSetAvatarListener;
 import cn.gen.superwechat.R;
+import cn.gen.superwechat.bean.Contact;
 
 import com.easemob.exceptions.EaseMobException;
 
@@ -129,15 +131,15 @@ public class NewGroupActivity extends BaseActivity {
         if (resultCode == RESULT_OK) {
             return;
         }
-        if(requestCode == CREATE_NEW_GROUP){
+        if (requestCode == CREATE_NEW_GROUP) {
             setProgressDialog();
             //新建群组
             //1.创建环信的群组，为了拿到环信id
             //2.创建远端的群组，并上传群组头像
             //3.添加群主成员到远端
             createNewGroup(data);
-        }else {
-            mOnSetAvatarListener.setAvatar(requestCode,data,ivAvatar);
+        } else {
+            mOnSetAvatarListener.setAvatar(requestCode, data, ivAvatar);
         }
     }
 
@@ -156,17 +158,29 @@ public class NewGroupActivity extends BaseActivity {
                 // 调用sdk创建群组方法
                 String groupName = groupNameEditText.getText().toString().trim();
                 String desc = introductionEditText.getText().toString();
-                String[] members = data.getStringArrayExtra("newmembers");
+                Contact[] contacts = (Contact[]) data.getSerializableExtra("newmembers");
+                String[] members = null;
+                String[] memberIds = null;
+                if (contacts != null) {
+                    members = new String[contacts.length];
+                    memberIds = new String[contacts.length];
+                    for (int i = 0; i < contacts.length; i++) {
+                        members[i] = contacts[i].getMContactCname() + ",";
+                        memberIds[i] = contacts[i].getMContactId() + ",";
+                    }
+                }
                 final String st2 = getResources().getString(R.string.Failed_to_create_groups);
+                EMGroup emGroup;
                 try {
                     if (checkBox.isChecked()) {
                         //创建公开群，此种方式创建的群，可以自由加入
                         //创建公开群，此种方式创建的群，用户需要申请，等群主同意后才能加入此群
-                        EMGroupManager.getInstance().createPublicGroup(groupName, desc, members, true, 200);
+                        emGroup=EMGroupManager.getInstance().createPublicGroup(groupName, desc, members, true, 200);
                     } else {
                         //创建不公开群
-                        EMGroupManager.getInstance().createPrivateGroup(groupName, desc, members, memberCheckbox.isChecked(), 200);
+                        emGroup=EMGroupManager.getInstance().createPrivateGroup(groupName, desc, members, memberCheckbox.isChecked(), 200);
                     }
+                    String hxid = emGroup.getGroupId();
                     runOnUiThread(new Runnable() {
                         public void run() {
                             progressDialog.dismiss();
