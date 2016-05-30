@@ -78,7 +78,7 @@ public class UserUtils {
         imageView.setImageUrl(url, RequestManager.getImageLoader());
         imageView.setErrorImageResId(R.drawable.default_avatar);
     }
-	private static String getAvatarPath(String username) {
+	public static String getAvatarPath(String username) {
         if(username ==null|| username.isEmpty())return null;
 		return I.REQUEST_DOWNLOAD_AVATAR_USER+username;
 	}
