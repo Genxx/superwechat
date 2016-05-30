@@ -311,7 +311,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
                     .with(I.User.USER_NAME, SuperWeChatApplication.getInstance().getUserName())
                     .getRequestUrl(I.REQUEST_UPLOAD_AVATAR);
             executeRequest(new MultipartRequest<Message>(url, Message.class, null,
-                    responseUpdateUserAvatarListener(), errorListener(), mimeType, multipartBody));
+                    responseUpdateUserAvatarListener(bm), errorListener(), mimeType, multipartBody));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -325,7 +325,7 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
         return imageBytes;
     }
 
-    private Response.Listener<Message> responseUpdateUserAvatarListener() {
+    private Response.Listener<Message> responseUpdateUserAvatarListener(final Bitmap bm) {
         return new Response.Listener<Message>() {
             @Override
             public void onResponse(Message msg) {
@@ -334,6 +334,8 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
                             .getCache().remove(UserUtils
                             .getAvatarPath(SuperWeChatApplication.getInstance().getUserName()));
                     UserUtils.setCurrentUserAvatar(headAvatar);
+
+                    headAvatar.setImageBitmap(bm);
                 } else {
                     UserUtils.setCurrentUserAvatar(headAvatar);
                     Toast.makeText(UserProfileActivity.this, getString(cn.gen.superwechat.R.string.toast_updatephoto_fail),
