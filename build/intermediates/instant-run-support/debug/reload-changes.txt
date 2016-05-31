@@ -1,12 +1,5 @@
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\UserProfileManager$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\NewGroupActivity$override.class
 CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$3$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$5$1$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$6$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$2$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$7$1$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$1$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$7$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$4$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$5$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\UserProfileActivity$5$2$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\fragment\ContactlistFragment$6$override.class
+CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\MainActivity$MyGroupChangeListener$override.class

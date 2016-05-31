@@ -19,7 +19,6 @@
             android:onClick="back" >
 
             <ImageView
-                android:id="@+id/btnSaveGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -37,6 +36,7 @@
             android:textSize="20sp" />
 
         <Button
+            android:id="@+id/btn_save"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

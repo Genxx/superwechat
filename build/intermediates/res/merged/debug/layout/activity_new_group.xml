@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_new_group"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eee"
@@ -35,6 +36,7 @@
             android:textSize="20sp" />
 
         <Button
+            android:id="@+id/btn_save"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -71,7 +73,37 @@
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
         android:textSize="18sp" />
-    
+
+    <LinearLayout
+        android:id="@+id/layout_group_icon"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_normal_shape"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="群图标"
+            android:textColor="#333"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:scaleType="fitXY"
+            android:paddingRight="5dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/group_icon"
+            />
+
+    </LinearLayout>
     
     <LinearLayout 
         android:layout_width="match_parent"

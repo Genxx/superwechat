@@ -68,12 +68,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\camera_switch_normal.9.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\record_animate_04.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\record_animate_04.png"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\record_animate_07.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\record_animate_07.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\record_animate_04.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\record_animate_04.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\dx_checkbox_off.png",
