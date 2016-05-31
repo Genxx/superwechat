@@ -248,6 +248,7 @@ public class NewGroupActivity extends BaseActivity {
                             if(contacts!=null){
                              addGruopMembers(group,contacts);
                             }else {
+                                addGruopMembers(group,contacts);
                                 SuperWeChatApplication.getInstance().getGroupList().add(group);
                                 Intent intent = new Intent("update_group_list").putExtra("group",group);
                                 setResult(RESULT_OK,intent);

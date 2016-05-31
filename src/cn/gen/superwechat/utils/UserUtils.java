@@ -189,5 +189,23 @@ public class UserUtils {
             }
         }
     }
-    
+
+    //设置群组头像
+    public static void setGroupBeanAvatar(String mGroupHxid, NetworkImageView imageView) {
+        if (mGroupHxid != null && !mGroupHxid.isEmpty()) {
+            setGroupAvatar(getGroupAvatarPath(mGroupHxid), imageView);
+        }
+    }
+    public static void setGroupAvatar(String url, NetworkImageView imageView) {
+        if (url == null || url.isEmpty()) return;
+        imageView.setDefaultImageResId(R.drawable.group_icon);
+        imageView.setImageUrl(url, RequestManager.getImageLoader());
+        imageView.setErrorImageResId(R.drawable.group_icon);
+    }
+    public static String getGroupAvatarPath(String hxid) {
+        if (hxid == null || hxid.isEmpty()) return null;
+        return I.REQUEST_DOWNLOAD_AVATAR_GROUP + hxid;
+    }
+
+
 }
