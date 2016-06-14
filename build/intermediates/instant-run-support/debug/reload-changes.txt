@@ -1,8 +1,0 @@
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\NewGroupActivity$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\NewGroupActivity$4$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\NewGroupActivity$1$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\NewGroupActivity$2$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\NewGroupActivity$6$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\NewGroupActivity$3$override.class
-CHANGED,D:\SuperWeChat\superwechat\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\cn\gen\superwechat\activity\NewGroupActivity$5$override.class

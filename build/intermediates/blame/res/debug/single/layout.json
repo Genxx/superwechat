@@ -40,12 +40,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_show_file.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add_contact.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_add_contact.xml"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_edit.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add_contact.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_add_contact.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_add_group.xml",
@@ -108,12 +108,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_splash.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_group_pick_contacts.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_group_pick_contacts.xml"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_pick_contact_no_checkbox.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_pick_contact_no_checkbox.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_group_pick_contacts.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_group_pick_contacts.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_emojicon.xml",
@@ -132,12 +132,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\search_bar_with_padding.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_chat_history.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\row_chat_history.xml"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_baidumap.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_baidumap.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_chat_history.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\row_chat_history.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_menu.xml",
@@ -272,12 +272,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\row_received_location.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_conversation_settings.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\fragment_conversation_settings.xml"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\popu_show_avatar.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\popu_show_avatar.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_conversation_settings.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\fragment_conversation_settings.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",

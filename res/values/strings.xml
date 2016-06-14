@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">SuperWeChat</string>
+    
+    <string name="app_name">FuLiCenter</string>
     <string name="text_ack_msg">Read</string>
     <string name="text_delivered_msg">Delivered</string>
     <string name="back">Back</string>
@@ -64,7 +64,7 @@
     <string name="dissolution_group_hint">The group will be dismissed after exiting</string>
     <string name="exit_group">Exit</string>
     <string name="connect_conflict">The same account was loggedin in other device</string>
-    <string name="em_user_remove">This EMUser has been removed</string>
+    <string name="em_user_remove">This user has been removed</string>
     <string name="set">Settings</string>
     <string name="notify">New message notification</string>
     <string name="newnotify">Receiving a new message</string>
@@ -73,9 +73,12 @@
     <string name="yangshengqi">Use speaker</string>
     <string name="book_black">Black list</string>
     <string name="session">Conversation</string>
+    <string name="message">Messages</string>
     <string name="address_book">Address book</string>
+    <string name="contact_list">Contact List</string>
     <string name="setting">Settings</string>
     <string name="now_refresh_list">Refreshing contact list</string>
+    <string name="now_refresh">Refreshing...</string>
     <string name="Application_and_notify">Invitation and notification</string>
     <string name="save_new_nickname">Save new nickname</string>
     <string name="group_chat">Group chat</string>
@@ -122,7 +125,7 @@
     <string name="Please_enter_a_username">Please enter a username</string>
 
     <string name="not_add_myself">"Can't add myself"</string>
-    <string name="This_user_is_already_your_friend">This EMUser is already your friend</string>
+    <string name="This_user_is_already_your_friend">This user is already your friend</string>
     <string name="Add_a_friend">Let me to be your friend!</string>
     <string name="send_successful">Request was sent, waiting for the peer to accept</string>
     <string name="Request_add_buddy_failure">Request add buddy failure:</string>
@@ -195,6 +198,7 @@
     <string name="Video_footage">Video record</string>
     <string name="User_name_cannot_be_empty">User name cannot be empty!</string>
     <string name="User_name_cannot_be_wd">User name can only alpha or number or underline !</string>
+    <string name="Nick_name_cannot_be_empty">Nick name cannot be empty!</string>
     <string name="Password_cannot_be_empty">Password cannot be empty!</string>
     <string name="please_set_the_current">"Please set the current EMUser's nickname \ n to ios offline push not userid but Nick, see comments"</string>
     <string name="Is_landing">logining..</string>
@@ -283,7 +287,7 @@
     <string name="nickname">NickName</string>
     <string name="upload_avatar_failed">upload avatar failed</string>
     <string name="cancel_register_failed"> cancel register failed</string>
-
+    <string name="photo">photo</string>
     <string name="dl_title_upload_photo">Upload Photo</string>
     <string name="dl_msg_local_upload">Local Upload</string>
     <string name="dl_msg_take_photo">Task Photo</string>
@@ -300,12 +304,9 @@
     <string name="toast_updatephoto_success">update photo success!</string>
     <string name="toast_updatephoto_fail">update photo fail!</string>
     <string name="Add_buddy_success">add buddy success</string>
-    <string name="Nick_name_cannot_be_empty">Nick name cannot be empty!</string>
     <string name="Group_name_existed">Group name existed</string>
     <string name="Create_groups_Success">Success to create groups</string>
     <string name="Create_groups_Failed">Failed to create groups</string>
-    <string name="photo">photo</string>
-    <string name="near_people_hint">See nearby people\'s function will get your location information, your location information will be kept for a period of time. Through the list of the top right corner to remove functions can be manually remove location information at any time.</string>
 
     <string name="msg_900">msg:Connection Success</string>
     <string name="msg_901">msg:Connection Fail</string>
@@ -347,5 +348,32 @@
     <string name="msg_503">msg:Location Update Success</string>
     <string name="msg_504">msg:Location Update Fail</string>
     <string name="msg_999">msg:Unknow</string>
+    <string name="title_activity_good_details">GoodDetailsActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_boutique_child">BoutiqueChildActivity</string>
+    <string name="title_activity_category_child">CategoryChildActivity</string>
+    <string name="title_activity_my_setting">MySettingActivity</string>
+    <string name="title_activity_cart">CartActivity</string>
+    <string name="title_activity_buy">BuyActivity</string>
+    <string name="near_people_hint">See nearby people\'s function will get your location information, your location information will be kept for a period of time. Through the list of the top right corner to remove functions can be manually remove location information at any time.</string>
+
+    <!-- 支付的字符串资源 -->
+    <string name="title_activity_pay">支付</string>
+    <string name="title_activity_pay_sucessed">支付成功</string>
+    <string name="title_activity_pay_filed">支付失败</string>
+    <string name="title_activity_success">支付成功</string>
+    <string name="generic_server_down">generic server down</string>
+    <string name="no_internet">no internet</string>
+    <string name="generic_error">generic error</string>
+    <string name="title_activity_bill_list">BillListActivity</string>
+    <string name="title_activity_refund_orders">RefundOrdersActivity</string>
+    <string name="title_activity_refund_status">RefundStatusActivity</string>
+    <string name="title_activity_gen_qrcode">GenQRCodeActivity</string>
+    <string name="title_activity_aliqrcode">ALIQRCodeActivity</string>
+    <string name="title_activity_orders_entry">OrdersEntryActivity</string>
+    <string name="title_activity_pay_pal_un_synced_list">PayPalUnSyncedListActivity</string>
+    <string name="share">share</string>
+    <string name="user_qrcode">user qrcode</string>
 
 </resources>

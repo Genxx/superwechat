@@ -2,5 +2,13 @@
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\color\\main_botton_text_color.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\color\\main_botton_text_color.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\color\\wallet_base_click_text_color.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\color\\wallet_base_click_text_color.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\color\\wallet_base_dialog_btntext_color_selector.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\color\\wallet_base_dialog_btntext_color_selector.xml"
     }
 ]

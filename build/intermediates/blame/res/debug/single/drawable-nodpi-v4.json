@@ -12,12 +12,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\find_erweima.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\friends_icon.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\friends_icon.png"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\geek.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\geek.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\friends_icon.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-nodpi\\friends_icon.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\find_friends.png",

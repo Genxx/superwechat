@@ -9,7 +9,7 @@
         android:layout_height="fill_parent"
         android:background="#fff"
         >
-         <cn.gen.superwechat.widget.RecyclingImageView
+         <cn.gen.fulicenter.widget.RecyclingImageView
         android:id="@+id/imageView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

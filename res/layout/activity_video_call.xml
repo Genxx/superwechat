@@ -37,7 +37,7 @@
                 android:textSize="22sp"
                 android:visibility="visible" />
 
-            <cn.gen.superwechat.widget.MyChronometer
+            <cn.gen.fulicenter.widget.MyChronometer
                 android:id="@+id/chronometer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
