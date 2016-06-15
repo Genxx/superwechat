@@ -442,11 +442,11 @@ ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:233:17-63
 	android:name
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:233:25-60
 meta-data#EASEMOB_APPKEY
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:242:9-244:49
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:242:9-244:48
 	android:name
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:243:13-42
 	android:value
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:244:13-46
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:244:13-45
 service#com.easemob.chat.EMChatService
 ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:246:9-66
 	android:name
