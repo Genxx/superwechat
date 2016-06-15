@@ -17,6 +17,8 @@ ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:2:1-276:12
 		INJECTED from D:\SuperWeChat\superwechat\AndroidManifest.xml
 uses-sdk
 ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:recyclerview-v7:23.2.0] D:\SuperWeChat\superwechat\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.2.0] D:\SuperWeChat\superwechat\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:9:9-38
 	android:minSdkVersion
@@ -129,6 +131,7 @@ ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:41:5-80
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:41:22-77
 application
 ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:43:5-274:19
+MERGED from [com.android.support:support-v4:23.2.0] D:\SuperWeChat\superwechat\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:47:9-41
 	android:allowBackup

@@ -4,28 +4,28 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\ebpay_slide_to_left.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\head_in.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\head_in.xml"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\fade_out.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\fade_out.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\wallet_base_slide_to_right.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\wallet_base_slide_to_right.xml"
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\head_in.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\head_in.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_out.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\push_top_out.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\ebpay_slide_from_left.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\ebpay_slide_from_left.xml"
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\wallet_base_slide_to_right.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\wallet_base_slide_to_right.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_left.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\slide_in_from_left.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\ebpay_slide_from_left.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\ebpay_slide_from_left.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\head_out.xml",
@@ -40,12 +40,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\fade_in.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\wallet_base_slide_to_left.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\wallet_base_slide_to_left.xml"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\wallet_base_slide_from_right.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\wallet_base_slide_from_right.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\wallet_base_slide_to_left.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\wallet_base_slide_to_left.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\wallet_base_show_dialog_anim.xml",
@@ -68,36 +68,36 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\ebpay_slide_to_right.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\pop_enter.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\pop_enter.xml"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_out2.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\push_top_out2.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\voice_to_icon.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\voice_to_icon.xml"
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\pop_enter.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\pop_enter.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\wallet_base_dismiss_dialog_anim.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\wallet_base_dismiss_dialog_anim.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\voice_from_icon.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\voice_from_icon.xml"
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\voice_to_icon.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\voice_to_icon.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_to_right.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\slide_out_to_right.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_right.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\slide_in_from_right.xml"
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\voice_from_icon.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\voice_from_icon.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_out.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\push_bottom_out.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_right.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\anim\\slide_in_from_right.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_in.xml",

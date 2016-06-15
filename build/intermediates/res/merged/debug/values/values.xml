@@ -185,6 +185,7 @@
     <declare-styleable name="Emojicon"><attr format="dimension" name="emojiconSize"/><attr format="integer" name="emojiconTextStart"/><attr format="integer" name="emojiconTextLength"/></declare-styleable>
     <declare-styleable name="FlowIndicator"><attr format="integer" name="count"/><attr format="dimension" name="r"/><attr format="dimension" name="space"/><attr format="color|reference" name="normal_color"/><attr format="color|reference" name="focus_color"/><attr format="integer" name="focus"/></declare-styleable>
     <declare-styleable name="LinePageIndicator"><attr name="centered"/><attr name="unselectedColor"/><attr name="selectedColor"/><attr format="dimension" name="lineWidth"/><attr name="strokeWidth"/><attr format="dimension" name="gapWidth"/><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="RecyclerView"><attr format="string" name="layoutManager"/><attr name="android:orientation"/><attr format="integer" name="spanCount"/><attr format="boolean" name="reverseLayout"/><attr format="boolean" name="stackFromEnd"/></declare-styleable>
     <declare-styleable name="TitlePageIndicator"><attr format="dimension" name="clipPadding"/><attr format="color" name="footerColor"/><attr format="dimension" name="footerLineHeight"/><attr name="footerIndicatorStyle"><enum name="none" value="0"/><enum name="triangle" value="1"/><enum name="underline" value="2"/></attr><attr format="dimension" name="footerIndicatorHeight"/><attr format="dimension" name="footerIndicatorUnderlinePadding"/><attr format="dimension" name="footerPadding"/><attr name="linePosition"><enum name="bottom" value="0"/><enum name="top" value="1"/></attr><attr name="selectedColor"/><attr format="boolean" name="selectedBold"/><attr name="android:textColor"/><attr name="android:textSize"/><attr format="dimension" name="titlePadding"/><attr format="dimension" name="topPadding"/><attr name="android:background"/></declare-styleable>
     <declare-styleable name="UnderlinePageIndicator"><attr format="boolean" name="fades"/><attr format="integer" name="fadeDelay"/><attr format="integer" name="fadeLength"/><attr name="selectedColor"/><attr name="android:background"/></declare-styleable>
     <declare-styleable name="ViewPagerIndicator"><attr format="reference" name="vpiCirclePageIndicatorStyle"/><attr format="reference" name="vpiIconPageIndicatorStyle"/><attr format="reference" name="vpiLinePageIndicatorStyle"/><attr format="reference" name="vpiTitlePageIndicatorStyle"/><attr format="reference" name="vpiTabPageIndicatorStyle"/><attr format="reference" name="vpiUnderlinePageIndicatorStyle"/></declare-styleable>
@@ -260,6 +261,9 @@
     <dimen name="height_top_bar">46dp</dimen>
     <dimen name="image_thumbnail_size">100dp</dimen>
     <dimen name="image_thumbnail_spacing">1dp</dimen>
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
+    <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
+    <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
     <dimen name="margin_chat_activity">5dp</dimen>
     <dimen name="notification_bar_height">25dp</dimen>
     <dimen name="padding_search_bar">5dp</dimen>
@@ -270,6 +274,7 @@
     <drawable name="menu_item_selected">#FF7A49</drawable>
     <drawable name="ssdk_oks_classic_platfrom_cell_back_nor">#ffffffff</drawable>
     <drawable name="ssdk_oks_classic_platfrom_cell_back_sel">#ffeeeeee</drawable>
+    <item name="item_touch_helper_previous_elevation" type="id"/>
     <integer name="default_circle_indicator_orientation">0</integer>
     <integer name="default_title_indicator_footer_indicator_style">2</integer>
     <integer name="default_title_indicator_line_position">0</integer>
