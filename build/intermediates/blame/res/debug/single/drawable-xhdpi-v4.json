@@ -596,12 +596,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xhdpi\\logo_uidemo.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_alipay.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xhdpi\\ssdk_oks_classic_alipay.png"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\tb_icon_more_msg_white_56.gif",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xhdpi\\tb_icon_more_msg_white_56.gif"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_alipay.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xhdpi\\ssdk_oks_classic_alipay.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\chat_edit_normal.9.png",
