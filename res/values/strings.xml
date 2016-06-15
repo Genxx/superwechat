@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
+
     <string name="app_name">FuLiCenter</string>
     <string name="text_ack_msg">Read</string>
     <string name="text_delivered_msg">Delivered</string>
@@ -264,7 +264,7 @@
     <string name="dismiss_group">Dismiss group</string>
     <string name="add_public_group_chat">Add public group</string>
     <string name="gorup_not_found">Can not find this group</string>
-    <string name= "no_more_messages">no more messages</string>
+    <string name="no_more_messages">no more messages</string>
     <string name="join_public_group">Join public group</string>
     <string name="chatroom_allow_owner_leave">Allow chatroom owner leave</string>
     <string name="group_id">Group ID</string>

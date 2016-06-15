@@ -248,6 +248,10 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_null.xml"
     },
     {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_fuli_center_main.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_fuli_center_main.xml"
+    },
+    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_offline_push.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_offline_push.xml"
     },
