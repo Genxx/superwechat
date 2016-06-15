@@ -3,37 +3,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eff2f6"
-    android:orientation="vertical">
-
-    <RelativeLayout
+    android:orientation="vertical" >
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1">
-
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#fff"
+        android:paddingTop="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:drawableLeft="@drawable/mobile"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical"
-            android:text="SuperWeChat"
-            android:textColor="#000"
-            android:textSize="20sp" />
-    </RelativeLayout>
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dip"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_press"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账号登录"
+                android:textColor="#030303"
+                android:textSize="25dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"/>
 
-    <RelativeLayout
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
 
         <RelativeLayout
             android:id="@+id/rl_username"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginRight="28dp"
-            android:background="#fff">
+            android:background="#fff" >
 
             <ImageView
                 android:id="@+id/iv_username"
@@ -62,10 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_below="@id/rl_username"
-            android:layout_marginLeft="28dp"
-            android:layout_marginRight="28dp"
-            android:layout_marginTop="10dp"
-            android:background="#fff">
+            android:layout_marginTop="2dp"
+            android:background="#fff" >
 
             <ImageView
                 android:id="@+id/iv_password"
@@ -96,49 +105,57 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="30dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnRegister"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:layout_weight="1"
-                android:background="@drawable/button_register_bg"
-                android:gravity="center"
-                android:onClick="register"
-                android:paddingBottom="7dp"
-                android:paddingTop="7dp"
-                android:text="@string/register"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
+            android:orientation="horizontal"
+            >
             <Button
                 android:id="@+id/btnLogin"
-                android:layout_width="0dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dip"
                 android:layout_marginRight="10dip"
                 android:layout_weight="1"
-                android:background="@drawable/button_login_bg"
+                android:background="#fc3512"
                 android:gravity="center"
-                android:onClick="login"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
-                android:text="@string/login"
+                android:text="登录"
                 android:textColor="@android:color/white"
+                android:textSize="18sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_password"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:layout_marginTop="15dp"
+                android:id="@+id/btnRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dip"
+                android:layout_marginRight="90dip"
+                android:layout_weight="1"
+                android:background="#faf49e"
+                android:gravity="center"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:text="免费注册"
+                android:textColor="#ff9100"
                 android:textSize="18sp" />
         </LinearLayout>
-    </RelativeLayout>
-
+    </LinearLayout>
     <Button
         android:id="@+id/btnUrl"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@null"
-        android:text="设置服务器的IP地址"
-        android:textColor="#000" />
-
+        android:text="设置服务器IP地址"
+        android:textColor="#000"
+        android:background="@null"/>
 </LinearLayout>
