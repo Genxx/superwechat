@@ -59,9 +59,7 @@ import cn.gen.fulicenter.data.GsonRequest;
 import cn.gen.fulicenter.data.OkHttpUtils;
 import cn.gen.fulicenter.db.EMUserDao;
 import cn.gen.fulicenter.domain.EMUser;
-import cn.gen.fulicenter.task.DownloadAllGroupTask;
 import cn.gen.fulicenter.task.DownloadContactList;
-import cn.gen.fulicenter.task.DownloadPublicGroupTask;
 import cn.gen.fulicenter.utils.CommonUtils;
 import cn.gen.fulicenter.utils.MD5;
 import cn.gen.fulicenter.utils.Utils;
@@ -291,9 +289,6 @@ public class LoginActivity extends BaseActivity {
                 @Override
                 public void run() {
                     new DownloadContactList(mContext,currentUsername).execute();
-                    new DownloadAllGroupTask(mContext,currentUsername).execute();
-                    new DownloadPublicGroupTask(mContext,currentUsername,
-                            I.PAGE_ID_DEFAULT,I.PAGE_SIZE_DEFAULT).execute();
                 }
             });
             //处理好友和群组

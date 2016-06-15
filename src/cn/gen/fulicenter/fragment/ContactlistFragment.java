@@ -54,10 +54,8 @@ import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.SuperWeChatApplication;
 import cn.gen.fulicenter.activity.AddContactActivity;
 import cn.gen.fulicenter.activity.ChatActivity;
-import cn.gen.fulicenter.activity.GroupsActivity;
 import cn.gen.fulicenter.activity.MainActivity;
 import cn.gen.fulicenter.activity.NewFriendsMsgActivity;
-import cn.gen.fulicenter.activity.PublicChatRoomsActivity;
 import cn.gen.fulicenter.activity.RobotsActivity;
 import cn.gen.fulicenter.applib.controller.HXSDKHelper;
 
@@ -236,13 +234,7 @@ public class ContactlistFragment extends Fragment {
                     EMUser EMUser = ((DemoHXSDKHelper) HXSDKHelper.getInstance()).getContactList().get(Constant.NEW_FRIENDS_USERNAME);
                     EMUser.setUnreadMsgCount(0);
                     startActivity(new Intent(getActivity(), NewFriendsMsgActivity.class));
-                } else if (Constant.GROUP_USERNAME.equals(username)) {
-                    // 进入群聊列表页面
-                    startActivity(new Intent(getActivity(), GroupsActivity.class));
-                } else if (Constant.CHAT_ROOM.equals(username)) {
-                    //进入聊天室列表页面
-                    startActivity(new Intent(getActivity(), PublicChatRoomsActivity.class));
-                } else if (Constant.CHAT_ROBOT.equals(username)) {
+                }  else if (Constant.CHAT_ROBOT.equals(username)) {
                     //进入Robot列表页面
                     startActivity(new Intent(getActivity(), RobotsActivity.class));
                 } else {
@@ -299,7 +291,7 @@ public class ContactlistFragment extends Fragment {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        if (((AdapterContextMenuInfo) menuInfo).position > 1) {
+        if (((AdapterContextMenuInfo) menuInfo).position > 0) {
             toBeProcessEMUser = adapter.getItem(((AdapterContextMenuInfo) menuInfo).position);
             toBeProcessUsername = toBeProcessEMUser.getMContactCname();
             getActivity().getMenuInflater().inflate(cn.gen.fulicenter.R.menu.context_contact_list, menu);

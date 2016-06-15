@@ -55,6 +55,7 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.easemob.EMCallBack;
 import com.easemob.EMError;
 
+import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.applib.controller.HXSDKHelper;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMConversation;
@@ -641,7 +642,7 @@ public class MessageAdapter extends BaseAdapter{
 				textView.setText(itemStr);
 				textView.setTextSize(15);
 				try {
-					XmlPullParser xrp = context.getResources().getXml(cn.gen.fulicenter.R.drawable.menu_msg_text_color);
+					XmlPullParser xrp = context.getResources().getXml(R.drawable.menu_msg_text_color);
 					textView.setTextColor(ColorStateList.createFromXml(context.getResources(), xrp));
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -988,9 +989,9 @@ public class MessageAdapter extends BaseAdapter{
 						.getMsgId())&&VoicePlayClickListener.isPlaying) {
 			AnimationDrawable voiceAnimation;
 			if (message.direct == EMMessage.Direct.RECEIVE) {
-				holder.iv.setImageResource(cn.gen.fulicenter.R.anim.voice_from_icon);
+				holder.iv.setImageResource(R.anim.voice_from_icon);
 			} else {
-				holder.iv.setImageResource(cn.gen.fulicenter.R.anim.voice_to_icon);
+				holder.iv.setImageResource(R.anim.voice_to_icon);
 			}
 			voiceAnimation = (AnimationDrawable) holder.iv.getDrawable();
 			voiceAnimation.start();
@@ -1417,14 +1418,7 @@ public class MessageAdapter extends BaseAdapter{
 		});
 	}
 
-	/**
-	 * load image into image view
-	 * 
-	 * @param thumbernailPath
-	 * @param iv
-	 * @param position
-	 * @return the image exists or not
-	 */
+
 	private boolean showImageView(final String thumbernailPath, final ImageView iv, final String localFullSizePath, String remoteDir,
 			final EMMessage message) {
 		// String imagename =

@@ -15,12 +15,9 @@ import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
 
 import cn.gen.fulicenter.DemoHXSDKHelper;
-import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.SuperWeChatApplication;
 import cn.gen.fulicenter.bean.User;
-import cn.gen.fulicenter.task.DownloadAllGroupTask;
 import cn.gen.fulicenter.task.DownloadContactList;
-import cn.gen.fulicenter.task.DownloadPublicGroupTask;
 import cn.gen.fulicenter.db.UserDao;
 
 /**
@@ -63,9 +60,6 @@ public class SplashActivity extends BaseActivity {
                 Log.e("main", "start dowmload arraylist--------SplashAcitivity开始下载");
                 SuperWeChatApplication.currentUserNick = user.getMUserNick();
                 new DownloadContactList(SplashActivity.this, username).execute();
-                new DownloadAllGroupTask(SplashActivity.this, username).execute();
-                new DownloadPublicGroupTask(SplashActivity.this, username,
-                        I.PAGE_ID_DEFAULT, I.PAGE_SIZE_DEFAULT).execute();
             }
         }
 
