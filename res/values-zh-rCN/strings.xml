@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="load_more">加载更多</string>
+    <string name="no_more">没有更多数据了</string>
+    <string name="title_good_details">商品详情</string>
     <string name="app_name">福利社-AS</string>
     <string name="text_ack_msg">已读</string>
     <string name="text_delivered_msg">送达</string>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="load_more">load more</string>
+    <string name="no_more">no more data!</string>
     <string name="app_name">FuLiCenter</string>
     <string name="text_ack_msg">Read</string>
     <string name="text_delivered_msg">Delivered</string>

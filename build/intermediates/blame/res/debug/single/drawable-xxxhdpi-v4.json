@@ -4,16 +4,16 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_conversation_selected.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_category_normal.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_category_normal.png"
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_personal_center_selected.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_personal_center_selected.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\splash.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\splash.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_personal_center_selected.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_personal_center_selected.png"
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_category_normal.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_category_normal.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\bg_share_sel.png",
@@ -24,12 +24,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\arrow_order_down.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_new_good_normal.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_new_good_normal.png"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\delete.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\delete.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_new_good_normal.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_new_good_normal.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\arrow2_up.png",
@@ -52,24 +52,24 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\bg_collect_in.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_new_good_selected.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_new_good_selected.png"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_cart_selected.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_cart_selected.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\boutique_normal.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\boutique_normal.png"
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_new_good_selected.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_new_good_selected.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_contact_list_normal.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_contact_list_normal.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\goods_thumb.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\goods_thumb.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_contact_list_normal.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_contact_list_normal.png"
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\boutique_normal.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\boutique_normal.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\arrow2_right.png",
@@ -100,12 +100,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_personal_center_normal.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\checkbox_normal.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\checkbox_normal.png"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\checkbox_pressed.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\checkbox_pressed.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\checkbox_normal.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\checkbox_normal.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\arrow_order_up.png",
@@ -116,35 +116,35 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_category_selected.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\bg_share_nor.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\bg_share_nor.png"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\del_cart.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\del_cart.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\bg_share_nor.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\bg_share_nor.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\bg_collect_out.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\bg_collect_out.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\back_nomal.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\back_nomal.png"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_collect_selected.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_collect_selected.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\back_nomal.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\back_nomal.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_item_contact_list_selected.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\menu_item_contact_list_selected.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\back_press.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\back_press.png"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\boutique_selected.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\boutique_selected.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\back_press.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-xxxhdpi\\back_press.png"
     }
 ]

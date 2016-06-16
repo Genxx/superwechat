@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     android:background="@color/list_background"
     tools:context="cn.gen.fulicenter.activity.FuliCenterMainActivity">
-
     <LinearLayout
+        android:id="@+id/main_bottom"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
@@ -95,11 +95,13 @@
                 android:textColor="@color/main_botton_text_color" />
         </RadioGroup>
     </LinearLayout>
-
     <RelativeLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/main_bottom"
-        android:layout_marginBottom="1dp"></RelativeLayout>
+        android:layout_marginBottom="1dp">
+
+    </RelativeLayout>
+
 </RelativeLayout>

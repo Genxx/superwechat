@@ -761,6 +761,7 @@
     <string name="is_quit_the_group_chat">Exiting group</string>
     <string name="join_public_group">Join public group</string>
     <string name="list_is_for">Retrieving the groups and contacts</string>
+    <string name="load_more">load more</string>
     <string name="location_message">The location information</string>
     <string name="location_prefix">[my location]</string>
     <string name="location_recv">[%1$s location]</string>
@@ -821,6 +822,7 @@
     <string name="nickname">NickName</string>
     <string name="nickname_description">Once this nick is set, this nick will be used in push notification (by default this is HuanXin ID ) when the receiver is using the IOS device.</string>
     <string name="no_internet">no internet</string>
+    <string name="no_more">no more data!</string>
     <string name="no_more_messages">no more messages</string>
     <string name="not_add_myself">"Can't add myself"</string>
     <string name="not_connect_to_server">Not connect to server, please try again later</string>
