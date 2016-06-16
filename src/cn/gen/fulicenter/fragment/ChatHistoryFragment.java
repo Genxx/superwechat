@@ -46,7 +46,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cn.gen.fulicenter.SuperWeChatApplication;
+import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.activity.ChatActivity;
 import cn.gen.fulicenter.activity.MainActivity;
 import cn.gen.fulicenter.applib.controller.HXSDKHelper;
@@ -101,7 +101,7 @@ public class ChatHistoryFragment extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				EMContact emContact = adapter.getItem(position);
-				if (adapter.getItem(position).getUsername().equals(SuperWeChatApplication.getInstance().getUserName()))
+				if (adapter.getItem(position).getUsername().equals(FuliCenterApplication.getInstance().getUserName()))
 					Toast.makeText(getActivity(), st, Toast.LENGTH_SHORT).show();
 				else {
 					// 进入聊天页面

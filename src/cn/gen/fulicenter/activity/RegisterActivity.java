@@ -30,7 +30,7 @@ import com.easemob.chat.EMChatManager;
 import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.Listener.OnSetAvatarListener;
 import cn.gen.fulicenter.R;
-import cn.gen.fulicenter.SuperWeChatApplication;
+import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.bean.Message;
 import cn.gen.fulicenter.data.OkHttpUtils;
 import cn.gen.fulicenter.utils.ImageUtils;
@@ -173,7 +173,7 @@ public class RegisterActivity extends BaseActivity {
         File file  = new File(ImageUtils.getAvatarPath(mContext,I.AVATAR_TYPE_USER_PATH),
                 avatarName+I.AVATAR_SUFFIX_JPG);
         OkHttpUtils<Message> utils = new OkHttpUtils<Message>();
-        utils.url(SuperWeChatApplication.SERVER_ROOT)//设置服务端根地址
+        utils.url(FuliCenterApplication.SERVER_ROOT)//设置服务端根地址
                 .addParam(I.KEY_REQUEST,I.REQUEST_REGISTER)//天津爱上传的请求参数
                 .addParam(I.User.USER_NAME,username)//添加用户的账号
                 .addParam(I.User.NICK,nick)//添加用户的昵称
@@ -216,7 +216,7 @@ public class RegisterActivity extends BaseActivity {
                             if (!RegisterActivity.this.isFinishing())
                                 pd.dismiss();
                             // 保存用户名
-                            SuperWeChatApplication.getInstance().setUserName(username);
+                            FuliCenterApplication.getInstance().setUserName(username);
                             Toast.makeText(getApplicationContext(), getResources().getString(cn.gen.fulicenter.R.string.Registered_successfully), Toast.LENGTH_SHORT).show();
                             finish();
                         }

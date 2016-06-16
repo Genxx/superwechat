@@ -51,7 +51,7 @@ import android.widget.Toast;
 
 import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
-import cn.gen.fulicenter.SuperWeChatApplication;
+import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.activity.AddContactActivity;
 import cn.gen.fulicenter.activity.ChatActivity;
 import cn.gen.fulicenter.activity.MainActivity;
@@ -349,7 +349,7 @@ public class ContactlistFragment extends Fragment {
         pd.show();
         try {
             String path = new ApiParams()
-                    .with(I.Contact.USER_NAME, SuperWeChatApplication.getInstance().getUserName())
+                    .with(I.Contact.USER_NAME, FuliCenterApplication.getInstance().getUserName())
                     .with(I.Contact.CU_NAME, tobeDeleteEMUser.getMContactCname())
                     .getRequestUrl(I.REQUEST_DELETE_CONTACT);
             ((MainActivity) getActivity()).executeRequest(new GsonRequest<Boolean>(path,
@@ -393,8 +393,8 @@ public class ContactlistFragment extends Fragment {
             @Override
             public void onResponse(Boolean response) {
                 if (response) {
-                    SuperWeChatApplication.getInstance().getUserList().remove(tobeDeleteEMUser.getMContactCname());
-                    SuperWeChatApplication.getInstance().getContactList().remove(tobeDeleteEMUser);
+                    FuliCenterApplication.getInstance().getUserList().remove(tobeDeleteEMUser.getMContactCname());
+                    FuliCenterApplication.getInstance().getContactList().remove(tobeDeleteEMUser);
                     getActivity().sendStickyBroadcast(new Intent("update_contact_list"));
                 }
             }
@@ -490,7 +490,7 @@ public class ContactlistFragment extends Fragment {
     private void getContactList() {
         mContactList.clear();
         //获取本地好友列表
-        ArrayList<Contact> contactList = SuperWeChatApplication.getInstance().getContactList();
+        ArrayList<Contact> contactList = FuliCenterApplication.getInstance().getContactList();
         mContactList.addAll(contactList);
 
         // 添加user"申请与通知"

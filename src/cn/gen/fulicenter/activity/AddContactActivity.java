@@ -36,7 +36,7 @@ import com.easemob.chat.EMContactManager;
 
 import java.util.HashMap;
 
-import cn.gen.fulicenter.SuperWeChatApplication;
+import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.DemoHXSDKHelper;
 import cn.gen.fulicenter.bean.Contact;
 import cn.gen.fulicenter.bean.User;
@@ -91,7 +91,7 @@ public class AddContactActivity extends BaseActivity {
         }
 
         //如果添加的是自己就显示自己的页面
-        if (SuperWeChatApplication.getInstance().getUserName().equals(name.trim())) {
+        if (FuliCenterApplication.getInstance().getUserName().equals(name.trim())) {
             String str = getString(cn.gen.fulicenter.R.string.not_add_myself);
             startActivity(new Intent(this, AlertDialog.class).putExtra("msg", str));
             return;
@@ -115,7 +115,7 @@ public class AddContactActivity extends BaseActivity {
             public void onResponse(User user) {
                 if (user != null) {
                     HashMap<String, Contact> userList =
-                            SuperWeChatApplication.getInstance().getUserList();
+                            FuliCenterApplication.getInstance().getUserList();
                     if (userList.containsKey(user.getMUserName())) {
                         startActivity(new Intent(AddContactActivity.this, UserProfileActivity.class)
                                 .putExtra("username", user.getMUserName()));

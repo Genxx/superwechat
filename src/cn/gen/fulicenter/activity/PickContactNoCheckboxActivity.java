@@ -27,7 +27,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import cn.gen.fulicenter.SuperWeChatApplication;
+import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.Constant;
 import cn.gen.fulicenter.adapter.ContactAdapter;
 import cn.gen.fulicenter.bean.Contact;
@@ -77,7 +77,7 @@ public class PickContactNoCheckboxActivity extends BaseActivity {
 
 	private void getContactList() {
 		contactList.clear();
-		Map<String, Contact> users = SuperWeChatApplication.getInstance().getUserList();
+		Map<String, Contact> users = FuliCenterApplication.getInstance().getUserList();
 
 		Iterator<Entry<String, Contact>> iterator = users.entrySet().iterator();
 		while (iterator.hasNext()) {

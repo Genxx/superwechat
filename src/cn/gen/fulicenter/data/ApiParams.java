@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Set;
 
 import cn.gen.fulicenter.I;
-import cn.gen.fulicenter.SuperWeChatApplication;
+import cn.gen.fulicenter.FuliCenterApplication;
 
 
 public class ApiParams extends HashMap<String, String> {
@@ -59,7 +59,7 @@ public class ApiParams extends HashMap<String, String> {
 	}
 
 	public String getRequestUrl(String request) throws Exception {
-		StringBuilder url = new StringBuilder(SuperWeChatApplication.SERVER_ROOT);
+		StringBuilder url = new StringBuilder(FuliCenterApplication.SERVER_ROOT);
 		if (this == null || this.isEmpty()) {
 			return url.toString();
 		}

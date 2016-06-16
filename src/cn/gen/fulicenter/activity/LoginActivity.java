@@ -42,7 +42,7 @@ import com.easemob.EMCallBack;
 import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.Listener.OnSetAvatarListener;
 import cn.gen.fulicenter.R;
-import cn.gen.fulicenter.SuperWeChatApplication;
+import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.applib.controller.HXSDKHelper;
 
 import com.easemob.chat.EMChatManager;
@@ -103,8 +103,8 @@ public class LoginActivity extends BaseActivity {
         mbtnUrl = (Button) findViewById(R.id.btnLogin);
 
 
-        if (SuperWeChatApplication.getInstance().getUserName() != null) {
-            usernameEditText.setText(SuperWeChatApplication.getInstance().getUserName());
+        if (FuliCenterApplication.getInstance().getUserName() != null) {
+            usernameEditText.setText(FuliCenterApplication.getInstance().getUserName());
         }
         setListener();
     }
@@ -244,12 +244,12 @@ public class LoginActivity extends BaseActivity {
 
     /**保存当前登录的用户到全局变量**/
     private void saveUser(User user) {
-        SuperWeChatApplication instance = SuperWeChatApplication.getInstance();
+        FuliCenterApplication instance = FuliCenterApplication.getInstance();
         instance.setUser(user);
         //登录成功，保存用户名,密码
         instance.setUserName(currentUsername);
         instance.setPassword(currentPassword);
-        SuperWeChatApplication.currentUserNick = user.getMUserNick();
+        FuliCenterApplication.currentUserNick = user.getMUserNick();
     }
 
     private void loginSuccess() {
@@ -264,7 +264,7 @@ public class LoginActivity extends BaseActivity {
             //http://10.0.2.2:8080/SuperWeChatServer/Server?
             // request=download_avatar&avatarType=
             final OkHttpUtils<Message> utils = new OkHttpUtils<Message>();
-            utils.url(SuperWeChatApplication.SERVER_ROOT)//设置服务端根地址
+            utils.url(FuliCenterApplication.SERVER_ROOT)//设置服务端根地址
             .addParam(I.KEY_REQUEST,I.REQUEST_DOWNLOAD_AVATAR)//添加上传的请求参数
             .addParam(I.AVATAR_TYPE,currentUsername)//添加用户的账号
             .doInBackground(new Callback() {
@@ -308,7 +308,7 @@ public class LoginActivity extends BaseActivity {
 
         // 更新当前用户的nickname 此方法的作用是在ios离线推送时能够显示用户nick
         boolean updatenick = EMChatManager.getInstance().updateCurrentUserNick(
-                SuperWeChatApplication.currentUserNick.trim());
+                FuliCenterApplication.currentUserNick.trim());
         if (!updatenick) {
             Log.e("LoginActivity", "update current user nick fail");
         }
