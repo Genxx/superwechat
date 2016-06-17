@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.hardware.Camera.Size;
@@ -89,8 +90,16 @@ public class Utils {
 		}
 		 
 	}
-	
-	
+
+	public static int px2dp(Context context, int px){
+		int density = (int) context.getResources().getDisplayMetrics().density;
+		return px/density;
+	}
+
+	public static int dp2px(Context context,int dp){
+		int density = (int) context.getResources().getDisplayMetrics().density;
+		return dp*density;
+	}
 	
 	
 }
