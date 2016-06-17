@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.bean.NewGoodBean;
+import cn.gen.fulicenter.utils.ImageUtils;
 
 /**
  * Created by Administrator on 2016/6/15.
@@ -38,8 +39,8 @@ public class GoodAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public boolean setMore(boolean isMore) {
-        return isMore;
+    public void setMore(boolean more){
+        isMore=more;
     }
 
     public GoodAdapter(Context mContext, ArrayList<NewGoodBean> mGoodList) {
@@ -74,6 +75,7 @@ public class GoodAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             final NewGoodBean good = mGoodList.get(position);
             goodHolder.tvGoodName.setText(good.getGoodsName());
             goodHolder.tvGoodPrice.setText(good.getCurrencyPrice());
+            ImageUtils.setNewGoodThumb(good.getGoodsThumb(),goodHolder.nivThumb);
         }
 
     }

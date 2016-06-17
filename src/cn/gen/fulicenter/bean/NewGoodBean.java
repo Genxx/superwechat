@@ -1,10 +1,11 @@
 package cn.gen.fulicenter.bean;
 
 
+
 import java.io.Serializable;
 
 /**
- * Created by Administrator on 2016/6/13.
+ * Created by ucai001 on 2016/3/1.
  */
 public class NewGoodBean implements Serializable {
 
@@ -39,157 +40,157 @@ public class NewGoodBean implements Serializable {
     private String currencyPrice;
     private String promotePrice;
     private String rankPrice;
-    private boolean ispromote;
+    private boolean isPromote;
     private String goodsThumb;
     private String goodsImg;
     private int colorId;
     private String colorName;
     private String colorCode;
     private String colorUrl;
-    private int addTime;
-
-    public int getId() {
-        return id;
-    }
+    private long addTime;
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getGoodsId() {
-        return goodsId;
     }
 
     public void setGoodsId(int goodsId) {
         this.goodsId = goodsId;
     }
 
-    public int getCatId() {
-        return catId;
-    }
-
     public void setCatId(int catId) {
         this.catId = catId;
-    }
-
-    public String getGoodsName() {
-        return goodsName;
     }
 
     public void setGoodsName(String goodsName) {
         this.goodsName = goodsName;
     }
 
-    public String getGoodsEnglishName() {
-        return goodsEnglishName;
-    }
-
     public void setGoodsEnglishName(String goodsEnglishName) {
         this.goodsEnglishName = goodsEnglishName;
-    }
-
-    public String getGoodsBrief() {
-        return goodsBrief;
     }
 
     public void setGoodsBrief(String goodsBrief) {
         this.goodsBrief = goodsBrief;
     }
 
-    public String getShopPrice() {
-        return shopPrice;
-    }
-
     public void setShopPrice(String shopPrice) {
         this.shopPrice = shopPrice;
-    }
-
-    public String getCurrencyPrice() {
-        return currencyPrice;
     }
 
     public void setCurrencyPrice(String currencyPrice) {
         this.currencyPrice = currencyPrice;
     }
 
-    public String getPromotePrice() {
-        return promotePrice;
-    }
-
     public void setPromotePrice(String promotePrice) {
         this.promotePrice = promotePrice;
-    }
-
-    public String getRankPrice() {
-        return rankPrice;
     }
 
     public void setRankPrice(String rankPrice) {
         this.rankPrice = rankPrice;
     }
 
-    public boolean isPromote() {
-        return ispromote;
-    }
-
-    public void setPromote(boolean promote) {
-        this.ispromote = promote;
-    }
-
-    public String getGoodsThumb() {
-        return goodsThumb;
+    public void setIsPromote(boolean isPromote) {
+        this.isPromote = isPromote;
     }
 
     public void setGoodsThumb(String goodsThumb) {
         this.goodsThumb = goodsThumb;
     }
 
-    public String getGoodsImg() {
-        return goodsImg;
-    }
-
     public void setGoodsImg(String goodsImg) {
         this.goodsImg = goodsImg;
-    }
-
-    public int getColorId() {
-        return colorId;
     }
 
     public void setColorId(int colorId) {
         this.colorId = colorId;
     }
 
-    public String getColorName() {
-        return colorName;
-    }
-
     public void setColorName(String colorName) {
         this.colorName = colorName;
-    }
-
-    public String getColorCode() {
-        return colorCode;
     }
 
     public void setColorCode(String colorCode) {
         this.colorCode = colorCode;
     }
 
-    public String getColorUrl() {
-        return colorUrl;
-    }
-
     public void setColorUrl(String colorUrl) {
         this.colorUrl = colorUrl;
     }
 
-    public int getAddTime() {
-        return addTime;
+    public void setAddTime(long addTime) {
+        this.addTime = addTime;
     }
 
-    public void setAddTime(int addTime) {
-        this.addTime = addTime;
+    public int getId() {
+        return id;
+    }
+
+    public int getGoodsId() {
+        return goodsId;
+    }
+
+    public int getCatId() {
+        return catId;
+    }
+
+    public String getGoodsName() {
+        return goodsName;
+    }
+
+    public String getGoodsEnglishName() {
+        return goodsEnglishName;
+    }
+
+    public String getGoodsBrief() {
+        return goodsBrief;
+    }
+
+    public String getShopPrice() {
+        return shopPrice;
+    }
+
+    public String getCurrencyPrice() {
+        return currencyPrice;
+    }
+
+    public String getPromotePrice() {
+        return promotePrice;
+    }
+
+    public String getRankPrice() {
+        return rankPrice;
+    }
+
+    public boolean isPromote() {
+        return isPromote;
+    }
+
+    public String getGoodsThumb() {
+        return goodsThumb;
+    }
+
+    public String getGoodsImg() {
+        return goodsImg;
+    }
+
+    public int getColorId() {
+        return colorId;
+    }
+
+    public String getColorName() {
+        return colorName;
+    }
+
+    public String getColorCode() {
+        return colorCode;
+    }
+
+    public String getColorUrl() {
+        return colorUrl;
+    }
+
+    public long getAddTime() {
+        return addTime;
     }
 
     @Override
@@ -205,7 +206,7 @@ public class NewGoodBean implements Serializable {
                 ", currencyPrice='" + currencyPrice + '\'' +
                 ", promotePrice='" + promotePrice + '\'' +
                 ", rankPrice='" + rankPrice + '\'' +
-                ", promote=" + ispromote +
+                ", isPromote=" + isPromote +
                 ", goodsThumb='" + goodsThumb + '\'' +
                 ", goodsImg='" + goodsImg + '\'' +
                 ", colorId=" + colorId +

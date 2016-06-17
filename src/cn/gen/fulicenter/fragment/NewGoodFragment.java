@@ -8,6 +8,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,6 @@ import com.android.volley.Response;
 
 import java.util.ArrayList;
 
-import cn.gen.fulicenter.D;
 import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.activity.FuliCenterMainActivity;
@@ -92,6 +92,7 @@ public class NewGoodFragment extends Fragment {
                         super.onScrolled(recyclerView, dx, dy);
                         //获取最后列表项的下标
                         lastItemPosition = mGidLayoutManager.findLastVisibleItemPosition();
+                        //解决RecyclerView和SeipeRefreshLayout公用存在的bug
                         mSwipeRefreshLayout.setEnabled(mGidLayoutManager
                         .findFirstCompletelyVisibleItemPosition() == 0);
                     }
@@ -126,17 +127,21 @@ public class NewGoodFragment extends Fragment {
     }
 
     private void initData() {
-       getPath(pageId);
-        mContext.executeRequest(new GsonRequest<NewGoodBean[]>(path,
-                NewGoodBean[].class,responseDownloadNewGoodListener(),
-                mContext.errorListener()));
+        try {
+            getPath(pageId);
+            mContext.executeRequest(new GsonRequest<NewGoodBean[]>(path,
+                    NewGoodBean[].class,responseDownloadNewGoodListener(),
+                    mContext.errorListener()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private Response.Listener<NewGoodBean[]> responseDownloadNewGoodListener() {
         return new Response.Listener<NewGoodBean[]>(){
-
             @Override
             public void onResponse(NewGoodBean[] newGoodBeen) {
+                Log.i("main", "main:+++++++++++++++++++++++++++++++++++++++++++"+newGoodBeen);
                 if(newGoodBeen!=null){
                     mAdapter.setMore(true);
                     mSwipeRefreshLayout.setRefreshing(false);
@@ -160,7 +165,7 @@ public class NewGoodFragment extends Fragment {
 
     private String getPath(int pageId){
         try {
-            String path = new ApiParams()
+            path = new ApiParams()
                     .with(I.NewAndBoutiqueGood.CAT_ID, I.CAT_ID +"")
                     .with(I.PAGE_ID, pageId + "")
                     .with(I.PAGE_SIZE, I.PAGE_SIZE_DEFAULT +"")
@@ -168,7 +173,7 @@ public class NewGoodFragment extends Fragment {
             return path;
         } catch (Exception e) {
             e.printStackTrace();
-        }  
+        }
         return null;
     }
     

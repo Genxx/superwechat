@@ -141,7 +141,7 @@ MERGED from [com.android.support:support-v4:23.2.0] D:\SuperWeChat\superwechat\b
 	android:icon
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:46:9-45
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:44:9-47
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:44:9-46
 activity#cn.gen.fulicenter.activity.MainActivity
 ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:48:9-68
 	android:name

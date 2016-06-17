@@ -241,7 +241,7 @@ public interface I {
     public final int SORT_BY_ADDTIME_ASC=3;
     public final int SORT_BY_ADDTIME_DESC=4;
 
-    String AVATAR_PATH 								= 		"//SuperWeChat/superwechatDB/superwechatDB/";
+    String AVATAR_PATH 								= 		"//fulicenter_server_database/FuLiCenter-data";
     String ISON8859_1 								= 		"iso8859-1";
     String UTF_8 									= 		"utf-8";
     String PAGE_ID 									= 		"page_id";						//分页的起始下标

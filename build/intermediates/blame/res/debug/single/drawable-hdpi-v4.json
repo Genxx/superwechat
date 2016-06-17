@@ -748,12 +748,12 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\scan.png"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\beecloud_logo.png",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\beecloud_logo.png"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\order_list4.png",
         "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\order_list4.png"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\beecloud_logo.png",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\drawable-hdpi\\beecloud_logo.png"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mm_title_back.png",
