@@ -191,7 +191,7 @@ public class NewGoodFragment extends Fragment {
         mRecyclerView = (RecyclerView) layout.findViewById(R.id.rv_newgood);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(mGidLayoutManager);
-        mAdapter = new GoodAdapter(mContext,mGoodList);
+        mAdapter = new GoodAdapter(mContext,mGoodList,I.SORT_BY_ADDTIME_DESC);
         mRecyclerView.setAdapter(mAdapter);
     }
 }
