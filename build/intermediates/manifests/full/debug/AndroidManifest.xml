@@ -50,7 +50,14 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <!-- 商品详情 -->
+        <activity
+            android:name="cn.gen.fulicenter.activity.GoodDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" >
+        </activity>
 
         <!-- 开屏页 -->
         <activity

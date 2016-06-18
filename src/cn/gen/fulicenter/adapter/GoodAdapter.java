@@ -1,6 +1,7 @@
 package cn.gen.fulicenter.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +15,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import cn.gen.fulicenter.D;
 import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
+import cn.gen.fulicenter.activity.GoodDetailActivity;
 import cn.gen.fulicenter.bean.NewGoodBean;
 import cn.gen.fulicenter.utils.ImageUtils;
 
@@ -86,23 +89,31 @@ public class GoodAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             goodHolder.tvGoodName.setText(good.getGoodsName());
             goodHolder.tvGoodPrice.setText(good.getCurrencyPrice());
             ImageUtils.setNewGoodThumb(good.getGoodsThumb(), goodHolder.nivThumb);
+
+            goodHolder.layoutGood.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mContext.startActivity(new Intent(mContext, GoodDetailActivity.class)
+                            .putExtra(D.NewGood.KEY_GOODS_ID, good.getGoodsId()));
+                }
+            });
+            }
+
         }
 
-    }
-
-    @Override
-    public int getItemCount() {
-        return mGoodList == null ? 1 : mGoodList.size() + 1;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if (position == getItemCount() - 1) {
-            return I.TYPE_FOOTER;
-        } else {
-            return I.TYPE_ITEM;
+        @Override
+        public int getItemCount () {
+            return mGoodList == null ? 1 : mGoodList.size() + 1;
         }
-    }
+
+        @Override
+        public int getItemViewType ( int position){
+            if (position == getItemCount() - 1) {
+                return I.TYPE_FOOTER;
+            } else {
+                return I.TYPE_ITEM;
+            }
+        }
 
     public void initItems(ArrayList<NewGoodBean> list) {
         if (mGoodList != null && !mGoodList.isEmpty()) {
@@ -126,30 +137,29 @@ public class GoodAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 int result = 0;
                 switch (sortBy) {
                     case I.SORT_BY_ADDTIME_ASC:
-                        result=(int)(g1.getAddTime()-g2.getAddTime());
+                        result = (int) (g1.getAddTime() - g2.getAddTime());
                         break;
                     case I.SORT_BY_ADDTIME_DESC:
-                        result=(int)(g2.getAddTime()-g1.getAddTime());
+                        result = (int) (g2.getAddTime() - g1.getAddTime());
                         break;
-                    case I.SORT_BY_PRICE_ASC:
-                    {
-                        int p1=convertPrice(g1.getCurrencyPrice());
-                        int p2=convertPrice(g2.getCurrencyPrice());
-                        result = p1-p2;
+                    case I.SORT_BY_PRICE_ASC: {
+                        int p1 = convertPrice(g1.getCurrencyPrice());
+                        int p2 = convertPrice(g2.getCurrencyPrice());
+                        result = p1 - p2;
                     }
-                        break;
-                    case I.SORT_BY_PRICE_DESC:
-                    {
-                        int p1=convertPrice(g1.getCurrencyPrice());
-                        int p2=convertPrice(g2.getCurrencyPrice());
-                        result = p2-p1;
+                    break;
+                    case I.SORT_BY_PRICE_DESC: {
+                        int p1 = convertPrice(g1.getCurrencyPrice());
+                        int p2 = convertPrice(g2.getCurrencyPrice());
+                        result = p2 - p1;
                     }
-                        break;
+                    break;
                 }
                 return result;
             }
-            private int convertPrice(String price){
-                price = price.substring(price.indexOf("￥")+1);
+
+            private int convertPrice(String price) {
+                price = price.substring(price.indexOf("￥") + 1);
                 int p1 = Integer.parseInt(price);
                 return p1;
             }

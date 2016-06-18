@@ -1,16 +1,14 @@
 package cn.gen.fulicenter.bean;
 
-import android.widget.ProgressBar;
-
 
 import java.io.Serializable;
 import java.util.Arrays;
-import java.util.List;
 
 /**
- * Created by Administrator on 2016/6/13.
+ * Created by ucai001 on 2016/3/1.
  */
 public class GoodDetailsBean implements Serializable {
+
     /**
      * id : 280
      * goodsId : 7677
@@ -56,194 +54,150 @@ public class GoodDetailsBean implements Serializable {
      * albums : [{"pid":7677,"imgId":28296,"imgUrl":"201509/goods_img/7677_P_1442391216432.png","thumbUrl":"no_picture.gif"}]
      */
 
-    private ProgressBar[] properties;
-    private AlbumBean[] albums;
-
-    public AlbumBean[] getAlbums() {
-        return albums;
-    }
-
-    public void setAlbums(AlbumBean[] albums) {
-        this.albums = albums;
-    }
-
-    public int getId() {
-        return id;
-    }
+    private PropertyBean[] properties;
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getGoodsId() {
-        return goodsId;
     }
 
     public void setGoodsId(int goodsId) {
         this.goodsId = goodsId;
     }
 
-    public int getCatId() {
-        return catId;
-    }
-
     public void setCatId(int catId) {
         this.catId = catId;
-    }
-
-    public String getGoodsName() {
-        return goodsName;
     }
 
     public void setGoodsName(String goodsName) {
         this.goodsName = goodsName;
     }
 
-    public String getGoodsEnglishName() {
-        return goodsEnglishName;
-    }
-
     public void setGoodsEnglishName(String goodsEnglishName) {
         this.goodsEnglishName = goodsEnglishName;
-    }
-
-    public String getGoodsBrief() {
-        return goodsBrief;
     }
 
     public void setGoodsBrief(String goodsBrief) {
         this.goodsBrief = goodsBrief;
     }
 
-    public String getShopPrice() {
-        return shopPrice;
-    }
-
     public void setShopPrice(String shopPrice) {
         this.shopPrice = shopPrice;
-    }
-
-    public String getCurrencyPrice() {
-        return currencyPrice;
     }
 
     public void setCurrencyPrice(String currencyPrice) {
         this.currencyPrice = currencyPrice;
     }
 
-    public String getPromotePrice() {
-        return promotePrice;
-    }
-
     public void setPromotePrice(String promotePrice) {
         this.promotePrice = promotePrice;
-    }
-
-    public String getRankPrice() {
-        return rankPrice;
     }
 
     public void setRankPrice(String rankPrice) {
         this.rankPrice = rankPrice;
     }
 
-    public String getGoodsThumb() {
-        return goodsThumb;
-    }
-
     public void setGoodsThumb(String goodsThumb) {
         this.goodsThumb = goodsThumb;
-    }
-
-    public String getGoodsImg() {
-        return goodsImg;
     }
 
     public void setGoodsImg(String goodsImg) {
         this.goodsImg = goodsImg;
     }
 
-    public long getAddTime() {
-        return addTime;
-    }
-
     public void setAddTime(long addTime) {
         this.addTime = addTime;
-    }
-
-    public String getShareUrl() {
-        return shareUrl;
     }
 
     public void setShareUrl(String shareUrl) {
         this.shareUrl = shareUrl;
     }
 
+    public void setPromote(boolean isPromote) {
+        this.isPromote = isPromote;
+    }
+
+    public void setProperties(PropertyBean[] properties) {
+        this.properties = properties;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getGoodsId() {
+        return goodsId;
+    }
+
+    public int getCatId() {
+        return catId;
+    }
+
+    public String getGoodsName() {
+        return goodsName;
+    }
+
+    public String getGoodsEnglishName() {
+        return goodsEnglishName;
+    }
+
+    public String getGoodsBrief() {
+        return goodsBrief;
+    }
+
+    public String getShopPrice() {
+        return shopPrice;
+    }
+
+    public String getCurrencyPrice() {
+        return currencyPrice;
+    }
+
+    public String getPromotePrice() {
+        return promotePrice;
+    }
+
+    public String getRankPrice() {
+        return rankPrice;
+    }
+
+    public String getGoodsThumb() {
+        return goodsThumb;
+    }
+
+    public String getGoodsImg() {
+        return goodsImg;
+    }
+
+    public long getAddTime() {
+        return addTime;
+    }
+
+    public String getShareUrl() {
+        return shareUrl;
+    }
+
     public boolean isPromote() {
         return isPromote;
     }
 
-    public void setPromote(boolean promote) {
-        isPromote = promote;
-    }
-
-    public ProgressBar[] getProperties() {
+    public PropertyBean[] getProperties() {
         return properties;
-    }
-
-    public void setProperties(ProgressBar[] properties) {
-        this.properties = properties;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof GoodDetailsBean)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         GoodDetailsBean that = (GoodDetailsBean) o;
 
-        if (getId() != that.getId()) return false;
-        if (getGoodsId() != that.getGoodsId()) return false;
-        if (getCatId() != that.getCatId()) return false;
-        if (getAddTime() != that.getAddTime()) return false;
-        if (isPromote() != that.isPromote()) return false;
-        if (!getGoodsName().equals(that.getGoodsName())) return false;
-        if (!getGoodsEnglishName().equals(that.getGoodsEnglishName())) return false;
-        if (!getGoodsBrief().equals(that.getGoodsBrief())) return false;
-        if (!getShopPrice().equals(that.getShopPrice())) return false;
-        if (!getCurrencyPrice().equals(that.getCurrencyPrice())) return false;
-        if (!getPromotePrice().equals(that.getPromotePrice())) return false;
-        if (!getRankPrice().equals(that.getRankPrice())) return false;
-        if (!getGoodsThumb().equals(that.getGoodsThumb())) return false;
-        if (!getGoodsImg().equals(that.getGoodsImg())) return false;
-        if (!getShareUrl().equals(that.getShareUrl())) return false;
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        if (!Arrays.equals(getProperties(), that.getProperties())) return false;
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        return Arrays.equals(getAlbums(), that.getAlbums());
+        return goodsId == that.goodsId;
 
     }
 
     @Override
     public int hashCode() {
-        int result = getId();
-        result = 31 * result + getGoodsId();
-        result = 31 * result + getCatId();
-        result = 31 * result + getGoodsName().hashCode();
-        result = 31 * result + getGoodsEnglishName().hashCode();
-        result = 31 * result + getGoodsBrief().hashCode();
-        result = 31 * result + getShopPrice().hashCode();
-        result = 31 * result + getCurrencyPrice().hashCode();
-        result = 31 * result + getPromotePrice().hashCode();
-        result = 31 * result + getRankPrice().hashCode();
-        result = 31 * result + getGoodsThumb().hashCode();
-        result = 31 * result + getGoodsImg().hashCode();
-        result = 31 * result + (int) (getAddTime() ^ (getAddTime() >>> 32));
-        result = 31 * result + getShareUrl().hashCode();
-        result = 31 * result + (isPromote() ? 1 : 0);
-        result = 31 * result + Arrays.hashCode(getProperties());
-        result = 31 * result + Arrays.hashCode(getAlbums());
-        return result;
+        return goodsId;
     }
 
     @Override
@@ -265,7 +219,6 @@ public class GoodDetailsBean implements Serializable {
                 ", shareUrl='" + shareUrl + '\'' +
                 ", isPromote=" + isPromote +
                 ", properties=" + Arrays.toString(properties) +
-                ", albums=" + Arrays.toString(albums) +
                 '}';
     }
 }

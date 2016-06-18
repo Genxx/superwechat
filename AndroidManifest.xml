@@ -52,7 +52,17 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan">
+
+        </activity>
+        <!--商品详情-->
+        <activity
+            android:name=".activity.GoodDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            >
+
+        </activity>
 
         <!-- 开屏页 -->
         <activity
