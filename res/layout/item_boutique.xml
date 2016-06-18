@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_boutique_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    >
+<com.android.volley.toolbox.NetworkImageView
+    android:id="@+id/ivBoutqueImg"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:src="@drawable/nopic"
+    android:scaleType="fitXY"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:gravity="top"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_toRightOf="@+id/ivBoutqueImg"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/tvBoutiqueTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/list_item_title"
+            android:layout_marginTop="20dp"
+            android:ellipsize="end"
+            android:textSize="16sp"
+            android:text="Aug 28 209"/>
+        <TextView
+            android:id="@+id/tvBoutiqueName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/list_item_name"
+            android:layout_marginTop="20dp"
+            android:ellipsize="end"
+            android:textSize="20sp"
+            android:text="冬秋衣着大换血"/>
+        <TextView
+            android:id="@+id/tvBoutiqueDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_normal"
+            android:layout_marginTop="18dp"
+            android:textSize="18sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="2015F/W Trends Report"/>
+    </LinearLayout>
+</RelativeLayout>
