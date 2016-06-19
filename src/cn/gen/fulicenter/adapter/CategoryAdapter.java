@@ -1,6 +1,7 @@
 package cn.gen.fulicenter.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import cn.gen.fulicenter.D;
 import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
+import cn.gen.fulicenter.activity.CategoryChildActivity;
 import cn.gen.fulicenter.bean.CategoryChildBean;
 import cn.gen.fulicenter.bean.CategoryGroupBean;
 import cn.gen.fulicenter.utils.ImageUtils;
@@ -96,7 +98,7 @@ public class CategoryAdapter extends BaseExpandableListAdapter{
     }
 
     @Override
-    public View getChildView(int groupPosition, int childPosition, boolean isExpanded, View layout, ViewGroup parent) {
+    public View getChildView(final int groupPosition, int childPosition, boolean isExpanded, View layout, ViewGroup parent) {
         ViewChildHolder holder=null;
         if(layout==null){
             holder = new ViewChildHolder();
@@ -115,6 +117,15 @@ public class CategoryAdapter extends BaseExpandableListAdapter{
         String imgUrl =child.getImageUrl();
         String url = I.DOWNLOAD_DOWNLOAD_CATEGORY_CHILD_IMAGE_URL+imgUrl;
         ImageUtils.setThumb(url,holder.ivCategoryCHildThumb);
+        holder.layoutChild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mContext.startActivity(new Intent(mContext, CategoryChildActivity.class)
+                        .putExtra(I.CategoryChild.CAT_ID,child.getId())
+                        .putExtra(I.CategoryGroup.NAME,mGroupList.get(groupPosition).getName())
+                        .putExtra("childList",(ArrayList<CategoryChildBean>)mChildList.get(groupPosition)));
+            }
+        });
         return layout;
     }
 
