@@ -75,7 +75,6 @@ public class BaseActivity extends FragmentActivity {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
                 System.out.print(volleyError.getMessage());
-                Log.i("main",volleyError.getMessage());
             }
         };
     }

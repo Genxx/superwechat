@@ -28,7 +28,8 @@
             android:textColor="@color/list_item_title"
             android:layout_marginTop="20dp"
             android:ellipsize="end"
-            android:textSize="16sp"
+            android:maxLines="2"
+            android:textSize="14sp"
             android:text="Aug 28 209"/>
         <TextView
             android:id="@+id/tvBoutiqueName"
@@ -37,7 +38,8 @@
             android:textColor="@color/list_item_name"
             android:layout_marginTop="20dp"
             android:ellipsize="end"
-            android:textSize="20sp"
+            android:textSize="16sp"
+            android:maxLines="2"
             android:text="冬秋衣着大换血"/>
         <TextView
             android:id="@+id/tvBoutiqueDescription"
@@ -45,7 +47,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/gray_normal"
             android:layout_marginTop="18dp"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:maxLines="2"
             android:ellipsize="end"
             android:text="2015F/W Trends Report"/>

@@ -19,7 +19,6 @@ import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.activity.FuliCenterMainActivity;
 import cn.gen.fulicenter.adapter.BoutiqueAdapter;
-import cn.gen.fulicenter.adapter.GoodAdapter;
 import cn.gen.fulicenter.bean.BoutiqueBean;
 import cn.gen.fulicenter.data.ApiParams;
 import cn.gen.fulicenter.data.GsonRequest;
