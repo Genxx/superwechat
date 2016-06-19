@@ -192,6 +192,10 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\commom_back_btn.xml"
     },
     {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\item_category_group.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\item_category_group.xml"
+    },
+    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_invite_msg.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\row_invite_msg.xml"
     },
@@ -210,6 +214,10 @@
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_groups.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\fragment_groups.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_category.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\fragment_category.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_chatroom.xml",
@@ -346,6 +354,10 @@
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_good_details.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_good_details.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\item_category_child.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\item_category_child.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_expression.xml",

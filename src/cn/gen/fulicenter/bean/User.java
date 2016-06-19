@@ -1,11 +1,10 @@
 package cn.gen.fulicenter.bean;
 
 
-
 /**
  * EMUser entity. @author MyEclipse Persistence Tools
  */
-public class User extends Message implements java.io.Serializable {
+public class User extends Location implements java.io.Serializable {
 	private static final long serialVersionUID = 6848921231724157394L;
 
 	// Fields
@@ -13,12 +12,12 @@ public class User extends Message implements java.io.Serializable {
 	/**
 	 * 
 	 */
-	private Integer muserId;//用户在环信服务器上的id
-	private String muserName;//用户在环信服务器上的账号
-	private String muserPassword;//用户在环信服务器上的密码
-	private String muserNick;//用户在环信服务器上的昵称
-	private Integer muserUnreadMsgCount=0;//用户位置信息
-	private String header;//保存昵称首字母的索引
+	private Integer muserId;  //user id
+	private String muserName;
+	private String muserPassword;
+	private String muserNick;
+	private Integer muserUnreadMsgCount=0;
+	private  String header;  //名字首字母
 
 	// Constructors
 
@@ -96,25 +95,26 @@ public class User extends Message implements java.io.Serializable {
 	}
 
 	@Override
+	public String toString() {
+		return "EMUser [MUserId=" + muserId + ", MUserName=" + muserName
+				+ ", MUserPassword=" + muserPassword + ", MUserNick="
+				+ muserNick + ", MUserUnreadMsgCount=" + muserUnreadMsgCount
+				+",header="+header+ "]";
+	}
+
+	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (!(o instanceof User)) return false;
+
 		User user = (User) o;
+
 		return muserName.equals(user.muserName);
+
 	}
 
 	@Override
 	public int hashCode() {
 		return muserName.hashCode();
 	}
-
-	@Override
-	public String toString() {
-		return "EMUser [MUserId=" + muserId + ", MUserName=" + muserName
-				+ ", MUserPassword=" + muserPassword + ", MUserNick="
-				+ muserNick + ", MUserUnreadMsgCount=" + muserUnreadMsgCount
-				+ ",header=" + header + "]";
-	}
-	
-
 }

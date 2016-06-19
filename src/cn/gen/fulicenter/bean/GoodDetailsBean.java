@@ -1,6 +1,7 @@
 package cn.gen.fulicenter.bean;
 
 
+
 import java.io.Serializable;
 import java.util.Arrays;
 

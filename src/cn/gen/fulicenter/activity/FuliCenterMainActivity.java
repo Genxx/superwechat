@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.fragment.BoutiqueFragment;
+import cn.gen.fulicenter.fragment.CategoryFragment;
 import cn.gen.fulicenter.fragment.NewGoodFragment;
 
 public class FuliCenterMainActivity extends BaseActivity {
@@ -21,8 +22,9 @@ public class FuliCenterMainActivity extends BaseActivity {
     RadioButton mRadionPersonalCenter;
     NewGoodFragment mNewGoodFragment;
     BoutiqueFragment mBoutiqueFragment;
+    CategoryFragment mCategoryFragment;
     RadioButton[] mRadios = new RadioButton[5];
-    Fragment[] mFragments = new Fragment[2];
+    Fragment[] mFragments = new Fragment[3];
     private int index;
     // 当前fragment的index
     private int currentTabIndex;
@@ -37,8 +39,8 @@ public class FuliCenterMainActivity extends BaseActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fragment_container, mNewGoodFragment)
-                .add(R.id.fragment_container, mBoutiqueFragment)
-                .hide(mBoutiqueFragment)
+                .add(R.id.fragment_container, mBoutiqueFragment).hide(mBoutiqueFragment)
+                .add(R.id.fragment_container, mCategoryFragment).hide(mCategoryFragment)
                 .show(mNewGoodFragment)
                 .commit();
 
@@ -47,8 +49,11 @@ public class FuliCenterMainActivity extends BaseActivity {
     private void initFragment() {
         mNewGoodFragment = new NewGoodFragment();
         mBoutiqueFragment = new BoutiqueFragment();
+       mCategoryFragment = new CategoryFragment();
         mFragments[0] = mNewGoodFragment;
         mFragments[1] = mBoutiqueFragment;
+        mFragments[2] = mCategoryFragment;
+
     }
 
     private void initView() {

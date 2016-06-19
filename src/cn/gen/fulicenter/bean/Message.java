@@ -3,8 +3,8 @@ package cn.gen.fulicenter.bean;
 public class Message {
 
 	boolean result;
-	int msg;//就是我们在String中使用的消息。
-	
+	int msg;
+
 	public Message() {
 		super();
 	}
@@ -22,7 +22,7 @@ public class Message {
 	public void setResult(boolean result) {
 		this.result = result;
 	}
-	
+
 	public int getMsg() {
 		return msg;
 	}
@@ -35,5 +35,5 @@ public class Message {
 	public String toString() {
 		return "Message [result=" + result + ", msg=" + msg + "]";
 	}
-	
+
 }

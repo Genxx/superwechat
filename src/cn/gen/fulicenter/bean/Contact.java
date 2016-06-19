@@ -1,26 +1,37 @@
 package cn.gen.fulicenter.bean;
 
-import android.annotation.TargetApi;
-import android.os.Build;
-
-import java.util.Objects;
-
 /**
  * Contact entity. @author MyEclipse Persistence Tools
  */
 public class Contact extends User implements java.io.Serializable {
 	private static final long serialVersionUID = -2183229871248294573L;
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Contact)) return false;
+
+		Contact contact = (Contact) o;
+
+		return mcontactId.equals(contact.mcontactId);
+
+	}
+
+	@Override
+	public int hashCode() {
+		return mcontactId.hashCode();
+	}
+
 	/**
 	 * 
 	 */
 	// Fields
 
-	private Integer mcontactId;//这条好友关系在数据库里的id
-	private Integer mcontactUserId;//好友的id
-	private String mcontactUserName;//好友的名字
-	private Integer mcontactCid;//自己的id
-	private String mcontactCname;//自己的名字
+	private Integer mcontactId;
+	private Integer mcontactUserId;
+	private String mcontactUserName;
+	private Integer mcontactCid;
+	private String mcontactCname;
 
 	// Constructors
 
@@ -87,18 +98,5 @@ public class Contact extends User implements java.io.Serializable {
 				+ mcontactCname + "]";
 	}
 
-	@TargetApi(Build.VERSION_CODES.KITKAT)
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		Contact contact = (Contact) o;
-		return Objects.equals(mcontactId, contact.mcontactId);
-	}
-
-	@TargetApi(Build.VERSION_CODES.KITKAT)
-	@Override
-	public int hashCode() {
-		return Objects.hash(mcontactId);
-	}
+	
 }
