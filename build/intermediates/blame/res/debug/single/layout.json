@@ -40,6 +40,10 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\row_sent_video.xml"
     },
     {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_boutique_child.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_boutique_child.xml"
+    },
+    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\expression_gridview.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\expression_gridview.xml"
     },

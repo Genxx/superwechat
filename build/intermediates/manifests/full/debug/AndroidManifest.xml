@@ -59,6 +59,13 @@
             android:theme="@style/horizontal_slide" >
         </activity>
 
+        <!-- 精品二级界面 -->
+        <activity
+            android:name="cn.gen.fulicenter.activity.BoutiqueChildActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" >
+        </activity>
+
         <!-- 开屏页 -->
         <activity
             android:name="cn.gen.fulicenter.activity.SplashActivity"

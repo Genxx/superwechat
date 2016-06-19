@@ -59,9 +59,14 @@
         <activity
             android:name=".activity.GoodDetailActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/horizontal_slide"
-            >
+            android:theme="@style/horizontal_slide">
+        </activity>
 
+        <!--精品二级界面-->
+        <activity
+            android:name=".activity.BoutiqueChildActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide">
         </activity>
 
         <!-- 开屏页 -->

@@ -1,6 +1,7 @@
 package cn.gen.fulicenter.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
+import cn.gen.fulicenter.activity.BoutiqueChildActivity;
 import cn.gen.fulicenter.bean.BoutiqueBean;
 import cn.gen.fulicenter.utils.ImageUtils;
 
@@ -79,6 +81,15 @@ public class BoutiqueAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             boutiqueViewHolder.tvName.setText(boutiqueBean.getName());
             boutiqueViewHolder.tvPrice.setText(boutiqueBean.getTitle());
             ImageUtils.setNewGoodThumb(boutiqueBean.getImageurl(), boutiqueViewHolder.nivThumb);
+
+            boutiqueViewHolder.layoutItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mContext.startActivity(new Intent(mContext, BoutiqueChildActivity.class)
+                            .putExtra(I.Boutique.NAME, boutiqueBean.getName())
+                            .putExtra(I.Boutique.CAT_ID, boutiqueBean.getId()));
+                }
+            });
         }
     }
 
