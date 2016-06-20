@@ -4,41 +4,13 @@
     android:layout_height="match_parent"
     android:background="#eff2f6"
     android:orientation="vertical" >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#fff"
-        android:paddingTop="5dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="15dip"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/back_press"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="账号登录"
-                android:textColor="#030303"
-                android:textSize="25dp"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="10dp"/>
-
-        </LinearLayout>
-    </LinearLayout>
+    <include layout="@layout/common_head_title_white"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="15dp">
 
         <RelativeLayout
             android:id="@+id/rl_username"
