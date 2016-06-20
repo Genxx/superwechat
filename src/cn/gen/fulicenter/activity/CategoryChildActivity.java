@@ -19,6 +19,7 @@ import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.adapter.GoodAdapter;
 import cn.gen.fulicenter.bean.CategoryChildBean;
+import cn.gen.fulicenter.bean.ColorBean;
 import cn.gen.fulicenter.bean.NewGoodBean;
 import cn.gen.fulicenter.data.ApiParams;
 import cn.gen.fulicenter.data.GsonRequest;
@@ -26,6 +27,7 @@ import cn.gen.fulicenter.utils.DisplayUtils;
 import cn.gen.fulicenter.utils.ImageUtils;
 import cn.gen.fulicenter.utils.Utils;
 import cn.gen.fulicenter.view.CatChildFilterButton;
+import cn.gen.fulicenter.view.ColorFilterButton;
 
 /**
  * Created by Administrator on 2016/6/15.
@@ -37,6 +39,7 @@ public class CategoryChildActivity extends BaseActivity {
     ArrayList<NewGoodBean> mGoodList;
     GoodAdapter mAdapter;
     private int pageId=0;
+    private int catId;
     private int actioin=I.ACTION_DOWNLOAD;
     String path;
     
@@ -63,6 +66,7 @@ public class CategoryChildActivity extends BaseActivity {
     CatChildFilterButton mCatChildFilterButton;
     String groupName;
     ArrayList<CategoryChildBean> mChildList;
+    ColorFilterButton mColorFilterButton;
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
@@ -148,13 +152,32 @@ public class CategoryChildActivity extends BaseActivity {
     private void initData() {
         try {
             mChildList = (ArrayList<CategoryChildBean>) getIntent().getSerializableExtra("childList");
+
             getPath(pageId);
             mContext.executeRequest(new GsonRequest<NewGoodBean[]>(path,
                     NewGoodBean[].class,responseDownloadNewGoodListener(),
                     mContext.errorListener()));
+            String colorPath=new ApiParams()
+                    .with(I.Color.CAT_ID,catId+"")
+                    .getRequestUrl(I.REQUEST_FIND_COLOR_LIST);
+            mContext.executeRequest(new GsonRequest<ColorBean[]>(colorPath,ColorBean[].class,
+                    responseDownloadColorListener(),mContext.errorListener()));
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private Response.Listener<ColorBean[]> responseDownloadColorListener() {
+        return new Response.Listener<ColorBean[]>() {
+            @Override
+            public void onResponse(ColorBean[] colorBean) {
+                if (colorBean!=null){
+                    mColorFilterButton.setVisibility(View.VISIBLE);
+                    ArrayList<ColorBean> list = Utils.array2List(colorBean);
+                    mColorFilterButton.setOnColorFilterClickListener(groupName,mChildList,list);
+                }
+            }
+        };
     }
 
     private Response.Listener<NewGoodBean[]> responseDownloadNewGoodListener() {
@@ -185,7 +208,7 @@ public class CategoryChildActivity extends BaseActivity {
 
     private String getPath(int pageId){
         try {
-            int catId = getIntent().getIntExtra(I.CategoryChild.CAT_ID, 0);
+            catId = getIntent().getIntExtra(I.CategoryChild.CAT_ID, 0);
             path = new ApiParams()
                     .with(I.NewAndBoutiqueGood.CAT_ID, catId +"")
                     .with(I.PAGE_ID, pageId + "")
@@ -221,6 +244,8 @@ public class CategoryChildActivity extends BaseActivity {
         mbtnPriceSort = (Button) findViewById(R.id.btn_add_time_sort);
         mCatChildFilterButton = (CatChildFilterButton) findViewById(R.id.btnCatChildFilter);
         mCatChildFilterButton.setText(groupName);
+        mColorFilterButton = (ColorFilterButton) findViewById(R.id.btnColorFilter);
+        mColorFilterButton.setVisibility(View.INVISIBLE);
     }
 
     class SortStateChangedListener implements View.OnClickListener{
