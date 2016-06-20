@@ -1,5 +1,6 @@
 package cn.gen.fulicenter.activity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
@@ -7,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.volley.Response;
@@ -16,11 +18,14 @@ import java.util.ArrayList;
 import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.adapter.GoodAdapter;
+import cn.gen.fulicenter.bean.CategoryChildBean;
 import cn.gen.fulicenter.bean.NewGoodBean;
 import cn.gen.fulicenter.data.ApiParams;
 import cn.gen.fulicenter.data.GsonRequest;
 import cn.gen.fulicenter.utils.DisplayUtils;
+import cn.gen.fulicenter.utils.ImageUtils;
 import cn.gen.fulicenter.utils.Utils;
+import cn.gen.fulicenter.view.CatChildFilterButton;
 
 /**
  * Created by Administrator on 2016/6/15.
@@ -40,21 +45,45 @@ public class CategoryChildActivity extends BaseActivity {
     RecyclerView mRecyclerView;
     TextView mtvHint;
     GridLayoutManager mGidLayoutManager;
+    /*按价格排序*/
+    Button mbtnPriceSort;
+    /**按上架时间排序**/
+    Button mbtnAddTimeSort;
+    /**商品按价格排序
+     * true:升序排序
+     flase:降序排序*/
+    boolean mSortByPriceAsc;
+    /**商品按上架时间
+     * true:升序排序
+     flase:降序排序*/
+    boolean mSortByAddTimeAsc;
+    /**当前排序**/
+    private int sortBy;
+
+    CatChildFilterButton mCatChildFilterButton;
+    String groupName;
+    ArrayList<CategoryChildBean> mChildList;
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_category_child);
         mContext = this;
+        sortBy = I.SORT_BY_ADDTIME_DESC;
         mGoodList = new ArrayList<NewGoodBean>();
+        mChildList = new ArrayList<CategoryChildBean>();
         initView();
-        setListener();
         initData();
+        setListener();
     }
 
     private void setListener() {
         setPullDownRefreshListener();
         setPullUpRefreshListener();
+        SortStateChangedListener mSortStateChangeListener = new SortStateChangedListener();
+        mbtnPriceSort.setOnClickListener(mSortStateChangeListener);
+        mbtnAddTimeSort.setOnClickListener(mSortStateChangeListener);
+        mCatChildFilterButton.setOnCatFilterClickListener(groupName,mChildList);
     }
 
     /**
@@ -118,6 +147,7 @@ public class CategoryChildActivity extends BaseActivity {
 
     private void initData() {
         try {
+            mChildList = (ArrayList<CategoryChildBean>) getIntent().getSerializableExtra("childList");
             getPath(pageId);
             mContext.executeRequest(new GsonRequest<NewGoodBean[]>(path,
                     NewGoodBean[].class,responseDownloadNewGoodListener(),
@@ -182,9 +212,54 @@ public class CategoryChildActivity extends BaseActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_category_child);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(mGidLayoutManager);
-        mAdapter = new GoodAdapter(mContext,mGoodList,I.SORT_BY_ADDTIME_DESC);
+        mAdapter = new GoodAdapter(mContext,mGoodList,sortBy);
         mRecyclerView.setAdapter(mAdapter);
-//        String boutiqueChildTitle = getIntent().getStringExtra(I.Boutique.NAME);
+        groupName = getIntent().getStringExtra(I.CategoryGroup.NAME);
+         String m = getIntent().getStringExtra(I.Boutique.NAME);
         DisplayUtils.initBack(mContext);
+        mbtnAddTimeSort = (Button) findViewById(R.id.btn_price_sort);
+        mbtnPriceSort = (Button) findViewById(R.id.btn_add_time_sort);
+        mCatChildFilterButton = (CatChildFilterButton) findViewById(R.id.btnCatChildFilter);
+        mCatChildFilterButton.setText(groupName);
+    }
+
+    class SortStateChangedListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            Drawable right = null;
+            int resId;
+            switch (view.getId()){
+                case R.id.btn_price_sort:
+                    if (mSortByPriceAsc){
+                        sortBy = I.SORT_BY_ADDTIME_ASC;
+                        right = mContext.getResources().getDrawable(R.drawable.arrow_order_up);
+                        resId = R.drawable.arrow_order_up;
+                    }else {
+                        sortBy = I.SORT_BY_ADDTIME_DESC;
+                        right = mContext.getResources().getDrawable(R.drawable.arrow_order_down);
+                        resId = R.drawable.arrow_order_down;
+                    }
+                    mSortByPriceAsc = !mSortByPriceAsc;
+                    right.setBounds(0,0, ImageUtils.getDrawableWidth(mContext,resId),ImageUtils.getDrawableHeight(mContext,resId));
+                    mbtnPriceSort.setCompoundDrawables(null,null,right,null);
+                    break;
+                case R.id.btn_add_time_sort:
+                    if (mSortByAddTimeAsc){
+                        sortBy = I.SORT_BY_ADDTIME_ASC;
+                        right = mContext.getResources().getDrawable(R.drawable.arrow_order_up);
+                        resId = R.drawable.arrow_order_up;
+                    }else {
+                        sortBy = I.SORT_BY_ADDTIME_DESC;
+                        right = mContext.getResources().getDrawable(R.drawable.arrow_order_down);
+                        resId = R.drawable.arrow_order_down;
+                    }
+                    mSortByAddTimeAsc = !mSortByAddTimeAsc;
+                    right.setBounds(0,0, ImageUtils.getDrawableWidth(mContext,resId),ImageUtils.getDrawableHeight(mContext,resId));
+                    mbtnAddTimeSort.setCompoundDrawables(null,null,right,null);
+                    break;
+            }
+            mAdapter.setSortBy(sortBy);
+        }
     }
 }

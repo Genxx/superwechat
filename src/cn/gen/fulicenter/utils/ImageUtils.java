@@ -14,6 +14,8 @@
 package cn.gen.fulicenter.utils;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Environment;
 
 import com.android.volley.toolbox.NetworkImageView;
@@ -90,4 +92,12 @@ public class ImageUtils {
 		imageView.setImageUrl(url,RequestManager.getImageLoader());
 	}
 
+	public static int getDrawableWidth(Context context,int resId){
+		Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), resId);
+		return bitmap.getWidth();
+	}
+	public static int getDrawableHeight(Context context,int resId){
+		Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), resId);
+		return bitmap.getHeight();
+	}
 }

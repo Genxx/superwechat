@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="35dp">
         <include layout="@layout/common_head_back"/>
-        <cn.ucai.fulicenter.view.CatChildFilterButton
+        <cn.gen.fulicenter.view.CatChildFilterButton
             android:id="@+id/btnCatChildFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
             android:background="@null"
             android:textColor="@color/white"
             android:text="分类"/>
-        <cn.ucai.fulicenter.view.ColorFilterButton
+        <cn.gen.fulicenter.view.ColorFilterButton
             android:id="@+id/btnColorFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
         android:background="@color/main_orange"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/btn_rice_sort"
+            android:id="@+id/btn_price_sort"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -49,7 +49,7 @@
             android:textSize="13sp"
             android:textColor="#000"/>
         <Button
-            android:id="@+id/ben_add_time_sort"
+            android:id="@+id/btn_add_time_sort"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

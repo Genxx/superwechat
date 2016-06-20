@@ -89,6 +89,8 @@ public class GoodDetailActivity extends BaseActivity {
                     tvGoodEnglishName.setText(mGood.getGoodsEnglishName());
                     tvGoodName.setText(mGood.getGoodsName());
                     wvGoodBrief.loadDataWithBaseURL(null, mGood.getGoodsBrief().trim(), D.TEXT_HTML, D.UTF_8, null);
+
+                    //初始化颜色面板
                     initColorBanner();
                 } else {
                     Utils.showToast(mContext,"商品详情下载失败", Toast.LENGTH_SHORT);

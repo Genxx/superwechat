@@ -1,5 +1,7 @@
 package cn.gen.fulicenter.video.util;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -100,6 +102,15 @@ public class Utils {
 		int density = (int) context.getResources().getDisplayMetrics().density;
 		return dp*density;
 	}
-	
-	
+
+	/**
+	 * 将数组转换为ArrayList集合
+	 * @param ary
+	 * @return
+	 */
+	public static <T> ArrayList<T> array2List(T[] ary){
+		List<T> list = Arrays.asList(ary);
+		ArrayList<T> arrayList=new ArrayList<T>(list);
+		return arrayList;
+	}
 }
