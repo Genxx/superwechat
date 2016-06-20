@@ -11,6 +11,7 @@ import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.fragment.BoutiqueFragment;
 import cn.gen.fulicenter.fragment.CategoryFragment;
 import cn.gen.fulicenter.fragment.NewGoodFragment;
+import cn.gen.fulicenter.fragment.PersonalCenterFragment;
 
 public class FuliCenterMainActivity extends BaseActivity {
 
@@ -23,8 +24,9 @@ public class FuliCenterMainActivity extends BaseActivity {
     NewGoodFragment mNewGoodFragment;
     BoutiqueFragment mBoutiqueFragment;
     CategoryFragment mCategoryFragment;
+    PersonalCenterFragment mPersonalCenterFragment;
     RadioButton[] mRadios = new RadioButton[5];
-    Fragment[] mFragments = new Fragment[3];
+    Fragment[] mFragments = new Fragment[5];
     private int index;
     // 当前fragment的index
     private int currentTabIndex;
@@ -41,6 +43,7 @@ public class FuliCenterMainActivity extends BaseActivity {
                 .add(R.id.fragment_container, mNewGoodFragment)
                 .add(R.id.fragment_container, mBoutiqueFragment).hide(mBoutiqueFragment)
                 .add(R.id.fragment_container, mCategoryFragment).hide(mCategoryFragment)
+                .add(R.id.fragment_container, mPersonalCenterFragment).hide(mPersonalCenterFragment)
                 .show(mNewGoodFragment)
                 .commit();
 
@@ -49,11 +52,12 @@ public class FuliCenterMainActivity extends BaseActivity {
     private void initFragment() {
         mNewGoodFragment = new NewGoodFragment();
         mBoutiqueFragment = new BoutiqueFragment();
-       mCategoryFragment = new CategoryFragment();
+        mCategoryFragment = new CategoryFragment();
+        mPersonalCenterFragment = new PersonalCenterFragment();
         mFragments[0] = mNewGoodFragment;
         mFragments[1] = mBoutiqueFragment;
         mFragments[2] = mCategoryFragment;
-
+        mFragments[4] = mPersonalCenterFragment;
     }
 
     private void initView() {
@@ -64,13 +68,14 @@ public class FuliCenterMainActivity extends BaseActivity {
         mRadioCart = (RadioButton) findViewById(R.id.layout_cart);
         mRadionPersonalCenter = (RadioButton) findViewById(R.id.layout_personal_center);
 
-        mRadios[0]=mRadioNewGood;
-        mRadios[1]=mRadioButique;
-        mRadios[2]=mRadiCategory;
-        mRadios[3]=mRadioCart;
-        mRadios[4]=mRadionPersonalCenter;
+        mRadios[0] = mRadioNewGood;
+        mRadios[1] = mRadioButique;
+        mRadios[2] = mRadiCategory;
+        mRadios[3] = mRadioCart;
+        mRadios[4] = mRadionPersonalCenter;
     }
-    public void onCheckedChange(View view){
+
+    public void onCheckedChange(View view) {
         switch (view.getId()) {
             case R.id.layout_new_good:
                 index = 0;
@@ -100,11 +105,11 @@ public class FuliCenterMainActivity extends BaseActivity {
         }
     }
 
-    private void setRadioChecked(int index){
-        for(int i=0;i<mRadios.length;i++){
-            if (i==index) {
+    private void setRadioChecked(int index) {
+        for (int i = 0; i < mRadios.length; i++) {
+            if (i == index) {
                 mRadios[i].setChecked(true);
-            }else {
+            } else {
                 mRadios[i].setChecked(false);
             }
         }

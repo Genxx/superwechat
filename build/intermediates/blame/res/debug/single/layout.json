@@ -68,6 +68,10 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\row_sent_file.xml"
     },
     {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_personal_center.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\fragment_personal_center.xml"
+    },
+    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_black_list.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_black_list.xml"
     },
@@ -90,6 +94,10 @@
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\image_grid_fragment.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\image_grid_fragment.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\simple_grid_item.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\simple_grid_item.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_show_file.xml",
@@ -354,6 +362,10 @@
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\listview_footer_view.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\listview_footer_view.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\common_head_title_white.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\common_head_title_white.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_picture.xml",

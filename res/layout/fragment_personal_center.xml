@@ -215,7 +215,7 @@
         android:id="@+id/center_user_order_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="10dp"
         android:background="@color/white"
         android:cacheColorHint="#000"
         android:numColumns="5"

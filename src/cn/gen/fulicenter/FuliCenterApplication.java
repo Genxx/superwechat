@@ -124,6 +124,16 @@ public static String SERVER_ROOT = "http://192.168.1.5:8080/FuLiCenterServer/Ser
 	/**全局的当前登录用户的好友集合*/
 	private HashMap<String,Contact> userList = new HashMap<String, Contact>();
 
+	private int CollectCount;
+
+	public int getCollectCount() {
+		return CollectCount;
+	}
+
+	public void setCollectCount(int collectCount) {
+		CollectCount = collectCount;
+	}
+
 	public User getUser() {
 		return user;
 	}
