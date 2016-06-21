@@ -33,6 +33,7 @@ import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.bean.Message;
 import cn.gen.fulicenter.data.OkHttpUtils;
+import cn.gen.fulicenter.utils.DisplayUtils;
 import cn.gen.fulicenter.utils.ImageUtils;
 import cn.gen.fulicenter.utils.Utils;
 
@@ -114,6 +115,8 @@ public class RegisterActivity extends BaseActivity {
         passwordEditText = (EditText) findViewById(R.id.etPassword);
         confirmPwdEditText = (EditText) findViewById(R.id.etconfirm_password);
         mIVAvatar = (ImageView) findViewById(R.id.iv_avatar);
+        /**实现返回上一个页面**/
+        DisplayUtils.initBackWithTitle(this,"账号注册");
     }
 
     /**

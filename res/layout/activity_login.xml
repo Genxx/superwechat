@@ -28,6 +28,7 @@
                 android:src="@drawable/icon_account" />
 
             <EditText
+                android:layout_marginLeft="8dp"
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -62,6 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
                 android:background="@null"
                 android:hint="@string/password"
                 android:inputType="textPassword"
@@ -86,7 +88,7 @@
                 android:layout_marginLeft="10dip"
                 android:layout_marginRight="10dip"
                 android:layout_weight="1"
-                android:background="#fc3512"
+                android:background="#fd5202"
                 android:gravity="center"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"

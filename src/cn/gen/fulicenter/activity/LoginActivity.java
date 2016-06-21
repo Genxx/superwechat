@@ -61,6 +61,7 @@ import cn.gen.fulicenter.db.EMUserDao;
 import cn.gen.fulicenter.domain.EMUser;
 import cn.gen.fulicenter.task.DownloadContactList;
 import cn.gen.fulicenter.utils.CommonUtils;
+import cn.gen.fulicenter.utils.DisplayUtils;
 import cn.gen.fulicenter.utils.MD5;
 import cn.gen.fulicenter.utils.Utils;
 import cn.gen.fulicenter.db.UserDao;
@@ -92,7 +93,7 @@ public class LoginActivity extends BaseActivity {
         // 如果用户名密码都有，直接进入主页面
         if (DemoHXSDKHelper.getInstance().isLogined()) {
             autoLogin = true;
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, FuliCenterMainActivity.class));
             return;
         }
         setContentView(R.layout.activity_login);
@@ -101,7 +102,7 @@ public class LoginActivity extends BaseActivity {
         usernameEditText = (EditText) findViewById(R.id.username);
         passwordEditText = (EditText) findViewById(R.id.password);
         mbtnUrl = (Button) findViewById(R.id.btnLogin);
-
+        DisplayUtils.initBackWithTitle(this,"账户登录");
 
         if (FuliCenterApplication.getInstance().getUserName() != null) {
             usernameEditText.setText(FuliCenterApplication.getInstance().getUserName());
@@ -113,7 +114,6 @@ public class LoginActivity extends BaseActivity {
         onLoginListener();
         onUserNameChangedListener();
         onRegisterListener();
-
     }
 
 
@@ -317,7 +317,7 @@ public class LoginActivity extends BaseActivity {
         }
         // 进入主页面
         Intent intent = new Intent(LoginActivity.this,
-                MainActivity.class);
+                FuliCenterMainActivity.class);
         startActivity(intent);
 
         finish();

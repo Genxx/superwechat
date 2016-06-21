@@ -1,12 +1,15 @@
 package cn.gen.fulicenter.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.fragment.BoutiqueFragment;
 import cn.gen.fulicenter.fragment.CategoryFragment;
@@ -90,7 +93,11 @@ public class FuliCenterMainActivity extends BaseActivity {
                 index = 3;
                 break;
             case R.id.layout_personal_center:
-                index = 4;
+                if(FuliCenterApplication.getInstance().getUser()!=null){
+                    index = 4;
+                }else {
+                    gotoLogin();
+                }
                 break;
         }
         if (currentTabIndex != index) {
@@ -105,6 +112,10 @@ public class FuliCenterMainActivity extends BaseActivity {
         }
     }
 
+    private void gotoLogin() {
+        startActivity(new Intent(this,LoginActivity.class));
+    }
+
     private void setRadioChecked(int index) {
         for (int i = 0; i < mRadios.length; i++) {
             if (i == index) {
@@ -113,6 +124,26 @@ public class FuliCenterMainActivity extends BaseActivity {
                 mRadios[i].setChecked(false);
             }
         }
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("FuliCenterMainActivity=","currentTabIndex"+currentTabIndex+",index="+index);
+        if(FuliCenterApplication.getInstance().getUser()!=null){
+            index = 4;
+            if (currentTabIndex != index) {
+                FragmentTransaction trx = getSupportFragmentManager().beginTransaction();
+                trx.hide(mFragments[currentTabIndex]);
+                if (!mFragments[index].isAdded()) {
+                    trx.add(cn.gen.fulicenter.R.id.fragment_container, mFragments[index]);
+                }
+                trx.show(mFragments[index]).commit();
+                setRadioChecked(index);
+                currentTabIndex = index;
+            }
+        }else{
+            setRadioChecked(index);
+        }
     }
 }

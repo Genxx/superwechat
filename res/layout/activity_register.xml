@@ -31,6 +31,7 @@
                 android:src="@drawable/icon_account" />
 
             <EditText
+                android:layout_marginLeft="8dp"
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -59,6 +60,7 @@
                 android:src="@drawable/icon_account" />
 
             <EditText
+                android:layout_marginLeft="8dp"
                 android:id="@+id/etNick"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -86,6 +88,7 @@
                 android:src="@drawable/icon_pwd" />
 
             <EditText
+                android:layout_marginLeft="8dp"
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -115,6 +118,7 @@
                 android:src="@drawable/icon_pwd" />
 
             <EditText
+                android:layout_marginLeft="8dp"
                 android:id="@+id/etconfirm_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -143,6 +147,7 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/default_avatar"/>
             <ImageView
+                android:layout_marginLeft="8dp"
                 android:id="@+id/photo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
