@@ -10,6 +10,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import cn.gen.fulicenter.FuliCenterApplication;
+import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.fragment.BoutiqueFragment;
 import cn.gen.fulicenter.fragment.CategoryFragment;
@@ -113,7 +114,7 @@ public class FuliCenterMainActivity extends BaseActivity {
     }
 
     private void gotoLogin() {
-        startActivity(new Intent(this,LoginActivity.class).putExtra("action","personal"));
+        startActivity(new Intent(this,LoginActivity.class).putExtra("action",I.ACTION_TYPE_PERSONAL));
     }
 
     private void setRadioChecked(int index) {
@@ -127,12 +128,19 @@ public class FuliCenterMainActivity extends BaseActivity {
     }
 
     @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        String action = getIntent().getStringExtra("action");
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         Log.e("FuliCenterMainActivity=","currentTabIndex"+currentTabIndex+",index="+index);
         String action =getIntent().getStringExtra("action");
         if(action!=null && FuliCenterApplication.getInstance().getUser()!=null){
-            if(action.equals("personal")){
+            if(action.equals(I.ACTION_TYPE_PERSONAL)){
               index = 4;
             }
         }else{

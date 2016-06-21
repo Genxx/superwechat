@@ -484,4 +484,6 @@ public interface I {
     /**壹收款服务端支付URL*/
     String PAY_URL= FuliCenterApplication.SERVER_ROOT+"?request="+I.REQUEST_PAY;
 
+    String ACTION_TYPE_PERSONAL = "personal";
+
 }

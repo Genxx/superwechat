@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:2:1-298:12
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:2:1-305:12
 	xmlns:android
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:2:11-69
 	package
@@ -131,7 +131,7 @@ ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:41:5-80
 	android:name
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:41:22-77
 application
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:43:5-296:19
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:43:5-303:19
 MERGED from [com.android.support:support-v4:23.2.0] D:\SuperWeChat\superwechat\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.2.0] D:\SuperWeChat\superwechat\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\AndroidManifest.xml:22:5-20
 	android:label
@@ -182,35 +182,33 @@ ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:73:9-77:20
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:76:13-52
 	android:name
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:74:13-59
-activity#cn.gen.fulicenter.activity.SplashActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:80:9-89:20
+activity#cn.gen.fulicenter.activity.SettingsActivity
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:80:9-84:20
 	android:screenOrientation
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:82:13-49
 	android:theme
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:83:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:81:13-52
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:84:13-88:29
-action#android.intent.action.MAIN
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:85:17-69
-	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:85:25-66
-category#android.intent.category.LAUNCHER
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:87:17-77
-	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:87:27-74
-activity#cn.gen.fulicenter.activity.LoginActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:92:9-96:80
-	android:windowSoftInputMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:96:13-68
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:81:13-54
+activity#cn.gen.fulicenter.activity.SplashActivity
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:87:9-96:20
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:94:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:89:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:95:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:90:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:93:13-51
-activity#cn.gen.fulicenter.activity.RegisterActivity
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:88:13-52
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:91:13-95:29
+action#android.intent.action.MAIN
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:92:17-69
+	android:name
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:92:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:94:17-77
+	android:name
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:94:27-74
+activity#cn.gen.fulicenter.activity.LoginActivity
 ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:99:9-103:80
 	android:windowSoftInputMode
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:103:13-68
@@ -219,178 +217,178 @@ ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:99:9-103:80
 	android:theme
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:102:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:100:13-54
-activity#cn.gen.fulicenter.activity.ChatActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:105:9-110:67
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:100:13-51
+activity#cn.gen.fulicenter.activity.RegisterActivity
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:106:9-110:80
 	android:windowSoftInputMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:110:13-55
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:110:13-68
 	android:screenOrientation
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:108:13-49
 	android:theme
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:109:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:106:13-50
-	android:launchMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:107:13-43
-activity#cn.gen.fulicenter.activity.AddContactActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:112:9-116:67
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:107:13-54
+activity#cn.gen.fulicenter.activity.ChatActivity
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:112:9-117:67
 	android:windowSoftInputMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:116:13-55
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:117:13-55
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:114:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:115:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:115:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:116:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:113:13-56
-activity#cn.gen.fulicenter.activity.BaiduMapActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:119:9-122:64
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:113:13-50
+	android:launchMode
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:114:13-43
+activity#cn.gen.fulicenter.activity.AddContactActivity
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:119:9-123:67
+	android:windowSoftInputMode
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:123:13-55
 	android:screenOrientation
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:121:13-49
 	android:theme
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:122:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:120:13-54
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:120:13-56
+activity#cn.gen.fulicenter.activity.BaiduMapActivity
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:126:9-129:64
+	android:screenOrientation
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:128:13-49
+	android:theme
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:129:13-52
+	android:name
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:127:13-54
 activity#cn.gen.fulicenter.activity.NewFriendsMsgActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:125:9-128:64
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:132:9-135:64
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:127:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:134:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:128:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:135:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:126:13-59
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:133:13-59
 activity#cn.gen.fulicenter.activity.ForwardMessageActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:130:9-134:64
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:137:9-141:64
 	android:windowSoftInputMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:134:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:141:13-52
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:132:13-49
-	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:133:13-52
-	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:131:13-60
-activity#cn.gen.fulicenter.activity.ContextMenu
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:136:9-139:61
-	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:138:13-49
-	android:theme
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:139:13-49
-	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:137:13-49
-activity#cn.gen.fulicenter.activity.AlertDialog
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:141:9-144:61
-	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:143:13-49
 	android:theme
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:140:13-52
+	android:name
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:138:13-60
+activity#cn.gen.fulicenter.activity.ContextMenu
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:143:9-146:61
+	android:screenOrientation
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:145:13-49
+	android:theme
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:146:13-49
+	android:name
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:144:13-49
+activity#cn.gen.fulicenter.activity.AlertDialog
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:148:9-151:61
+	android:screenOrientation
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:150:13-49
+	android:theme
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:151:13-49
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:142:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:149:13-49
 activity#cn.gen.fulicenter.activity.ShowBigImage
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:146:9-149:64
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:153:9-156:64
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:148:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:155:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:149:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:156:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:147:13-50
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:154:13-50
 activity#cn.gen.fulicenter.activity.ShowNormalFileActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:151:9-154:64
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:158:9-161:64
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:153:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:160:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:154:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:161:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:152:13-60
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:159:13-60
 activity#cn.gen.fulicenter.activity.BlacklistActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:156:9-159:64
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:163:9-166:64
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:158:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:165:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:159:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:166:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:157:13-55
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:164:13-55
 activity#cn.gen.fulicenter.activity.PublicChatRoomsActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:160:9-164:64
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:167:9-171:64
 	android:windowSoftInputMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:164:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:171:13-52
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:162:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:169:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:163:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:170:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:161:13-61
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:168:13-61
 activity#cn.gen.fulicenter.activity.VoiceCallActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:167:9-171:60
-	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:170:13-49
-	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:171:13-48
-	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:168:13-55
-	android:launchMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:169:13-44
-activity#cn.gen.fulicenter.activity.VideoCallActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:173:9-178:64
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:174:9-178:60
 	android:screenOrientation
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:177:13-49
-	android:configChanges
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:175:13-74
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:178:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:178:13-48
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:174:13-55
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:175:13-55
 	android:launchMode
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:176:13-44
+activity#cn.gen.fulicenter.activity.VideoCallActivity
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:180:9-185:64
+	android:screenOrientation
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:184:13-49
+	android:configChanges
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:182:13-74
+	android:theme
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:185:13-52
+	android:name
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:181:13-55
+	android:launchMode
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:183:13-44
 activity#cn.gen.fulicenter.activity.EditActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:179:9-183:67
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:186:9-190:67
 	android:windowSoftInputMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:183:13-55
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:190:13-55
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:181:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:188:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:182:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:189:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:180:13-50
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:187:13-50
 activity#cn.gen.fulicenter.activity.ShowVideoActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:184:9-188:72
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:191:9-195:72
 	android:windowSoftInputMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:188:13-60
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:195:13-60
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:186:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:193:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:187:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:194:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:185:13-55
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:192:13-55
 activity#cn.gen.fulicenter.activity.ImageGridActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:190:9-194:72
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:197:9-201:72
 	android:windowSoftInputMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:194:13-60
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:201:13-60
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:192:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:199:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:193:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:200:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:191:13-55
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:198:13-55
 activity#cn.gen.fulicenter.activity.RecorderVideoActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:195:9-199:72
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:202:9-206:72
 	android:windowSoftInputMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:199:13-60
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:206:13-60
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:197:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:204:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:198:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:205:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:196:13-59
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:203:13-59
 activity#cn.gen.fulicenter.activity.DiagnoseActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:201:9-205:72
-	android:windowSoftInputMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:205:13-60
-	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:203:13-49
-	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:204:13-52
-	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:202:13-54
-activity#cn.gen.fulicenter.activity.OfflinePushNickActivity
 ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:208:9-212:72
 	android:windowSoftInputMode
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:212:13-60
@@ -399,124 +397,134 @@ ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:208:9-212:72
 	android:theme
 		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:211:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:209:13-61
-activity#cn.gen.fulicenter.activity.RobotsActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:214:9-218:63
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:209:13-54
+activity#cn.gen.fulicenter.activity.OfflinePushNickActivity
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:215:9-219:72
 	android:windowSoftInputMode
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:218:13-60
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:219:13-60
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:216:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:217:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:217:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:218:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:215:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:216:13-61
+activity#cn.gen.fulicenter.activity.RobotsActivity
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:221:9-225:63
+	android:windowSoftInputMode
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:225:13-60
+	android:screenOrientation
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:223:13-49
+	android:theme
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:224:13-52
+	android:name
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:222:13-52
 activity#cn.gen.fulicenter.activity.UserProfileActivity
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:220:9-223:55
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:227:9-230:55
 	android:screenOrientation
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:222:13-49
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:229:13-49
 	android:theme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:223:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:230:13-52
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:221:13-57
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:228:13-57
 receiver#com.easemob.chat.StartServiceReceiver
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:226:9-233:20
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:233:9-240:20
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:226:19-71
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:233:19-71
 intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.action.QUICKBOOT_POWERON+android.intent.category.LAUNCHER
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:227:13-232:29
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:234:13-239:29
 	android:priority
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:227:28-51
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:234:28-51
 action#android.intent.action.BOOT_COMPLETED
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:228:17-79
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:235:17-79
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:228:25-76
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:235:25-76
 action#android.intent.action.QUICKBOOT_POWERON
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:229:17-82
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:236:17-82
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:229:25-79
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:236:25-79
 receiver#com.easemob.chat.EMGCMBroadcastReceiver
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:236:9-245:20
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:243:9-252:20
 	android:exported
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:238:13-36
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:245:13-36
 	android:permission
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:239:13-73
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:246:13-73
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:237:13-67
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:244:13-67
 intent-filter#com.easemob.chatuidemo+com.google.android.c2dm.intent.RECEIVE
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:240:13-244:29
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:247:13-251:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:241:17-81
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:248:17-81
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:241:25-78
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:248:25-78
 category#com.easemob.chatuidemo
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:243:17-67
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:250:17-67
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:243:27-64
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:250:27-64
 service#com.easemob.chat.EMGCMListenerService
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:247:9-249:48
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:254:9-256:48
 	android:exported
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:249:13-37
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:256:13-37
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:248:13-65
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:255:13-65
 receiver#cn.gen.fulicenter.receiver.GCMPushBroadCast
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:251:9-259:20
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:258:9-266:20
 	android:exported
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:253:13-37
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:260:13-37
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:252:13-54
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:259:13-54
 intent-filter#com.easemob.chatuidemo+com.easemob.sdk.push
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:254:13-258:29
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:261:13-265:29
 action#com.easemob.sdk.push
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:255:17-63
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:262:17-63
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:255:25-60
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:262:25-60
 meta-data#EASEMOB_APPKEY
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:264:9-266:48
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:271:9-273:48
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:265:13-42
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:272:13-42
 	android:value
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:266:13-45
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:273:13-45
 service#com.easemob.chat.EMChatService
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:268:9-66
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:275:9-66
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:268:18-63
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:275:18-63
 receiver#com.easemob.chat.EMMonitorReceiver
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:270:9-280:20
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:277:9-287:20
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:270:19-68
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:277:19-68
 intent-filter#android.intent.action.PACKAGE_REMOVED
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:271:13-275:29
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:278:13-282:29
 action#android.intent.action.PACKAGE_REMOVED
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:272:17-80
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:279:17-80
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:272:25-77
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:279:25-77
 data
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:274:17-50
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:281:17-50
 	android:scheme
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:274:23-47
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:281:23-47
 intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.action.USER_PRESENT
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:276:13-279:29
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:283:13-286:29
 action#android.intent.action.USER_PRESENT
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:278:17-77
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:285:17-77
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:278:25-74
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:285:25-74
 service#com.baidu.location.f
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:283:9-286:41
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:290:9-293:41
 	android:process
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:286:13-38
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:293:13-38
 	android:enabled
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:285:13-35
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:292:13-35
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:284:13-48
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:291:13-48
 meta-data#UMENG_APPKEY
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:288:9-290:66
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:295:9-297:66
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:289:13-40
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:296:13-40
 	android:value
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:290:13-53
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:297:13-53
 meta-data#com.baidu.lbsapi.API_KEY
-ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:291:9-293:64
+ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:298:9-300:64
 	android:name
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:292:13-52
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:299:13-52
 	android:value
-		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:293:13-61
+		ADDED from D:\SuperWeChat\superwechat\AndroidManifest.xml:300:13-61

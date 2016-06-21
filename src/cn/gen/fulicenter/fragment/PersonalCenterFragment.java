@@ -25,6 +25,7 @@ import java.util.HashMap;
 import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.activity.FuliCenterMainActivity;
+import cn.gen.fulicenter.activity.SettingsActivity;
 import cn.gen.fulicenter.task.DownloadCollectCountTask;
 import cn.gen.fulicenter.utils.UserUtils;
 
@@ -50,7 +51,7 @@ public class PersonalCenterFragment extends Fragment {
     RelativeLayout mLayoutCenterUserInfo;
 
     int mCollectCount;
-
+    MyClickListener listener;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,9 +59,29 @@ public class PersonalCenterFragment extends Fragment {
         View layout = View.inflate(mContext, R.layout.fragment_personal_center, null);
         initView(layout);
         initData();
+        setListener();
+        return layout;
+    }
+
+    private void setListener() {
         reisterCollerCountChangedListener();
         registerUpdateUserReceiver();
-        return layout;
+        listener = new MyClickListener();
+        mtvSettings.setOnClickListener(listener);
+        mLayoutCenterUserInfo.setOnClickListener(listener);
+    }
+
+    class  MyClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()){
+                case R.id.tv_center_settings:
+                case R.id.center_user_info:
+                    startActivity(new Intent(mContext, SettingsActivity.class));
+                    break;
+            }
+        }
     }
 
     private void initData() {
