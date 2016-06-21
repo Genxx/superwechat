@@ -315,11 +315,14 @@ public class LoginActivity extends BaseActivity {
         if (!LoginActivity.this.isFinishing() && pd.isShowing()) {
             pd.dismiss();
         }
-        // 进入主页面
-        Intent intent = new Intent(LoginActivity.this,
-                FuliCenterMainActivity.class);
-        startActivity(intent);
-
+        String action = getIntent().getStringExtra("action");
+        if(action!=null){
+            // 进入主页面
+            Intent intent = new Intent(LoginActivity.this,
+                    FuliCenterMainActivity.class)
+                    .putExtra("action",action);
+            startActivity(intent);
+        }
         finish();
     }
 
