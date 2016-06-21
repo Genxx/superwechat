@@ -3,6 +3,7 @@ package cn.gen.fulicenter.fragment;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -24,6 +25,7 @@ import java.util.HashMap;
 import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.activity.FuliCenterMainActivity;
+import cn.gen.fulicenter.task.DownloadCollectCountTask;
 import cn.gen.fulicenter.utils.UserUtils;
 
 
@@ -56,6 +58,8 @@ public class PersonalCenterFragment extends Fragment {
         View layout = View.inflate(mContext, R.layout.fragment_personal_center, null);
         initView(layout);
         initData();
+        reisterCollerCountChangedListener();
+        registerUpdateUserReceiver();
         return layout;
     }
 
@@ -108,8 +112,39 @@ public class PersonalCenterFragment extends Fragment {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-
+             initData();
         }
     }
+    CollectCountChangedReceive mReceiver;
+    private void reisterCollerCountChangedListener(){
+        mReceiver = new CollectCountChangedReceive();
+        IntentFilter filter = new IntentFilter("update_collect_count");
+        mContext.registerReceiver(mReceiver,filter);
+    }
 
+    class UpadateUserChangedReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            new DownloadCollectCountTask(mContext).execute();
+            initData();
+        }
+    }
+    UpadateUserChangedReceiver mUserReceiver;
+    private void registerUpdateUserReceiver(){
+        mUserReceiver = new UpadateUserChangedReceiver();
+        IntentFilter filter = new IntentFilter("update_user");
+        mContext.registerReceiver(mUserReceiver,filter);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mReceiver!=null){
+            mContext.unregisterReceiver(mReceiver);
+        }
+        if (mUserReceiver!=null){
+            mContext.unregisterReceiver(mUserReceiver);
+        }
+    }
 }
