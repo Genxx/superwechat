@@ -31,8 +31,10 @@ public class DownloadCollectCountTask extends BaseActivity{
             User user = FuliCenterApplication.getInstance().getUser();
             if (user != null) {
                 path = new ApiParams()
-                        .with(I.User.USER_NAME, user.getMUserName())
+                        .with(I.Collect.USER_NAME, user.getMUserName())
                         .getRequestUrl(I.REQUEST_FIND_COLLECT_COUNT);
+                Log.e("main", "user:" + user.getMUserName());
+
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -54,6 +56,7 @@ public class DownloadCollectCountTask extends BaseActivity{
                     FuliCenterApplication.getInstance().setCollectCount(Integer.parseInt(count));
 
                 } else {
+                    Log.e("main", "count=0" + messageBean.getMsg());
                     Log.e("main", "count=0");
                     FuliCenterApplication.getInstance().setCollectCount(0);
                 }

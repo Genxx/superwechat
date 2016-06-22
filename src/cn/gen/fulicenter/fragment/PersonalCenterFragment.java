@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -147,6 +148,7 @@ public class PersonalCenterFragment extends Fragment {
 
         @Override
         public void onReceive(Context context, Intent intent) {
+            Log.e("PersonalCenterFragment","UpdateUserChangerReceiver,user="+FuliCenterApplication.getInstance().getUser());
             new DownloadCollectCountTask(mContext).execute();
             initData();
         }
@@ -154,6 +156,7 @@ public class PersonalCenterFragment extends Fragment {
     UpadateUserChangedReceiver mUserReceiver;
     private void registerUpdateUserReceiver(){
         mUserReceiver = new UpadateUserChangedReceiver();
+        //接收广播
         IntentFilter filter = new IntentFilter("update_user");
         mContext.registerReceiver(mUserReceiver,filter);
     }

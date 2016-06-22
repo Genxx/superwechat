@@ -14,10 +14,13 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.NetworkImageView;
 
 import cn.gen.fulicenter.D;
+import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.bean.AlbumBean;
 import cn.gen.fulicenter.bean.GoodDetailsBean;
+import cn.gen.fulicenter.bean.MessageBean;
+import cn.gen.fulicenter.bean.User;
 import cn.gen.fulicenter.data.ApiParams;
 import cn.gen.fulicenter.data.GsonRequest;
 import cn.gen.fulicenter.utils.DisplayUtils;
@@ -65,10 +68,10 @@ public class GoodDetailActivity extends BaseActivity {
     }
 
     private void initData() {
-        int goodId=getIntent().getIntExtra(D.NewGood.KEY_GOODS_ID,0);
+        mGoodsId=getIntent().getIntExtra(D.GoodDetails.KEY_GOODS_ID,0);
         try {
             String path = new ApiParams()
-                    .with(D.NewGood.KEY_GOODS_ID, goodId + "")
+                    .with(I.CategoryGood.GOODS_ID, mGoodsId + "")
                     .getRequestUrl(I.REQUEST_FIND_GOOD_DETAILS);
             executeRequest(new GsonRequest<GoodDetailsBean>(path, GoodDetailsBean.class,
                     responseDownloadGoodDetailsListener(),errorListener()));
@@ -153,5 +156,42 @@ public class GoodDetailActivity extends BaseActivity {
         WebSettings settings = wvGoodBrief.getSettings();
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         settings.setBuiltInZoomControls(true);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initCollectStatus();
+    }
+
+    private void initCollectStatus() {
+        User user = FuliCenterApplication.getInstance().getUser();
+        if(user!=null){
+            try {
+                String path = new ApiParams()
+                        .with(I.Collect.USER_NAME,FuliCenterApplication.getInstance().getUserName())
+                        .with(I.Collect.GOODS_ID,mGoodsId+"")
+                        .getRequestUrl(I.REQUEST_IS_COLLECT);
+                executeRequest(new GsonRequest<MessageBean>(path,MessageBean.class,
+                        responseIsCollectListener(),errorListener()));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else {
+            mivCollect.setImageResource(R.drawable.bg_collect_in);
+        }
+    }
+
+    private Response.Listener<MessageBean> responseIsCollectListener() {
+        return new Response.Listener<MessageBean>() {
+            @Override
+            public void onResponse(MessageBean messageBean) {
+               if(messageBean.isSuccess()){
+                   mivCollect.setImageResource(R.drawable.bg_collect_out);
+               }else {
+                   mivCollect.setImageResource(R.drawable.bg_collect_in);
+               }
+            }
+        };
     }
 }

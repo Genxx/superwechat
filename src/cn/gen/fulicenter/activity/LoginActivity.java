@@ -318,7 +318,8 @@ public class LoginActivity extends BaseActivity {
         }
         String action = getIntent().getStringExtra("action");
         if(action!=null){
-            new DownloadCollectCountTask(mContext).execute();
+//           new DownloadCollectCountTask(this).execute();
+            sendStickyBroadcast(new Intent("update_user"));
             // 进入主页面
             Intent intent = new Intent(LoginActivity.this,
                     FuliCenterMainActivity.class)
