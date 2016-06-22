@@ -59,6 +59,7 @@ import cn.gen.fulicenter.data.GsonRequest;
 import cn.gen.fulicenter.data.OkHttpUtils;
 import cn.gen.fulicenter.db.EMUserDao;
 import cn.gen.fulicenter.domain.EMUser;
+import cn.gen.fulicenter.task.DownloadCollectCountTask;
 import cn.gen.fulicenter.task.DownloadContactList;
 import cn.gen.fulicenter.utils.CommonUtils;
 import cn.gen.fulicenter.utils.DisplayUtils;
@@ -317,6 +318,7 @@ public class LoginActivity extends BaseActivity {
         }
         String action = getIntent().getStringExtra("action");
         if(action!=null){
+            new DownloadCollectCountTask(mContext).execute();
             // 进入主页面
             Intent intent = new Intent(LoginActivity.this,
                     FuliCenterMainActivity.class)

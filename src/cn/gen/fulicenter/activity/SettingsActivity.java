@@ -39,6 +39,7 @@ import cn.gen.fulicenter.DemoHXSDKModel;
 import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.R;
 import cn.gen.fulicenter.applib.controller.HXSDKHelper;
+import cn.gen.fulicenter.utils.DisplayUtils;
 
 /**
  * 设置界面
@@ -156,6 +157,8 @@ public class SettingsActivity extends BaseActivity implements OnClickListener {
 		
 		
 		logoutBtn = (Button) findViewById(cn.gen.fulicenter.R.id.btn_logout);
+		DisplayUtils.initBackWithTitle(this,"设置");
+
 		if(!TextUtils.isEmpty(EMChatManager.getInstance().getCurrentUser())){
 			logoutBtn.setText(getString(cn.gen.fulicenter.R.string.button_logout) + "(" + EMChatManager.getInstance().getCurrentUser() + ")");
 		}

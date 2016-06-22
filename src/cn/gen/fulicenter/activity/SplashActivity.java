@@ -17,6 +17,7 @@ import com.easemob.chat.EMGroupManager;
 import cn.gen.fulicenter.DemoHXSDKHelper;
 import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.bean.User;
+import cn.gen.fulicenter.task.DownloadCollectCountTask;
 import cn.gen.fulicenter.task.DownloadContactList;
 import cn.gen.fulicenter.db.UserDao;
 
@@ -60,6 +61,7 @@ public class SplashActivity extends BaseActivity {
                 Log.e("main", "start dowmload arraylist--------SplashAcitivity开始下载");
                 FuliCenterApplication.currentUserNick = user.getMUserNick();
                 new DownloadContactList(SplashActivity.this, username).execute();
+                new DownloadCollectCountTask(mContext).execute();
             }
         }
 
