@@ -34,6 +34,7 @@ public class DownloadCollectCountTask extends BaseActivity{
                         .with(I.Collect.USER_NAME, user.getMUserName())
                         .getRequestUrl(I.REQUEST_FIND_COLLECT_COUNT);
                 Log.e("main", "user:" + user.getMUserName());
+                Log.e("main", "path:" + path);
 
             }
         } catch (Exception e) {

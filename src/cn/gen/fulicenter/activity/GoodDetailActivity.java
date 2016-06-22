@@ -1,7 +1,9 @@
 package cn.gen.fulicenter.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -23,6 +25,7 @@ import cn.gen.fulicenter.bean.MessageBean;
 import cn.gen.fulicenter.bean.User;
 import cn.gen.fulicenter.data.ApiParams;
 import cn.gen.fulicenter.data.GsonRequest;
+import cn.gen.fulicenter.task.DownloadCollectCountTask;
 import cn.gen.fulicenter.utils.DisplayUtils;
 import cn.gen.fulicenter.utils.ImageUtils;
 import cn.gen.fulicenter.utils.Utils;
@@ -41,8 +44,8 @@ public class GoodDetailActivity extends BaseActivity {
 
     SlideAutoLoopView mSlideAutoLoopView;
     FlowIndicator mFlowIndicator;
-   /*  * 显示颜色的容器布局
-     */
+    /*  * 显示颜色的容器布局
+      */
     LinearLayout mLayoutColors;
     ImageView mivCollect;
     ImageView mivAddCart;
@@ -58,23 +61,90 @@ public class GoodDetailActivity extends BaseActivity {
      * 当前颜色值
      **/
     int mCurrentColor;
+
+    boolean isCollect;
+    int actionCollect;
+
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
         setContentView(R.layout.activity_good_details);
         mContext = this;
         initView();
-       initData();
+        initData();
+        setListener();
+    }
+
+    private void setListener() {
+        setCollectClickListener();
+    }
+
+    private void setCollectClickListener() {
+        mivCollect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                User user = FuliCenterApplication.getInstance().getUser();
+                if(user==null){
+                    startActivity(new Intent(GoodDetailActivity.this,LoginActivity.class));
+                }else {
+                    try {
+                        String path;
+                        if(isCollect){
+                            actionCollect = I.ACTION_DEL_COLECT;
+                            path = new ApiParams()
+                                    .with(I.Collect.USER_NAME,user.getMUserName())
+                                    .with(I.Collect.GOODS_ID,mGoodsId+"")
+                                    .getRequestUrl(I.REQUEST_DELETE_COLLECT);
+                        }else {
+                            actionCollect = I.ACTION_ADD_CONLLECT;
+                            path = new ApiParams()
+                                    .with(I.Collect.USER_NAME,user.getMUserName())
+                                    .with(I.Collect.GOODS_ID,mGoodsId+"")
+                                    .with(I.Collect.GOODS_NAME,mGood.getGoodsName())
+                                    .with(I.Collect.GOODS_ENGLISH_NAME,mGood.getGoodsEnglishName())
+                                    .with(I.Collect.GOODS_THUMB,mGood.getGoodsThumb())
+                                    .with(I.Collect.ADD_TIME,mGood.getAddTime()+"")
+                                    .getRequestUrl(I.REQUEST_ADD_COLLECT);
+                        }
+                        Log.e("main", "OnClickListener Path:" + path);
+                        executeRequest(new GsonRequest<MessageBean>(path,MessageBean.class,
+                                responseSetCollectListener(),errorListener()));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
+
+    private Response.Listener<MessageBean> responseSetCollectListener() {
+        return new Response.Listener<MessageBean>() {
+            @Override
+            public void onResponse(MessageBean messageBean) {
+                 if(messageBean.isSuccess()){
+                     if(actionCollect==I.ACTION_ADD_CONLLECT){
+                         isCollect = true;
+                         mivCollect.setImageResource(R.drawable.bg_collect_out);
+                     }else {
+                         isCollect = false;
+                         mivCollect.setImageResource(R.drawable.bg_collect_in);
+                     }
+                     new DownloadCollectCountTask(mContext).execute();
+
+                 }
+                Utils.showToast(mContext,messageBean.getMsg(),Toast.LENGTH_LONG);
+            }
+        };
     }
 
     private void initData() {
-        mGoodsId=getIntent().getIntExtra(D.GoodDetails.KEY_GOODS_ID,0);
+        mGoodsId = getIntent().getIntExtra(D.GoodDetails.KEY_GOODS_ID, 0);
         try {
             String path = new ApiParams()
                     .with(I.CategoryGood.GOODS_ID, mGoodsId + "")
                     .getRequestUrl(I.REQUEST_FIND_GOOD_DETAILS);
             executeRequest(new GsonRequest<GoodDetailsBean>(path, GoodDetailsBean.class,
-                    responseDownloadGoodDetailsListener(),errorListener()));
+                    responseDownloadGoodDetailsListener(), errorListener()));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -96,7 +166,7 @@ public class GoodDetailActivity extends BaseActivity {
                     //初始化颜色面板
                     initColorBanner();
                 } else {
-                    Utils.showToast(mContext,"商品详情下载失败", Toast.LENGTH_SHORT);
+                    Utils.showToast(mContext, "商品详情下载失败", Toast.LENGTH_SHORT);
                     finish();
                 }
             }
@@ -105,14 +175,13 @@ public class GoodDetailActivity extends BaseActivity {
 
     private void initColorBanner() {
         updateColor(0);
-        for (int i=0;i<mGood.getProperties().length;i++) {
+        for (int i = 0; i < mGood.getProperties().length; i++) {
             mCurrentColor = i;
             View layout = View.inflate(mContext, R.layout.layout_property_color, null);
             final NetworkImageView ivColor = (NetworkImageView) layout.findViewById(R.id.ivColorItem);
             String colorImg = mGood.getProperties()[i].getColorImg();
             if (colorImg.isEmpty()) {
                 continue;
-
             }
             ImageUtils.setGoodDetailThumb(colorImg, ivColor);
             mLayoutColors.addView(layout);
@@ -127,16 +196,17 @@ public class GoodDetailActivity extends BaseActivity {
 
     /**
      * 设置指定属性的图片轮播
+     *
      * @param i
      */
     private void updateColor(int i) {
         AlbumBean[] albums = mGood.getProperties()[i].getAlbums();
         String[] albumImgUrl = new String[albums.length];
-        for (int j=0;j<albumImgUrl.length;j++) {
+        for (int j = 0; j < albumImgUrl.length; j++) {
             albumImgUrl[j] = albums[j].getImgUrl();
 
         }
-       mSlideAutoLoopView.startPlayLoop(mFlowIndicator,albumImgUrl,albumImgUrl.length);
+        mSlideAutoLoopView.startPlayLoop(mFlowIndicator, albumImgUrl, albumImgUrl.length);
     }
 
 
@@ -166,18 +236,20 @@ public class GoodDetailActivity extends BaseActivity {
 
     private void initCollectStatus() {
         User user = FuliCenterApplication.getInstance().getUser();
-        if(user!=null){
+        if (user != null) {
             try {
                 String path = new ApiParams()
-                        .with(I.Collect.USER_NAME,FuliCenterApplication.getInstance().getUserName())
-                        .with(I.Collect.GOODS_ID,mGoodsId+"")
+                        .with(I.Collect.USER_NAME, FuliCenterApplication.getInstance().getUserName())
+                        .with(I.Collect.GOODS_ID, mGoodsId + "")
                         .getRequestUrl(I.REQUEST_IS_COLLECT);
-                executeRequest(new GsonRequest<MessageBean>(path,MessageBean.class,
-                        responseIsCollectListener(),errorListener()));
+                executeRequest(new GsonRequest<MessageBean>(path, MessageBean.class,
+                        responseIsCollectListener(), errorListener()));
+                Log.e("main", "InitCollectStatus path:" + path);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else {
+        } else {
+            isCollect = false;
             mivCollect.setImageResource(R.drawable.bg_collect_in);
         }
     }
@@ -186,11 +258,13 @@ public class GoodDetailActivity extends BaseActivity {
         return new Response.Listener<MessageBean>() {
             @Override
             public void onResponse(MessageBean messageBean) {
-               if(messageBean.isSuccess()){
-                   mivCollect.setImageResource(R.drawable.bg_collect_out);
-               }else {
-                   mivCollect.setImageResource(R.drawable.bg_collect_in);
-               }
+                if (messageBean.isSuccess()) {
+                    isCollect =true;
+                    mivCollect.setImageResource(R.drawable.bg_collect_out);
+                } else {
+                    isCollect=false;
+                    mivCollect.setImageResource(R.drawable.bg_collect_in);
+                }
             }
         };
     }

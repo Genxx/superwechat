@@ -486,4 +486,6 @@ public interface I {
 
     String ACTION_TYPE_PERSONAL = "personal";
 
+    int ACTION_ADD_CONLLECT =1;
+    int ACTION_DEL_COLECT=2;
 }
