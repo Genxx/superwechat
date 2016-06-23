@@ -10,22 +10,29 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.volley.Response;
 import com.android.volley.toolbox.NetworkImageView;
 
 import java.util.ArrayList;
 
 import cn.gen.fulicenter.D;
+import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.R;
+import cn.gen.fulicenter.activity.CollectActivity;
 import cn.gen.fulicenter.activity.GoodDetailActivity;
 import cn.gen.fulicenter.bean.CollectBean;
+import cn.gen.fulicenter.bean.MessageBean;
+import cn.gen.fulicenter.data.ApiParams;
+import cn.gen.fulicenter.data.GsonRequest;
+import cn.gen.fulicenter.task.DownloadCollectCountTask;
 import cn.gen.fulicenter.utils.ImageUtils;
 
 /**
  * Created by Administrator on 2016/6/15.
  */
 public class CollectAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    Context mContext;
+    CollectActivity mContext;
     ArrayList<CollectBean> mCollectList;
 
     CollectItemViewHolder CollectHolder;
@@ -48,7 +55,7 @@ public class CollectAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     public CollectAdapter(Context mContext, ArrayList<CollectBean> list) {
-        this.mContext = mContext;
+        this.mContext = (CollectActivity) mContext;
         this.mCollectList = list;
     }
 
@@ -87,23 +94,52 @@ public class CollectAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             .putExtra(D.NewGood.KEY_GOODS_ID, collect.getGoodsId()));
                 }
             });
+            CollectHolder.ivDel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        String path = new ApiParams()
+                                .with(I.Collect.GOODS_ID, collect.getGoodsId() + "")
+                                .with(I.Collect.USER_NAME, FuliCenterApplication.getInstance().getUserName())
+                                .getRequestUrl(I.REQUEST_DELETE_COLLECT);
+                        mContext.executeRequest(new GsonRequest<MessageBean>(path, MessageBean.class,
+                                responseDelCollectListener(collect), mContext.errorListener()));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+        }
+
+    }
+
+    private Response.Listener<MessageBean> responseDelCollectListener(final CollectBean collect) {
+        return new Response.Listener<MessageBean>() {
+            @Override
+            public void onResponse(MessageBean messageBean) {
+                if(messageBean.isSuccess()){
+                    mCollectList.remove(collect);
+                    notifyDataSetChanged();
+                    new DownloadCollectCountTask(mContext).execute();
+                }
             }
+        };
+    }
 
-        }
+    @Override
+    public int getItemCount() {
+        return mCollectList == null ? 1 : mCollectList.size() + 1;
+    }
 
-        @Override
-        public int getItemCount () {
-            return mCollectList == null ? 1 : mCollectList.size() + 1;
+    @Override
+    public int getItemViewType(int position) {
+        if (position == getItemCount() - 1) {
+            return I.TYPE_FOOTER;
+        } else {
+            return I.TYPE_ITEM;
         }
-
-        @Override
-        public int getItemViewType ( int position){
-            if (position == getItemCount() - 1) {
-                return I.TYPE_FOOTER;
-            } else {
-                return I.TYPE_ITEM;
-            }
-        }
+    }
 
     public void initItems(ArrayList<CollectBean> list) {
         if (mCollectList != null && !mCollectList.isEmpty()) {

@@ -187,4 +187,9 @@ public class CollectActivity extends BaseActivity {
         mRecyclerView.setAdapter(mAdapter);
         DisplayUtils.initBackWithTitle(mContext,"收藏的宝贝");
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }
