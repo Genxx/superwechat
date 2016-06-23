@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    android:background="#fff">
+
+    <CheckBox
+        android:id="@+id/cheSelect"
+        style="@style/CustomCheckboxTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:checked="true" />
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/ivGoodThumb"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/cheSelect"
+        android:src="@drawable/goods_thumb" />
+    <TextView
+        android:id="@+id/tvGoodsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/ivGoodThumb"
+        android:text="衬衫"
+        android:textColor="#f90"
+        android:textSize="16sp"/>
+    <ImageView
+        android:id="@+id/ivAddCart"
+        android:layout_below="@+id/tvGoodsName"
+        android:layout_toRightOf="@id/ivGoodThumb"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/add_cart"/>
+
+    <TextView
+        android:id="@+id/tvCartCount"
+        android:layout_below="@+id/tvGoodsName"
+        android:layout_toRightOf="@+id/ivAddCart"
+        android:layout_alignTop="@+id/ivAddCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="(3)"
+        android:textColor="#f09"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/ivReduceCart"
+        android:layout_toRightOf="@+id/tvCartCount"
+        android:layout_below="@+id/tvGoodsName"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/del_cart" />
+
+    <TextView
+        android:id="@+id/tvGoodprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/ivAddCart"
+        android:layout_marginRight="5dp"
+        android:text="￥3000"
+        android:textColor="#f90"
+        android:textSize="16sp" />
+</RelativeLayout>
