@@ -1,6 +1,9 @@
 package cn.gen.fulicenter.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -16,6 +19,7 @@ import cn.gen.fulicenter.fragment.BoutiqueFragment;
 import cn.gen.fulicenter.fragment.CategoryFragment;
 import cn.gen.fulicenter.fragment.NewGoodFragment;
 import cn.gen.fulicenter.fragment.PersonalCenterFragment;
+import cn.gen.fulicenter.video.util.Utils;
 
 public class FuliCenterMainActivity extends BaseActivity {
 
@@ -50,7 +54,7 @@ public class FuliCenterMainActivity extends BaseActivity {
                 .add(R.id.fragment_container, mPersonalCenterFragment).hide(mPersonalCenterFragment)
                 .show(mNewGoodFragment)
                 .commit();
-
+        registerCartReceiver();
     }
 
     private void initFragment() {
@@ -77,6 +81,7 @@ public class FuliCenterMainActivity extends BaseActivity {
         mRadios[2] = mRadiCategory;
         mRadios[3] = mRadioCart;
         mRadios[4] = mRadionPersonalCenter;
+        mTvCartHint.setVisibility(View.GONE);
     }
 
     public void onCheckedChange(View view) {
@@ -94,9 +99,9 @@ public class FuliCenterMainActivity extends BaseActivity {
                 index = 3;
                 break;
             case R.id.layout_personal_center:
-                if(FuliCenterApplication.getInstance().getUser()!=null){
+                if (FuliCenterApplication.getInstance().getUser() != null) {
                     index = 4;
-                }else {
+                } else {
                     gotoLogin();
                 }
                 break;
@@ -114,7 +119,7 @@ public class FuliCenterMainActivity extends BaseActivity {
     }
 
     private void gotoLogin() {
-        startActivity(new Intent(this,LoginActivity.class).putExtra("action",I.ACTION_TYPE_PERSONAL));
+        startActivity(new Intent(this, LoginActivity.class).putExtra("action", I.ACTION_TYPE_PERSONAL));
     }
 
     private void setRadioChecked(int index) {
@@ -137,17 +142,17 @@ public class FuliCenterMainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.e("FuliCenterMainActivity=","currentTabIndex"+currentTabIndex+",index="+index);
-        String action =getIntent().getStringExtra("action");
-        if(action!=null && FuliCenterApplication.getInstance().getUser()!=null){
-            if(action.equals(I.ACTION_TYPE_PERSONAL)){
-              index = 4;
+        Log.e("FuliCenterMainActivity=", "currentTabIndex" + currentTabIndex + ",index=" + index);
+        String action = getIntent().getStringExtra("action");
+        if (action != null && FuliCenterApplication.getInstance().getUser() != null) {
+            if (action.equals(I.ACTION_TYPE_PERSONAL)) {
+                index = 4;
             }
-        }else{
+        } else {
             setRadioChecked(index);
         }
-        if(currentTabIndex==4 && FuliCenterApplication.getInstance().getUser()==null){
-            index=0;
+        if (currentTabIndex == 4 && FuliCenterApplication.getInstance().getUser() == null) {
+            index = 0;
         }
         if (currentTabIndex != index) {
             FragmentTransaction trx = getSupportFragmentManager().beginTransaction();
@@ -158,6 +163,37 @@ public class FuliCenterMainActivity extends BaseActivity {
             trx.show(mFragments[index]).commit();
             setRadioChecked(index);
             currentTabIndex = index;
+        }
+    }
+
+    class UpdateCartReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int count = Utils.sunCartCount();
+            Log.i("main","购物车的Count:"+count);
+            if (count > 0) {
+                Log.e("main","我进来了！");
+                mTvCartHint.setVisibility(View.VISIBLE);
+                mTvCartHint.setText(""+count);
+            } else {
+                mTvCartHint.setVisibility(View.GONE);
+            }
+        }
+    }
+    UpdateCartReceiver mReceiver;
+    private void registerCartReceiver() {
+        mReceiver = new UpdateCartReceiver();
+        IntentFilter filter = new IntentFilter("update_cart_list");
+        filter.addAction("update_user");
+        registerReceiver(mReceiver, filter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mReceiver != null) {
+            unregisterReceiver(mReceiver);
         }
     }
 }

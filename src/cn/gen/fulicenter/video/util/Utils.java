@@ -14,7 +14,9 @@ import android.os.Build;
 import android.os.Build.VERSION_CODES;
 import android.os.StrictMode;
 
+import cn.gen.fulicenter.FuliCenterApplication;
 import cn.gen.fulicenter.activity.ImageGridActivity;
+import cn.gen.fulicenter.bean.CartBean;
 
 public class Utils {
 
@@ -112,5 +114,14 @@ public class Utils {
 		List<T> list = Arrays.asList(ary);
 		ArrayList<T> arrayList=new ArrayList<T>(list);
 		return arrayList;
+	}
+
+	public static int sunCartCount(){
+		ArrayList<CartBean> cartList = FuliCenterApplication.getInstance().getCartList();
+		int count = 0;
+		for(CartBean cart:cartList){
+			count += cart.getCount();
+		}
+		return count;
 	}
 }

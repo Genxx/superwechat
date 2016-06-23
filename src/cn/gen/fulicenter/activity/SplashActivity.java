@@ -16,7 +16,9 @@ import com.easemob.chat.EMGroupManager;
 
 import cn.gen.fulicenter.DemoHXSDKHelper;
 import cn.gen.fulicenter.FuliCenterApplication;
+import cn.gen.fulicenter.I;
 import cn.gen.fulicenter.bean.User;
+import cn.gen.fulicenter.task.DownloadCartList;
 import cn.gen.fulicenter.task.DownloadCollectCountTask;
 import cn.gen.fulicenter.task.DownloadContactList;
 import cn.gen.fulicenter.db.UserDao;
@@ -62,6 +64,7 @@ public class SplashActivity extends BaseActivity {
                 FuliCenterApplication.currentUserNick = user.getMUserNick();
                 new DownloadContactList(SplashActivity.this, username).execute();
                 new DownloadCollectCountTask(mContext).execute();
+                new DownloadCartList(mContext,username,0, I.PAGE_SIZE_DEFAULT).execute();
             }
         }
 
