@@ -82,7 +82,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide">
         </activity>
-
+        <!--收藏商品页面-->
+        <activity
+            android:name=".activity.CollectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide">
+        </activity>
         <!-- 开屏页 -->
         <activity
             android:name=".activity.SplashActivity"

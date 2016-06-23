@@ -52,6 +52,10 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\expression_gridview.xml"
     },
     {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_collect.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_collect.xml"
+    },
+    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_video.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\row_received_video.xml"
     },
@@ -312,20 +316,16 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\common_head_title.xml"
     },
     {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\item_collect.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\item_collect.xml"
+    },
+    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_offline_push.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_offline_push.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_voice_call.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\row_received_voice_call.xml"
-    },
-    {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_new_friends_msg.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_new_friends_msg.xml"
-    },
-    {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_boutique.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\fragment_boutique.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\activity_new_group.xml",
@@ -336,16 +336,24 @@
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\activity_video_call.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_location.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\row_received_location.xml"
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_conversation_settings.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\fragment_conversation_settings.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\commom_refresh_hint.xml",
         "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\commom_refresh_hint.xml"
     },
     {
-        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_conversation_settings.xml",
-        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\fragment_conversation_settings.xml"
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_voice_call.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\row_received_voice_call.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_boutique.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\fragment_boutique.xml"
+    },
+    {
+        "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\row_received_location.xml",
+        "source": "D:\\SuperWeChat\\superwechat\\res\\layout\\row_received_location.xml"
     },
     {
         "merged": "D:\\SuperWeChat\\superwechat\\build\\intermediates\\res\\merged\\debug\\layout\\popu_show_avatar.xml",

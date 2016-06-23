@@ -28,7 +28,7 @@ import cn.gen.fulicenter.data.RequestManager;
 public class FuliCenterApplication extends Application {
 
 //	public static String SERVER_ROOT = "http://10.0.2.2:8080/FuliCenterServer/Server";
-public static String SERVER_ROOT = "http://192.168.1.3:8080/FuLiCenterServer/Server";
+public static String SERVER_ROOT = "http://192.168.1.6:8080/FuLiCenterServer/Server";
 	public static Context applicationContext;
 	private static FuliCenterApplication instance;
 	// login user name
