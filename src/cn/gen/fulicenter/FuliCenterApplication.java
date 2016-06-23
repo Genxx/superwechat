@@ -21,6 +21,7 @@ import com.easemob.EMCallBack;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import cn.gen.fulicenter.bean.CartBean;
 import cn.gen.fulicenter.bean.Contact;
 import cn.gen.fulicenter.bean.User;
 import cn.gen.fulicenter.data.RequestManager;
@@ -121,10 +122,14 @@ public static String SERVER_ROOT = "http://192.168.1.6:8080/FuLiCenterServer/Ser
 	private User user;
 	/**全局的当前登录用户的好友列表*/
 	private ArrayList<Contact> contactList = new ArrayList<Contact>();
-	/**全局的当前登录用户的好友集合*/
-	private HashMap<String,Contact> userList = new HashMap<String, Contact>();
 
-	private int CollectCount;
+	/**全局的当前登录用户的好友集合*/
+
+	private HashMap<String,Contact> userList = new HashMap<String, Contact>();
+    /**全局的当前登录用户的收藏商品数量**/
+	private int CollectCount=0;
+	/**全局的当前登录用户的购物车集合**/
+	private ArrayList<CartBean> cartList=new ArrayList<CartBean>();
 
 	public int getCollectCount() {
 		return CollectCount;
@@ -158,5 +163,12 @@ public static String SERVER_ROOT = "http://192.168.1.6:8080/FuLiCenterServer/Ser
 		this.userList = userList;
 	}
 
+	public ArrayList<CartBean> getCartList() {
+		return cartList;
+	}
+
+	public void setCartList(ArrayList<CartBean> cartList) {
+		this.cartList = cartList;
+	}
 
 }
